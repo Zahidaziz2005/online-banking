@@ -1,0 +1,16 @@
+<div id="toast-error" class="hidden fixed bottom-24 md:bottom-8 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-32px)] max-w-md animate-in slide-in-from-bottom-4 duration-300">
+    <div class="bg-slate-900 text-white p-4 rounded-xl shadow-2xl flex items-center justify-between gap-4 border border-white/10 backdrop-blur-md">
+        <div class="flex items-center gap-3">
+            <div class="flex-shrink-0 w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">warning</span>
+            </div>
+            <div>
+                <p id="toast-title" class="font-bold text-white leading-tight">Transaction Error</p>
+                <p id="toast-message" class="text-sm text-slate-300">Insufficient funds.</p>
+            </div>
+        </div>
+        <button onclick="closeToast()" class="text-xs font-bold uppercase hover:bg-white/10 px-3 py-2 rounded-lg">
+            Dismiss
+        </button>
+    </div>
+</div>

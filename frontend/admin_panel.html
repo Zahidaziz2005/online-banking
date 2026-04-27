@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexus Admin - User Directory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e4e1ea",
+                        "background": "#fbf8ff",
+                        "secondary-fixed": "#a3f69c",
+                        "surface-bright": "#fbf8ff",
+                        "outline": "#767683",
+                        "inverse-primary": "#bdc2ff",
+                        "tertiary-container": "#5c1800",
+                        "inverse-on-surface": "#f2eff8",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1b1b21",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#4c56af",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1a237e",
+                        "surface": "#fbf8ff",
+                        "on-primary-fixed-variant": "#343d96",
+                        "on-primary-container": "#8690ee",
+                        "on-secondary-container": "#217128",
+                        "inverse-surface": "#303036",
+                        "surface-container-low": "#f5f2fb",
+                        "surface-dim": "#dbd9e1",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "surface-border": "#E0E0E0",
+                        "on-secondary-fixed-variant": "#005312",
+                        "secondary-container": "#a0f399",
+                        "surface-background": "#F8F9FA",
+                        "on-surface-variant": "#454652",
+                        "warning-amber": "#F57F17",
+                        "on-primary-fixed": "#000767",
+                        "secondary": "#1b6d24",
+                        "on-secondary-fixed": "#002204",
+                        "on-tertiary-fixed-variant": "#7b2e12",
+                        "danger-red": "#C62828",
+                        "on-tertiary-container": "#e17c5a",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "text-primary": "#1A1A1A",
+                        "tertiary-fixed": "#ffdbd0",
+                        "surface-container-high": "#eae7ef",
+                        "secondary-fixed-dim": "#88d982",
+                        "primary": "#000666",
+                        "primary-fixed": "#e0e0ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "text-secondary": "#546E7A",
+                        "on-tertiary-fixed": "#390c00",
+                        "tertiary": "#380b00",
+                        "surface-container": "#efecf5",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c6c5d4",
+                        "surface-variant": "#e4e1ea",
+                        "on-background": "#1b1b21"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "padding-page": "32px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "sidebar-width": "260px",
+                        "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "title-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #F8F9FA;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-screen w-64 border-r border-gray-200 bg-white dark:bg-slate-900 flex flex-col px-4 py-6 z-40">
+<div class="mb-10 px-2">
+<span class="text-lg font-black text-indigo-900 dark:text-white uppercase tracking-wider">Nexus Admin</span>
+<p class="font-manrope font-medium text-xs text-gray-400 mt-1">Institutional Control</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-gray-50 hover:text-indigo-800 transition-all duration-200 rounded-md font-manrope font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-indigo-900 font-bold bg-gray-100 rounded-md font-manrope text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                User Directory
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-gray-50 hover:text-indigo-800 transition-all duration-200 rounded-md font-manrope font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+                Transactions
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-gray-50 hover:text-indigo-800 transition-all duration-200 rounded-md font-manrope font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                Security
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-gray-50 hover:text-indigo-800 transition-all duration-200 rounded-md font-manrope font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="mt-auto border-t border-gray-100 pt-4">
+<div class="flex items-center gap-3 px-2 mb-6">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img alt="Administrator" class="w-full h-full object-cover" data-alt="professional portrait of a senior banking executive in a crisp suit with soft office lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9GYUXUVX77T28AVkAJS826eE3jCh5mah6AzEpDd9U2g-psX58Ib7TbRLECXRMNWsTIOahQrT9BvF1dJXcgv6fAA9JJ3r-kkHoz_mVeDJqXO8t7tuqF2IyNI1t1ZMKACbcJUNWU5AFG32R5cG9L5INqvr7Gnb8WunEQfO8EzMMMsvpToTNGkVEI3bVIQFSTJFWcwKPGnq1gHMbuRhtHuQKgjulaxVmEBOoInjKrOBpbgYKEYUlg9xPmu9M_R8Soam9-WVwaMvSm1Q"/>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold text-indigo-900 truncate">Nexus Bank Admin</p>
+<p class="text-[10px] text-gray-400 truncate">Global Admin Account</p>
+</div>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-red-50 hover:text-danger-red transition-all duration-200 rounded-md font-manrope font-medium text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar Shell -->
+<header class="sticky top-0 z-30 flex justify-between items-center w-full px-8 h-16 bg-white/80 backdrop-blur-md border-b border-gray-200">
+<div class="flex items-center gap-4 w-1/3">
+<div class="relative w-full max-w-xs">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-md font-body-sm focus:outline-none focus:border-primary transition-all" placeholder="Search accounts..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="text-gray-500 hover:text-indigo-700 transition-opacity active:opacity-70">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-gray-500 hover:text-indigo-700 transition-opacity active:opacity-70">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-gray-200"></div>
+<div class="flex items-center gap-2">
+<span class="text-sm font-manrope font-semibold text-indigo-900">Administrator</span>
+<div class="w-8 h-8 rounded-md overflow-hidden border border-gray-200">
+<img alt="Administrator" class="w-full h-full object-cover" data-alt="professional portrait of a senior banking executive in a crisp suit with soft office lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-4uldPbqWjH7hXvGPK_nFP7pt_MgPKmhgwmWlrng1H9XFoMbQ389EeWdGvN9-U3O2i1hCGxpH0Cdfy90mG10ahX4VIJNb86n5-EWuVTfAfDyyRjlv6Xb4WNobloS7nJtTJENdYEX1uEpXfHzWWupakWDbV2BdGDwKap2WdBW6ctO8sSGmkH04aojWT4NliXU6YDwRqn72Nib3oppa0xig-yje9cm725OEzldvcoLo6lUbT_m9DAXuE-GBehdk7wUPwOcXdVUGFv8"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<main class="flex-1 p-padding-page max-w-container-max-width mx-auto w-full">
+<header class="mb-10">
+<h1 class="font-display-lg text-display-lg text-primary mb-2">User Directory</h1>
+<p class="font-body-md text-text-secondary">Manage institutional user accounts, monitor statuses, and control access levels.</p>
+</header>
+<!-- Summary Section: Bento Cards -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-12">
+<div class="bg-white p-8 border border-surface-border rounded-xl shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-fixed rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</div>
+<span class="text-secondary font-label-caps text-label-caps">+2.4%</span>
+</div>
+<p class="font-label-caps text-label-caps text-text-secondary uppercase mb-1">Total Bank Users</p>
+<p class="font-display-lg text-display-lg text-primary">12,840</p>
+</div>
+<div class="bg-white p-8 border border-surface-border rounded-xl shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-secondary-container rounded-lg text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</div>
+<span class="text-secondary font-label-caps text-label-caps">+5.1%</span>
+</div>
+<p class="font-label-caps text-label-caps text-text-secondary uppercase mb-1">Active Accounts</p>
+<p class="font-display-lg text-display-lg text-primary">12,102</p>
+</div>
+<div class="bg-white p-8 border border-surface-border rounded-xl shadow-sm border-l-4 border-l-danger-red">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-error-container rounded-lg text-on-error-container">
+<span class="material-symbols-outlined" data-icon="ac_unit">ac_unit</span>
+</div>
+<span class="text-danger-red font-label-caps text-label-caps">Warning</span>
+</div>
+<p class="font-label-caps text-label-caps text-text-secondary uppercase mb-1">Frozen Accounts</p>
+<p class="font-display-lg text-display-lg text-primary">738</p>
+</div>
+</section>
+<!-- Main Section: Data Table -->
+<section class="bg-white border border-surface-border rounded-xl overflow-hidden shadow-sm">
+<div class="px-8 py-6 border-b border-surface-border flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-primary">Global Directory</h3>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-indigo-900 rounded-md font-body-sm font-semibold transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                            Filter
+                        </button>
+<button class="px-4 py-2 bg-primary text-white hover:bg-indigo-950 rounded-md font-body-sm font-semibold transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                            New User
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-gray-50">
+<th class="px-8 py-4 font-label-caps text-label-caps text-text-secondary uppercase tracking-wider">Name</th>
+<th class="px-8 py-4 font-label-caps text-label-caps text-text-secondary uppercase tracking-wider">Account Number</th>
+<th class="px-8 py-4 font-label-caps text-label-caps text-text-secondary uppercase tracking-wider">Balance</th>
+<th class="px-8 py-4 font-label-caps text-label-caps text-text-secondary uppercase tracking-wider">Status</th>
+<th class="px-8 py-4 font-label-caps text-label-caps text-text-secondary uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100">
+<!-- User 1 -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-xs">
+                                            AM
+                                        </div>
+<div>
+<p class="font-title-sm text-text-primary">Alexander Mitchell</p>
+<p class="text-[12px] text-text-secondary">a.mitchell@example.com</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 font-mono text-sm text-text-secondary">NX-7742-9901</td>
+<td class="px-8 py-5 font-manrope font-bold text-primary">$42,910.50</td>
+<td class="px-8 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-container">
+                                        Active
+                                    </span>
+</td>
+<td class="px-8 py-5 text-right">
+<div class="flex items-center justify-end gap-4">
+<button class="text-indigo-900 hover:text-primary-container font-semibold text-sm transition-colors">View Details</button>
+<div class="flex items-center gap-2">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</td>
+</tr>
+<!-- User 2 -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-xs">
+                                            SC
+                                        </div>
+<div>
+<p class="font-title-sm text-text-primary">Sarah Chen</p>
+<p class="text-[12px] text-text-secondary">s.chen@corporate.nexus</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 font-mono text-sm text-text-secondary">NX-1102-8843</td>
+<td class="px-8 py-5 font-manrope font-bold text-primary">$158,200.00</td>
+<td class="px-8 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-error-container text-on-error-container">
+                                        Frozen
+                                    </span>
+</td>
+<td class="px-8 py-5 text-right">
+<div class="flex items-center justify-end gap-4">
+<button class="text-indigo-900 hover:text-primary-container font-semibold text-sm transition-colors">View Details</button>
+<div class="flex items-center gap-2">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</td>
+</tr>
+<!-- User 3 -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-xs">
+                                            RH
+                                        </div>
+<div>
+<p class="font-title-sm text-text-primary">Robert Harrison</p>
+<p class="text-[12px] text-text-secondary">r.harrison@global.net</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 font-mono text-sm text-text-secondary">NX-5561-2290</td>
+<td class="px-8 py-5 font-manrope font-bold text-primary">$4,302.12</td>
+<td class="px-8 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-container">
+                                        Active
+                                    </span>
+</td>
+<td class="px-8 py-5 text-right">
+<div class="flex items-center justify-end gap-4">
+<button class="text-indigo-900 hover:text-primary-container font-semibold text-sm transition-colors">View Details</button>
+<div class="flex items-center gap-2">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</td>
+</tr>
+<!-- User 4 -->
+<tr class="hover:bg-gray-50 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-xs">
+                                            LW
+                                        </div>
+<div>
+<p class="font-title-sm text-text-primary">Linda Wagner</p>
+<p class="text-[12px] text-text-secondary">l.wagner@techcorp.io</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 font-mono text-sm text-text-secondary">NX-3349-0012</td>
+<td class="px-8 py-5 font-manrope font-bold text-primary">$89,455.00</td>
+<td class="px-8 py-5">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-secondary-container text-on-secondary-container">
+                                        Active
+                                    </span>
+</td>
+<td class="px-8 py-5 text-right">
+<div class="flex items-center justify-end gap-4">
+<button class="text-indigo-900 hover:text-primary-container font-semibold text-sm transition-colors">View Details</button>
+<div class="flex items-center gap-2">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-4 border-t border-surface-border flex items-center justify-between">
+<p class="text-xs text-text-secondary">Showing 1 to 4 of 12,840 results</p>
+<div class="flex gap-2">
+<button class="p-2 border border-surface-border rounded-md hover:bg-gray-50 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-lg" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-2 border border-surface-border rounded-md hover:bg-gray-50">
+<span class="material-symbols-outlined text-lg" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>

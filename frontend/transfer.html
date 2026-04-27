@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Nexus Bank | Transfer Money</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <script id="tailwind-config">
+                tailwind.config = {
+                        darkMode: "class",
+                        theme: {
+                                extend: {
+                                        "colors": {
+                                                "primary-fixed-dim": "#bdc2ff",
+                                                "on-surface-variant": "#454652",
+                                                "on-secondary-fixed-variant": "#005312",
+                                                "on-secondary-fixed": "#002204",
+                                                "surface-container-highest": "#e4e1ea",
+                                                "surface-tint": "#4c56af",
+                                                "on-tertiary-fixed-variant": "#7b2e12",
+                                                "primary-fixed": "#e0e0ff",
+                                                "danger-red": "#C62828",
+                                                "surface-dim": "#dbd9e1",
+                                                "on-tertiary-container": "#e17c5a",
+                                                "on-secondary": "#ffffff",
+                                                "tertiary-fixed-dim": "#ffb59d",
+                                                "on-error": "#ffffff",
+                                                "surface-background": "#F8F9FA",
+                                                "surface-border": "#E0E0E0",
+                                                "surface-variant": "#e4e1ea",
+                                                "primary": "#000666",
+                                                "on-tertiary-fixed": "#390c00",
+                                                "secondary-fixed": "#a3f69c",
+                                                "surface": "#fbf8ff",
+                                                "surface-container": "#efecf5",
+                                                "on-primary": "#ffffff",
+                                                "on-error-container": "#93000a",
+                                                "surface-container-high": "#eae7ef",
+                                                "on-tertiary": "#ffffff",
+                                                "secondary-container": "#a0f399",
+                                                "warning-amber": "#F57F17",
+                                                "on-surface": "#1b1b21",
+                                                "surface-container-lowest": "#ffffff",
+                                                "primary-container": "#1a237e",
+                                                "inverse-surface": "#303036",
+                                                "inverse-on-surface": "#f2eff8",
+                                                "text-primary": "#1A1A1A",
+                                                "secondary": "#1b6d24",
+                                                "inverse-primary": "#bdc2ff",
+                                                "surface-container-low": "#f5f2fb",
+                                                "on-background": "#1b1b21",
+                                                "on-primary-fixed": "#000767",
+                                                "background": "#fbf8ff",
+                                                "on-primary-container": "#8690ee",
+                                                "text-secondary": "#546E7A",
+                                                "error": "#ba1a1a",
+                                                "tertiary-container": "#5c1800",
+                                                "tertiary-fixed": "#ffdbd0",
+                                                "secondary-fixed-dim": "#88d982",
+                                                "tertiary": "#380b00",
+                                                "error-container": "#ffdad6",
+                                                "on-primary-fixed-variant": "#343d96",
+                                                "surface-bright": "#fbf8ff",
+                                                "outline-variant": "#c6c5d4",
+                                                "outline": "#767683",
+                                                "on-secondary-container": "#217128"
+                                        },
+                                        "borderRadius": {
+                                                "DEFAULT": "0.125rem",
+                                                "lg": "0.25rem",
+                                                "xl": "0.5rem",
+                                                "full": "0.75rem"
+                                        },
+                                        "spacing": {
+                                                "sidebar-width": "260px",
+                                                "padding-page": "32px",
+                                                "gutter": "24px",
+                                                "unit": "8px",
+                                                "container-max-width": "1280px"
+                                        },
+                                        "fontFamily": {
+                                                "title-sm": ["Inter"],
+                                                "label-caps": ["Inter"],
+                                                "display-lg": ["Manrope"],
+                                                "headline-md": ["Manrope"],
+                                                "body-sm": ["Inter"],
+                                                "body-md": ["Inter"]
+                                        },
+                                        "fontSize": {
+                                                "title-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                                                "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                                                "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                                                "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                                                "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                                                "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                                        }
+                                },
+                        },
+                }
+        </script>
+        <style>
+                .material-symbols-outlined {
+                        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                }
+
+                body {
+                        background-color: #F8F9FA;
+                }
+        </style>
+        <style>
+                body {
+                        min-height: max(884px, 100dvh);
+                }
+        </style>
+</head>
+
+<body class="font-body-md text-on-surface">
+        <!-- TopAppBar -->
+        <header
+                class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white border-b border-gray-200">
+                <div class="flex items-center gap-4">
+                        <div class="md:hidden">
+                                <span class="material-symbols-outlined text-indigo-900">menu</span>
+                        </div>
+                        <h1 class="text-xl font-bold text-indigo-900 font-manrope font-semibold tracking-tight">Nexus
+                                Bank</h1>
+                </div>
+                <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-indigo-900"
+                                data-icon="notifications">notifications</span>
+                        <img alt="user profile picture" class="w-8 h-8 rounded-full border border-surface-border"
+                                data-alt="professional headshot of a businessman in a suit with a clean office background and natural lighting"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_vjz4fKRKyKK-jJ_2_dnTUMSx2U-EihksEFEiXlSGdEx9GIjX__3rmn8AaaQwKH3KU7YZm7h5D35YR9JlMaxZ3GPjPKliFPOwKIGkgSXI7zsPxM0NYGs_qqz7HrtsjPjnJgyfrv3sF2ia_k-s02CvYx9D620vJkl8bYG6ux0G2AWOo7_MrJD7hOUnnVU41y5yGcrasxxWZ3c8vzCPYsx-W7VgFRk-e7jL1cd2n6gb7CHexEO_gnQ30l5ay_8pvZE3mo45MN--Ho4" />
+                </div>
+        </header>
+        <!-- NavigationDrawer (Desktop) -->
+        <aside
+                class="fixed inset-y-0 left-0 w-80 z-[60] flex flex-col bg-white border-r border-gray-100 hidden md:flex">
+                <div class="p-8 flex flex-col gap-6">
+                        <h2 class="text-indigo-900 font-black text-2xl font-manrope">Nexus Bank</h2>
+                        <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                                <img alt="user avatar" class="w-12 h-12 rounded-full"
+                                        data-alt="portrait of a confident financial professional in a modern workspace with soft sunlight"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcCZMpJT0XPSh8b1VXlOK9Nnev5wEz8Ez_IOJvJhia8Iq3zS7JhuEc4DYi_VJTVYDnCjhoM1JgRCyVbJtMK5RP_o38I856YE8pT3ZRus_ZuKwlUIZS1beNRyWKZ7Go4MeaUQxiNscTlwUV8r1Wc3MRF3_j0ecZ1POlyrtnMwPaJdFi-kiofJlU8yLQtGqyEcabJNgFGmXyUZu64-N5sT0Dhrd3Z9SBavIar2MWV4cHl71pxUXBHH6EfPahhPv8rsX5N5vlFUQ8xIs" />
+                                <div>
+                                        <p  id="user-name-side" class="font-manrope text-sm font-bold text-indigo-900">Alex Sterling</p>
+                                        <p class="text-xs text-gray-500">Premium Account</p>
+                                        <span
+                                                class="text-[10px] bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider mt-1 inline-block">Verified</span>
+                                </div>
+                        </div>
+                        <nav class="flex flex-col gap-1">
+                                <a class="flex items-center gap-3 p-3 font-manrope text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg transition-all"
+                                        href="#">
+                                        <span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+                                        <span>Overview</span>
+                                </a>
+                                <a class="flex items-center gap-3 p-3 font-manrope text-sm bg-gray-50 text-indigo-900 font-bold rounded-lg transition-all"
+                                        href="#">
+                                        <span class="material-symbols-outlined" data-icon="payments">payments</span>
+                                        <span>Move Money</span>
+                                </a>
+                                <a class="flex items-center gap-3 p-3 font-manrope text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg transition-all"
+                                        href="#">
+                                        <span class="material-symbols-outlined"
+                                                data-icon="description">description</span>
+                                        <span>Statements</span>
+                                </a>
+                                <a class="flex items-center gap-3 p-3 font-manrope text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg transition-all"
+                                        href="#">
+                                        <span class="material-symbols-outlined" data-icon="shield">shield</span>
+                                        <span>Security</span>
+                                </a>
+                                <a class="flex items-center gap-3 p-3 font-manrope text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg transition-all"
+                                        href="#">
+                                        <span class="material-symbols-outlined"
+                                                data-icon="help_outline">help_outline</span>
+                                        <span>Help Center</span>
+                                </a>
+                        </nav>
+                </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="pt-24 pb-24 md:pb-8 md:pl-80 min-h-screen">
+                <div class="max-w-[1280px] mx-auto px-6">
+                        <div class="mb-8">
+                                <h2 class="font-display-lg text-display-lg text-primary mb-2">Transfer Money</h2>
+                                <p class="font-body-md text-text-secondary">Send funds securely to any account
+                                        worldwide.</p>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                                <!-- Transfer Form Card -->
+                                <div
+                                        class="lg:col-span-8 bg-white p-8 rounded-xl shadow-sm border border-surface-border">
+                                        <form class="space-y-8">
+                                                <!-- Source Account (Visual Only) -->
+
+
+                                                <div
+                                                        class="p-6 bg-primary-container rounded-xl text-white flex justify-between items-center relative overflow-hidden">
+                                                        <div class="relative z-10">
+                                                                <p
+                                                                        class="font-label-caps text-label-caps text-on-primary-container mb-1 uppercase">
+                                                                        Source Account</p>
+                                                                <h3 id="user-name-main"  class="font-headline-md text-headline-md">Alex
+                                                                        Sterling</h3>
+                                                                <p  id="user-account" class="font-body-sm opacity-80">**** **** **** 4290
+                                                                </p>
+                                                        </div>
+                                                        <div class="text-right relative z-10">
+                                                                <p
+                                                                        class="font-label-caps text-label-caps text-on-primary-container mb-1 uppercase">
+                                                                        Available Balance</p>
+                                                                <p id="user-balance" class="font-display-lg text-display-lg">$24,850.00
+                                                                </p>
+                                                        </div>
+                                                        <div
+                                                                class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full">
+                                                        </div>
+                                                </div>
+                                                <!-- Recipient Details -->
+                                                <div class="space-y-6">
+                                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                                <div class="space-y-2">
+                                                                        <label class="font-label-caps text-label-caps text-primary uppercase"
+                                                                                for="account_number">Recipient Account
+                                                                                Number</label>
+                                                                        <div class="relative">
+                                                                                <input class="w-full p-4 border border-surface-border rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md"
+                                                                                        id="account_number"
+                                                                                        placeholder="0000 0000 0000 0000"
+                                                                                        type="text" />
+                                                                                <span class="material-symbols-outlined absolute right-4 top-4 text-gray-400"
+                                                                                        data-icon="account_balance">account_balance</span>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="space-y-2">
+                                                                        <label class="font-label-caps text-label-caps text-primary uppercase"
+                                                                                for="bank_name">Bank Name</label>
+                                                                        <select class="w-full p-4 border border-surface-border rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md appearance-none"
+                                                                                id="bank_name">
+                                                                                <option>Select Destination Bank</option>
+                                                                                <option>Nexus Partner Bank</option>
+                                                                                <option>Global Standard Bank</option>
+                                                                                <option>Meridian Trust</option>
+                                                                        </select>
+                                                                </div>
+                                                        </div>
+                                                        <div class="space-y-2">
+                                                                <label class="font-label-caps text-label-caps text-primary uppercase"
+                                                                        for="amount">Amount (USD)</label>
+                                                                <div class="relative">
+                                                                        <span
+                                                                                class="absolute left-4 top-4 font-bold text-gray-400">$</span>
+                                                                        <input class="w-full p-4 pl-8 border border-surface-border rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-display-lg text-primary"
+                                                                                id="amount" placeholder="0.00"
+                                                                                type="number" />
+                                                                </div>
+                                                        </div>
+                                                        <div class="space-y-2">
+                                                                <label class="font-label-caps text-label-caps text-primary uppercase"
+                                                                        for="purpose">Purpose of Transfer</label>
+                                                                <textarea
+                                                                        class="w-full p-4 border border-surface-border rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md resize-none"
+                                                                        id="purpose"
+                                                                        placeholder="Add a note (e.g., Monthly Rent, Family Support)"
+                                                                        rows="3"></textarea>
+                                                        </div>
+                                                </div>
+                                                <button class="w-full py-5 bg-primary text-white font-manrope font-bold text-lg rounded-xl hover:bg-opacity-90 transition-all flex justify-center items-center gap-2 group"
+                                                        type="submit" id="btn-continue">
+                                                        Continue
+                                                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+                                                                data-icon="arrow_forward">arrow_forward</span>
+                                                </button>
+                                        </form>
+                                </div>
+
+
+                                
+                                <!-- Secondary Column / Info Area -->
+
+                                <div class="lg:col-span-4 space-y-6">
+                                        <div class="bg-white p-6 rounded-xl border border-surface-border">
+                                                <h4
+                                                        class="font-title-sm text-title-sm text-primary mb-4 flex items-center gap-2">
+                                                        <span class="material-symbols-outlined text-warning-amber"
+                                                                data-icon="security"
+                                                                style="font-variation-settings: 'FILL' 1;">security</span>
+                                                        Security Assurance
+                                                </h4>
+                                                <p class="text-body-sm text-text-secondary leading-relaxed">
+                                                        Every transaction is encrypted and monitored by our real-time
+                                                        fraud detection system. Nexus Bank never asks for your PIN via
+                                                        message.
+                                                </p>
+                                        </div>
+                                        <div
+                                                class="bg-secondary-container/10 p-6 rounded-xl border border-secondary-container/20">
+                                                <h4
+                                                        class="font-title-sm text-title-sm text-on-secondary-container mb-4">
+                                                        Frequent Recipients</h4>
+                                                <div class="space-y-4">
+                                                        <div
+                                                                class="flex items-center justify-between p-3 hover:bg-white rounded-lg transition-all cursor-pointer group">
+                                                                <div class="flex items-center gap-3">
+                                                                        <div
+                                                                                class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-700">
+                                                                                JS</div>
+                                                                        <div>
+                                                                                <p
+                                                                                        class="font-body-sm font-bold text-primary">
+                                                                                        James Smith</p>
+                                                                                <p class="text-[11px] text-gray-500">
+                                                                                        **** 8821</p>
+                                                                        </div>
+                                                                </div>
+                                                                <span class="material-symbols-outlined text-gray-300 group-hover:text-primary"
+                                                                        data-icon="chevron_right">chevron_right</span>
+                                                        </div>
+                                                        <div
+                                                                class="flex items-center justify-between p-3 hover:bg-white rounded-lg transition-all cursor-pointer group">
+                                                                <div class="flex items-center gap-3">
+                                                                        <div
+                                                                                class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center font-bold text-emerald-700">
+                                                                                MD</div>
+                                                                        <div>
+                                                                                <p
+                                                                                        class="font-body-sm font-bold text-primary">
+                                                                                        Maria Delgado</p>
+                                                                                <p class="text-[11px] text-gray-500">
+                                                                                        **** 4409</p>
+                                                                        </div>
+                                                                </div>
+                                                                <span class="material-symbols-outlined text-gray-300 group-hover:text-primary"
+                                                                        data-icon="chevron_right">chevron_right</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="relative rounded-xl overflow-hidden aspect-[4/3] group">
+                                                <img alt="Nexus Lifestyle"
+                                                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                        data-alt="abstract architectural glass facade reflecting deep blue sky and modern corporate aesthetic"
+                                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI1So-NmcECTzUJ54_YX12UO03wob3A6FhjfjdlXHiSxUaUIhqUMZQ09tqrXzVci4IQsRWJy3qFGlVGxsf5pX6pbfm8ZglkEq9kCjrgOkN8OPLheatp3onAU90WzPCFk4KhWEEUQecDwodIzKGsZtrqke5qCCXVmbAppIlrskHbmiQabD1ng79GUesJEIB7248stW71Wa07ae0SEKBLk5QYrvvEZUPB2cCFCUf2KJkLoi0C7xJr0c3soD0BxGLQnZhgT8QX0o9vxw" />
+                                                <div
+                                                        class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
+                                                        <div class="text-white">
+                                                                <p
+                                                                        class="font-label-caps text-[10px] text-primary-fixed-dim mb-1">
+                                                                        PROMOTION</p>
+                                                                <p class="font-title-sm mb-2">Upgrade to Nexus Gold</p>
+                                                                <p class="text-[12px] opacity-80">Get 0% fees on all
+                                                                        international wire transfers.</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </main>
+        <!-- BottomNavBar (Mobile) -->
+        <nav
+                class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 h-20 bg-white border-t border-gray-200 md:hidden">
+                <a class="flex flex-col items-center justify-center text-gray-400" href="#">
+                        <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                        <span class="text-[10px] font-bold uppercase tracking-wider font-manrope">Dashboard</span>
+                </a>
+                <a class="flex flex-col items-center justify-center text-indigo-900 font-bold scale-95 transition-transform"
+                        href="#">
+                        <span class="material-symbols-outlined" data-icon="swap_horiz"
+                                style="font-variation-settings: 'FILL' 1;">swap_horiz</span>
+                        <span class="text-[10px] font-bold uppercase tracking-wider font-manrope">Transfer</span>
+                </a>
+                <a class="flex flex-col items-center justify-center text-gray-400" href="#">
+                        <span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+                        <span class="text-[10px] font-bold uppercase tracking-wider font-manrope">History</span>
+                </a>
+                <a class="flex flex-col items-center justify-center text-gray-400" href="#">
+                        <span class="material-symbols-outlined" data-icon="person">person</span>
+                        <span class="text-[10px] font-bold uppercase tracking-wider font-manrope">Account</span>
+                </a>
+        </nav>
+
+        <div id="overlay-loading"
+                class="fixed inset-0 z-[100] flex items-center justify-center bg-primary/40 backdrop-blur-sm hidden">
+                <div class="bg-white p-8 rounded-2xl shadow-2xl flex flex-col items-center gap-4">
+                        <div class="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin">
+                        </div>
+                        <p id="loading-title" class="font-manrope font-bold text-primary text-lg">Processing...</p>
+                </div>
+        </div>
+
+        <div id="modal-success"
+                class="fixed inset-0 z-[110] flex items-center justify-center bg-black/60 backdrop-blur-md hidden">
+                <div
+                        class="bg-white w-full max-w-md mx-4 p-8 rounded-3xl shadow-2xl text-center transform transition-all">
+                        <div
+                                class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="material-symbols-outlined text-5xl">check_circle</span>
+                        </div>
+                        <h3 class="text-2xl font-manrope font-bold text-gray-900 mb-2">Transfer Successful!</h3>
+                        <p class="text-gray-500 mb-6">Sent <span id="display-amount"
+                                        class="font-bold text-primary"></span> to <span id="display-recipient"
+                                        class="font-bold text-primary"></span></p>
+                        <button onclick="closeSuccessModal()"
+                                class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-opacity-90 transition-all">
+                                Return to Dashboard
+                        </button>
+                </div>
+        </div>
+
+        <div id="toast-error"
+                class="fixed bottom-10 left-1/2 -translate-x-1/2 z-[120] flex items-center gap-3 bg-white border-l-4 border-danger-red p-4 shadow-xl rounded-lg min-w-[300px] hidden">
+                <span class="material-symbols-outlined text-danger-red">error</span>
+                <div>
+                        <p id="toast-title" class="font-bold text-sm text-gray-900"></p>
+                        <p id="toast-message" class="text-xs text-gray-500"></p>
+                </div>
+                <button onclick="closeToast()" class="ml-auto text-gray-400 hover:text-gray-600">
+                        <span class="material-symbols-outlined text-sm">close</span>
+                </button>
+        </div>
+
+
+
+        
+<script src="assets/js/ui-helper.js"></script>
+
+<script src="assets/js/transactions.js"></script>
+<script src="assets/js/transfer-handler.js"></script>
+</body>
+
+
+</html>
