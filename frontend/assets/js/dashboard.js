@@ -22,10 +22,34 @@ async function logout() {
 }
 
 /**
- * 2. ڈیٹا فیچنگ فنکشنز (Data Fetching)
+ * 2. اسٹیٹمنٹ کنٹرولرز (Statement Controls)
+ * ان فنکشنز کو باہر ہونا چاہیے تاکہ HTML ان تک رسائی حاصل کر سکے
  */
 
-// ٹرانزیکشن ہسٹری لوڈ کریں
+function toggleStatementDropdown() {
+    const dropdown = document.getElementById('statement-dropdown');
+    if (dropdown) {
+        dropdown.classList.toggle('hidden');
+    }
+}
+
+function downloadPDF() {
+    const startDate = document.getElementById('stmt-start').value;
+    const endDate = document.getElementById('stmt-end').value;
+
+    if (!startDate || !endDate) {
+        alert("براہ کرم شروع اور ختم ہونے کی تاریخ منتخب کریں۔");
+        return;
+    }
+
+    // PDF جنریٹ کرنے والی فائل کا پاتھ
+    window.location.href = `../backend/generate_pdf.php?start=${startDate}&end=${endDate}`;
+}
+
+/**
+ * 3. ڈیٹا فیچنگ فنکشنز (Data Fetching)
+ */
+
 async function fetchTransactionHistory(userAccountNumber) {
     const tableBody = document.getElementById('transaction-table-body');
     if (!tableBody) return;
@@ -42,7 +66,6 @@ async function fetchTransactionHistory(userAccountNumber) {
         }
 
         transactions.forEach(txn => {
-            // کریڈٹ یا ڈیبٹ کی منطق
             const isCredit = (txn.receiver_account === userAccountNumber) || (txn.type === 'deposit');
             const icon = isCredit ? 'account_balance_wallet' : 'payments';
             const amountClass = isCredit ? 'text-secondary' : 'text-primary';
@@ -79,11 +102,11 @@ async function fetchTransactionHistory(userAccountNumber) {
             tableBody.insertAdjacentHTML('beforeend', row);
         });
     } catch (error) {
+        console.error('Fetch error:', error);
         tableBody.innerHTML = '<tr><td colspan="5" class="p-6 text-center text-red-500">Failed to load transactions.</td></tr>';
     }
 }
 
-// ڈیش بورڈ سمری (Earnings/Expenses) لوڈ کریں
 async function loadDashboardSummary() {
     try {
         const response = await fetch('/online-banking/backend/get_dashboard_summary.php');
@@ -91,12 +114,12 @@ async function loadDashboardSummary() {
 
         if (result.success) {
             const { earnings, expenses } = result.data;
-
-            document.getElementById('monthly-earnings').innerText = formatCurrency(earnings.total);
-            document.getElementById('earning-percentage').innerText = `+${earnings.percentage}%`;
-
-            document.getElementById('monthly-expenses').innerText = formatCurrency(expenses.total);
-            document.getElementById('expense-percentage').innerText = `-${expenses.percentage}%`;
+            if(document.getElementById('monthly-earnings')) {
+                document.getElementById('monthly-earnings').innerText = formatCurrency(earnings.total);
+                document.getElementById('earning-percentage').innerText = `+${earnings.percentage}%`;
+                document.getElementById('monthly-expenses').innerText = formatCurrency(expenses.total);
+                document.getElementById('expense-percentage').innerText = `-${expenses.percentage}%`;
+            }
         }
     } catch (error) {
         console.error('Error loading summary:', error);
@@ -104,7 +127,7 @@ async function loadDashboardSummary() {
 }
 
 /**
- * 3. مین کنٹرولر (Main Initialization)
+ * 4. پیج لوڈ ہونے پر ڈیٹا شروع کریں (Initialization)
  */
 document.addEventListener('DOMContentLoaded', async () => {
     try {

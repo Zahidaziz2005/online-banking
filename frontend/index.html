@@ -141,12 +141,17 @@
             </nav>
         </div>
         <div class="flex items-center gap-4">
-           
-           <a href="login.html">
-            <button
-                class="text-indigo-900 font-manrope font-semibold tracking-tight text-sm px-4 py-2 hover:bg-gray-50 transition-colors">Log
-                In</button>
-</a>
+
+          <button onclick="toggleStaffModal()" class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-slate-600 hover:text-indigo-900 transition-all rounded-lg group">
+    <span class="material-symbols-outlined text-[20px] group-hover:rotate-12 transition-transform">admin_panel_settings</span>
+    Staff Portal
+</button>
+
+            <a href="login.html">
+                <button
+                    class="text-indigo-900 font-manrope font-semibold tracking-tight text-sm px-4 py-2 hover:bg-gray-50 transition-colors">Log
+                    In</button>
+            </a>
             <a href="register.html">
                 <button
                     class="bg-primary text-white px-6 py-2 rounded-lg font-manrope font-semibold tracking-tight text-sm transition-colors hover:bg-opacity-90">
@@ -370,6 +375,37 @@
                 </div>
             </div>
         </section>
+
+        <div id="staff-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4">
+    <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+        <div class="bg-indigo-900 p-6 text-white flex justify-between items-center">
+            <div>
+                <h2 class="text-xl font-bold">Staff Access</h2>
+                <p class="text-xs text-indigo-200">Institutional control panel login</p>
+            </div>
+            <button onclick="toggleStaffModal()" class="hover:bg-white/10 p-2 rounded-full transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+
+        <form id="staff-login-form" class="p-8 space-y-5">
+            <div class="space-y-1">
+                <label class="text-xs font-bold text-slate-500 uppercase">Staff Email</label>
+                <input type="email" id="staff-email" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-indigo-900 transition-all" placeholder="name@nexus.com">
+            </div>
+            <div class="space-y-1">
+                <label class="text-xs font-bold text-slate-500 uppercase">Secret Password</label>
+                <input type="password" id="staff-password" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-indigo-900 transition-all" placeholder="••••••••">
+            </div>
+            
+            <button type="submit" class="w-full py-4 bg-indigo-900 text-white font-bold rounded-xl hover:bg-indigo-800 shadow-lg shadow-indigo-200 transition-all active:scale-95">
+                Authenticate & Enter
+            </button>
+        </form>
+    </div>
+</div>
+
+
     </main>
     <!-- Footer -->
     <footer class="bg-white border-t border-surface-border pt-20 pb-10">
@@ -446,6 +482,7 @@
             <span class="text-[10px] font-bold uppercase tracking-wider font-manrope">Account</span>
         </div>
     </div>
+    <script src="assets/js/auth.js"></script>
 </body>
 
 </html>
