@@ -1,39 +1,69 @@
 <?php
 header('Content-Type: application/json');
-session_start(); // سیشن شروع کرنا ضروری ہے تاکہ لاگ ان یوزر کا ڈیٹا مل سکے
+session_start();
 
 $conn = new mysqli("localhost", "root", "", "nexus_bank");
 
 if ($conn->connect_error) {
-    die(json_encode(["error" => "Connection failed"]));
+    die(json_encode(["success" => false, "message" => "Database connection failed"]));
 }
 
-// 1. لاگ ان شدہ یوزر کا ڈیٹا بیس والا اکاؤنٹ نمبر حاصل کریں
-// (نوٹ: اگر سیشن میں اکاؤنٹ نمبر نہیں ہے تو یوزر آئی ڈی سے ڈیٹا بیس سے نکالیں)
-$user_id = $_SESSION['user_id'] ?? 0; 
+/* Check login */
+if (!isset($_SESSION['user_id'])) {
+    echo json_encode([
+        "success" => false,
+        "message" => "User not logged in"
+    ]);
+    exit;
+}
 
-// 2. ہم SQL میں sender_account اور receiver_account کو بھی شامل کریں گے
-$sql = "SELECT transaction_id, sender_account, receiver_account, description, type, amount, created_at 
-        FROM transactions 
-        ORDER BY created_at DESC LIMIT 10";
+$user_id = $_SESSION['user_id'];
 
-$result = $conn->query($sql);
+/* Step 1: Get logged-in user's account number */
+$stmt = $conn->prepare("SELECT account_number FROM accounts WHERE user_id = ?");
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$account = $result->fetch_assoc();
+
+if (!$account) {
+    echo json_encode([
+        "success" => false,
+        "message" => "Account not found"
+    ]);
+    exit;
+}
+
+$account_number = $account['account_number'];
+
+/* Step 2: Get only this user's transactions */
+$stmt2 = $conn->prepare("
+    SELECT transaction_id,
+           sender_account,
+           receiver_account,
+           description,
+           type,
+           amount,
+           created_at
+    FROM transactions
+    WHERE sender_account = ?
+       OR receiver_account = ?
+    ORDER BY created_at DESC
+    LIMIT 25
+");
+
+$stmt2->bind_param("ss", $account_number, $account_number);
+$stmt2->execute();
+
+$result2 = $stmt2->get_result();
 
 $data = [];
-if ($result && $result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        $data[] = [
-            "transaction_id" => $row["transaction_id"],
-            "sender_account" => $row["sender_account"],     // یہ کالم شامل کرنا ضروری ہے
-            "receiver_account" => $row["receiver_account"], // یہ کالم شامل کرنا ضروری ہے
-            "description" => $row["description"],
-            "type" => $row["type"],
-            "amount" => $row["amount"],
-            "created_at" => $row["created_at"]
-        ];
-    }
+
+while ($row = $result2->fetch_assoc()) {
+    $data[] = $row;
 }
 
 echo json_encode($data);
+
 $conn->close();
 ?>

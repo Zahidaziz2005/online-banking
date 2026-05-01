@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 document.getElementById('user-name-side').innerText = full_name;
             
             if(document.getElementById('welcome-msg')) 
-                document.getElementById('welcome-msg').innerText = `خوش آمدید، ${full_name.split(' ')[0]}`;
+                document.getElementById('welcome-msg').innerText = `Well Come, ${full_name.split(' ')[0]}`;
             
             if(document.getElementById('user-balance')) 
                 document.getElementById('user-balance').innerText = formatCurrency(balance);
