@@ -2,7 +2,7 @@
  * 1. مددگار فنکشنز (Utility Functions)
  */
 
-// کرنسی کو $0.00 کی شکل میں فارمیٹ کرنے کے لیے
+// کرنسی فارمیٹ (USD یا PKR کے لیے)
 const formatCurrency = (amount) => {
     return new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -13,24 +13,21 @@ const formatCurrency = (amount) => {
 // لاگ آؤٹ فنکشن
 async function logout() {
     try {
-        const response = await fetch('/online-banking/backend/logout.php');
+        // پاتھ کو درست کیا گیا ہے
+        const response = await fetch('../backend/logout.php');
         const result = await response.json();
-        if (result.success) window.location.href = 'login.html';
+        if (result.success) window.location.href = 'index.html';
     } catch (error) {
         console.error('Logout failed:', error);
     }
 }
 
 /**
- * 2. اسٹیٹمنٹ کنٹرولرز (Statement Controls)
- * ان فنکشنز کو باہر ہونا چاہیے تاکہ HTML ان تک رسائی حاصل کر سکے
+ * 2. اسٹیٹمنٹ کنٹرولرز
  */
-
 function toggleStatementDropdown() {
     const dropdown = document.getElementById('statement-dropdown');
-    if (dropdown) {
-        dropdown.classList.toggle('hidden');
-    }
+    if (dropdown) dropdown.classList.toggle('hidden');
 }
 
 function downloadPDF() {
@@ -38,35 +35,34 @@ function downloadPDF() {
     const endDate = document.getElementById('stmt-end').value;
 
     if (!startDate || !endDate) {
-        alert("براہ کرم شروع اور ختم ہونے کی تاریخ منتخب کریں۔");
+        alert("براہ کرم تاریخ منتخب کریں۔");
         return;
     }
-
-    // PDF جنریٹ کرنے والی فائل کا پاتھ
+    // پاتھ پہلے ہی درست تھا
     window.location.href = `../backend/generate_pdf.php?start=${startDate}&end=${endDate}`;
 }
 
 /**
- * 3. ڈیٹا فیچنگ فنکشنز (Data Fetching)
+ * 3. ڈیٹا فیچنگ فنکشنز
  */
-
 async function fetchTransactionHistory(userAccountNumber) {
     const tableBody = document.getElementById('transaction-table-body');
     if (!tableBody) return;
 
     try {
-        const response = await fetch('/online-banking/backend/fetch_transactions.php');
+        const response = await fetch('../backend/fetch_transactions.php');
         const transactions = await response.json();
 
         tableBody.innerHTML = ''; 
 
         if (!transactions || transactions.length === 0) {
-            tableBody.innerHTML = '<tr><td colspan="5" class="p-6 text-center text-text-secondary">No recent transactions found.</td></tr>';
+            tableBody.innerHTML = '<tr><td colspan="5" class="p-6 text-center text-text-secondary">کوئی ٹرانزیکشن نہیں ملی۔</td></tr>';
             return;
         }
 
         transactions.forEach(txn => {
-            const isCredit = (txn.receiver_account === userAccountNumber) || (txn.type === 'deposit');
+            // ڈیٹا بیس کی فیلڈز کے مطابق چیک (sender_account اور receiver_account)
+            const isCredit = (txn.receiver_account == userAccountNumber);
             const icon = isCredit ? 'account_balance_wallet' : 'payments';
             const amountClass = isCredit ? 'text-secondary' : 'text-primary';
             const amountSign = isCredit ? '+' : '-';
@@ -83,8 +79,8 @@ async function fetchTransactionHistory(userAccountNumber) {
                                 <span class="material-symbols-outlined text-gray-600">${icon}</span>
                             </div>
                             <div>
-                                <p class="font-title-sm text-primary">${txn.description || 'General Transaction'}</p>
-                                <p class="font-body-sm text-text-secondary">Ref: #TXN-${txn.transaction_id}</p>
+                                <p class="font-title-sm text-primary">${txn.description || 'Transfer'}</p>
+                                <p class="font-body-sm text-text-secondary">ID: #TXN-${txn.transaction_id}</p>
                             </div>
                         </div>
                     </td>
@@ -103,13 +99,12 @@ async function fetchTransactionHistory(userAccountNumber) {
         });
     } catch (error) {
         console.error('Fetch error:', error);
-        tableBody.innerHTML = '<tr><td colspan="5" class="p-6 text-center text-red-500">Failed to load transactions.</td></tr>';
     }
 }
 
 async function loadDashboardSummary() {
     try {
-        const response = await fetch('/online-banking/backend/get_dashboard_summary.php');
+        const response = await fetch('../backend/get_dashboard_summary.php');
         const result = await response.json();
 
         if (result.success) {
@@ -122,36 +117,47 @@ async function loadDashboardSummary() {
             }
         }
     } catch (error) {
-        console.error('Error loading summary:', error);
+        console.error('Summary loading error:', error);
     }
 }
 
 /**
- * 4. پیج لوڈ ہونے پر ڈیٹا شروع کریں (Initialization)
+/**
+ * 4. Initialization (درست شدہ ورژن)
  */
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch('/online-banking/backend/get_user_data.php');
+        const response = await fetch('../backend/get_user_data.php');
         const result = await response.json();
 
         if (result.success) {
             const { full_name, balance, account_number } = result.data;
 
             // UI اپڈیٹس
-            document.getElementById('user-name-side').innerText = full_name;
-            document.getElementById('welcome-msg').innerText = `Good Morning, ${full_name.split(' ')[0]}`;
-            document.getElementById('user-balance').innerText = formatCurrency(balance);
-            document.getElementById('user-account').innerText = `•••• •••• •••• ${account_number.slice(-4)}`;
+            if(document.getElementById('user-name-side')) 
+                document.getElementById('user-name-side').innerText = full_name;
+            
+            if(document.getElementById('welcome-msg')) 
+                document.getElementById('welcome-msg').innerText = `خوش آمدید، ${full_name.split(' ')[0]}`;
+            
+            if(document.getElementById('user-balance')) 
+                document.getElementById('user-balance').innerText = formatCurrency(balance);
+            
+            if(document.getElementById('user-account')) 
+                document.getElementById('user-account').innerText = `•••• •••• •••• ${account_number.slice(-4)}`;
 
-            // بقیہ ڈیٹا لوڈ کریں
+            // ٹرانزیکشنز اور سمری لوڈ کریں
             fetchTransactionHistory(account_number);
             loadDashboardSummary();
 
         } else {
+            // اگر سیشن نہیں ہے تو وجہ کنسول میں پرنٹ کریں
+            console.warn('Session missing or error:', result.message);
             window.location.href = 'login.html';
         }
     } catch (error) {
-        console.error('Initialization error:', error);
+        // نیٹ ورک یا سرور ایرر کی صورت میں تفصیل دکھائیں
+        console.error('Initialization error details:', error);
         window.location.href = 'login.html';
     }
 });
