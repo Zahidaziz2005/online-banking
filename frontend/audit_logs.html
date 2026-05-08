@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Audit Logs - Apex Bank</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#191c1e",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "on-primary-fixed": "#131b2e",
+                    "on-background": "#1a1c1c",
+                    "primary-container": "#131b2e",
+                    "on-secondary-container": "#54647a",
+                    "tertiary-fixed": "#e0e3e5",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#2f3131",
+                    "surface-container-high": "#e8e8e8",
+                    "primary": "#000000",
+                    "primary-fixed-dim": "#bec6e0",
+                    "surface-tint": "#565e74",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-primary-container": "#7c839b",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#c6c6cd",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "tertiary": "#000000",
+                    "secondary": "#505f76",
+                    "surface-dim": "#dadada",
+                    "surface-variant": "#e2e2e2",
+                    "on-surface-variant": "#45464d",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "secondary-container": "#d0e1fb",
+                    "inverse-primary": "#bec6e0",
+                    "tertiary-container": "#191c1e",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface": "#f9f9f9",
+                    "surface-container-low": "#f3f3f4",
+                    "surface-bright": "#f9f9f9",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#0b1c30",
+                    "primary-fixed": "#dae2fd",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "on-tertiary-container": "#818486",
+                    "secondary-fixed": "#d3e4fe",
+                    "background": "#f9f9f9",
+                    "outline": "#76777d",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "lg": "40px",
+                    "sm": "12px",
+                    "gutter": "24px",
+                    "xl": "64px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Public Sans"],
+                    "body-md": ["Public Sans"],
+                    "h2": ["Public Sans"],
+                    "h1": ["Public Sans"],
+                    "body-sm": ["Public Sans"],
+                    "h3": ["Public Sans"],
+                    "button": ["Public Sans"],
+                    "body-lg": ["Public Sans"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h2": ["30px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "button": ["15px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Public Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Shell Layout -->
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="flex flex-col h-full py-md px-sm gap-base bg-surface-container-low border-r border-outline-variant w-xl flex-shrink-0 z-20">
+<div class="flex items-center gap-sm px-sm mb-lg">
+<div class="w-10 h-10 bg-primary flex items-center justify-center rounded-xl overflow-hidden">
+<img alt="Apex Bank Logo" class="w-8 h-8" data-alt="A clean, geometric abstract logo composed of minimalist white lines forming a modern bank crest, set against a solid deep black background. The style is professional, institutional, and high-contrast, representing digital security and corporate banking precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC1mEU9TrCgq2xJ_syTk6YMoYFB4b2-TeAxINNAnZQXBPblg8oW6ciGTnS5aZ50Ly1hPkf829-abRLurOeAONDeLQxiHnQEGp2Dbq1bh8-tQkNZAlpXvUWWzghkkraI9eB65-AxNhcXQXegZ5dyg_jIC5Vz2-e6prmrXE8UYB4LRZ9WnAXDgFHOoJflrgTH6bnP5b80mRUTd1lVvs1leEayUb5RdUbAz80ROf435AURd0kB1jPE8HxyQEfm6_wxqvf6LnI4Hr2"/>
+</div>
+<div>
+<h1 class="font-h3 text-h3 font-bold text-primary">Apex Bank</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Corporate Portal</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-xs">
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 active:scale-95 font-body-sm text-body-sm" href="dashboard.html">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 active:scale-95 font-body-sm text-body-sm" href="transactions.html">
+<span class="material-symbols-outlined">receipt_long</span>
+                    Transactions
+                </a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 active:scale-95 font-body-sm text-body-sm" href="transfer.html">
+<span class="material-symbols-outlined">move_up</span>
+                    Fund Transfer
+                </a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 active:scale-95 font-body-sm text-body-sm" href="beneficiaries.html">
+<span class="material-symbols-outlined">group</span>
+                    Beneficiaries
+                </a>
+<!-- <a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 active:scale-95 font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined">manage_accounts</span>
+                    User Management
+                </a> -->
+<!-- Active Tab -->
+<a class="flex items-center gap-sm px-sm py-base bg-secondary-container text-on-secondary-container font-button rounded-xl active:scale-95 transition-all duration-200" href="audit_logs.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+                    Audit Logs
+                </a>
+</nav>
+<div class="mt-auto flex flex-col gap-xs border-t border-outline-variant pt-base">
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 active:scale-95 font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined">help</span>
+                    Help Center
+                </a>
+<a id="logoutBtn" class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 active:scale-95 font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined">logout</span>
+                    Logout
+                </a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col min-w-0">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-gutter h-xl bg-surface-container-lowest border-b border-outline-variant shadow-sm z-10 flex-shrink-0">
+<div class="flex items-center gap-sm">
+<span class="font-h3 text-h3 font-bold text-primary pl-20">Report</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20 w-64 transition-all duration-200" placeholder="Search logs..." type="text"/>
+</div>
+<div class="flex items-center gap-md">
+<button class="font-body-md text-body-md text-secondary hover:bg-surface-container-low px-sm py-xs rounded transition-colors">Support</button>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary transition-colors" data-icon="help_outline">help_outline</span>
+
+<span id="user-display-name" class="font-bold">Welcome, User</span>
+</div>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile avatar" data-alt="A professional headshot of a corporate executive in a modern workspace, characterized by soft natural light and a clean background. The individual is dressed in business casual attire with a friendly, confident expression. The lighting is bright and even, reinforcing a light-mode UI aesthetic of trust and clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYjPpBHgLlgKQT4KKaEy-zuC760MfUp-KCLxNUxCVWpLvK_IJey1doHNlfAMNrPr25-Oj3itGT8mTiPD_2hrQJaNf802T7BE9V6LuXuEUb8HMxhXZw6f2qYucAFqbjBkcXIIHsP7PxDX0bxy7HptL-EBbCskAEa1bDIFqy7hob7GLG5RSqiTsTJ59dnUlbNHbHPEcQAooQYIplWwBeJAUEYn_mjVB6tlkmjEUAKDurvNt0Bn6bkZtoi-fpN4c791TsLHpJxFxB"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto bg-surface">
+<div class="max-w-[1400px] mx-auto px-gutter py-lg">
+<!-- Page Header -->
+<div class="mb-lg">
+<h2 class="font-h1 text-h2 text-primary mb-xs">Audit Logs</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                            Track every action within your account to ensure maximum security. Review login attempts, financial movements, and administrative changes in real-time.
+                        </p>
+</div>
+<!-- Layout Grid: List + Security Summary -->
+<div class="grid grid-cols-12 gap-lg">
+<!-- Main Audit Container -->
+<section class="col-span-12 xl:col-span-8">
+<!-- Filters & Search Bar (Mobile/Table) -->
+<div class="flex flex-col md:flex-row gap-base mb-base items-center justify-between">
+<div class="flex items-center gap-base w-full md:w-auto">
+<div class="relative flex-1 md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search actions, IPs or users..." type="text"/>
+</div>
+<button class="flex items-center gap-xs px-md py-2 bg-surface-container-lowest border border-outline-variant rounded-lg font-button text-body-sm hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+                                        Filters
+                                    </button>
+</div>
+<div class="flex items-center gap-xs w-full md:w-auto">
+<select class="w-full md:w-auto pl-4 pr-10 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg text-body-sm font-button focus:outline-none appearance-none cursor-pointer">
+<option>Last 24 Hours</option>
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+<option>Custom Range</option>
+</select>
+</div>
+</div>
+<!-- Audit Logs List Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden min-h-[400px]" id="audit-log-container">
+<!-- Header Row -->
+<div class="hidden md:grid grid-cols-12 px-md py-sm bg-surface-container-low border-b border-outline-variant">
+<div class="col-span-4 font-label-caps text-label-caps text-outline uppercase">Action &amp; Status</div>
+<div class="col-span-3 font-label-caps text-label-caps text-outline uppercase">Device Info</div>
+<div class="col-span-2 font-label-caps text-label-caps text-outline uppercase">IP Address</div>
+<div class="col-span-3 font-label-caps text-label-caps text-outline uppercase text-right">Timestamp</div>
+</div>
+<!-- Log Item 1 -->
+<div class="grid grid-cols-1 md:grid-cols-12 px-md py-md border-b border-outline-variant hover:bg-surface-container-low transition-colors duration-200 cursor-pointer items-center gap-y-sm">
+<div class="col-span-4 flex items-center gap-base">
+<div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">login</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-primary">User Login</p>
+<p class="font-body-sm text-body-sm text-emerald-600">Successful Authorization</p>
+</div>
+</div>
+<div class="col-span-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Chrome 122.0 / Windows 11</p>
+<p class="font-label-caps text-[10px] text-outline uppercase tracking-wider">Laptop</p>
+</div>
+<div class="col-span-2 font-mono text-body-sm text-on-surface-variant">
+                                        192.168.1.104
+                                    </div>
+<div class="col-span-3 text-right">
+<p class="font-body-sm text-body-sm text-primary">Today, 02:45 PM</p>
+<p class="font-body-sm text-[12px] text-outline">2 minutes ago</p>
+</div>
+</div>
+<!-- Log Item 2 -->
+<div class="grid grid-cols-1 md:grid-cols-12 px-md py-md border-b border-outline-variant hover:bg-surface-container-low transition-colors duration-200 cursor-pointer items-center gap-y-sm">
+<div class="col-span-4 flex items-center gap-base">
+<div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">move_up</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-primary">Fund Transfer</p>
+<p class="font-body-sm text-body-sm text-on-secondary-container">Amount: $12,400.00</p>
+</div>
+</div>
+<div class="col-span-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Apex Bank App / iPhone 15 Pro</p>
+<p class="font-label-caps text-[10px] text-outline uppercase tracking-wider">Mobile</p>
+</div>
+<div class="col-span-2 font-mono text-body-sm text-on-surface-variant">
+                                        172.56.21.19
+                                    </div>
+<div class="col-span-3 text-right">
+<p class="font-body-sm text-body-sm text-primary">Today, 11:12 AM</p>
+<p class="font-body-sm text-[12px] text-outline">4 hours ago</p>
+</div>
+</div>
+<!-- Log Item 3 (Security Warning) -->
+<div class="grid grid-cols-1 md:grid-cols-12 px-md py-md border-b border-outline-variant hover:bg-surface-container-low transition-colors duration-200 cursor-pointer items-center gap-y-sm">
+<div class="col-span-4 flex items-center gap-base">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lock_reset</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-primary">Password Changed</p>
+<p class="font-body-sm text-body-sm text-error">Security Clearance Required</p>
+</div>
+</div>
+<div class="col-span-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Safari / macOS 14.2</p>
+<p class="font-label-caps text-[10px] text-outline uppercase tracking-wider">Desktop</p>
+</div>
+<div class="col-span-2 font-mono text-body-sm text-on-surface-variant">
+                                        104.28.15.221
+                                    </div>
+<div class="col-span-3 text-right">
+<p class="font-body-sm text-body-sm text-primary">Yesterday, 09:30 PM</p>
+<p class="font-body-sm text-[12px] text-outline">18 hours ago</p>
+</div>
+</div>
+<!-- Log Item 4 -->
+<div class="grid grid-cols-1 md:grid-cols-12 px-md py-md border-b border-outline-variant hover:bg-surface-container-low transition-colors duration-200 cursor-pointer items-center gap-y-sm">
+<div class="col-span-4 flex items-center gap-base">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-primary">MFA Settings Updated</p>
+<p class="font-body-sm text-body-sm text-on-secondary-container">Added New Authenticator</p>
+</div>
+</div>
+<div class="col-span-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Chrome 122.0 / Windows 11</p>
+<p class="font-label-caps text-[10px] text-outline uppercase tracking-wider">Laptop</p>
+</div>
+<div class="col-span-2 font-mono text-body-sm text-on-surface-variant">
+                                        192.168.1.104
+                                    </div>
+<div class="col-span-3 text-right">
+<p class="font-body-sm text-body-sm text-primary">Mar 12, 02:15 PM</p>
+<p class="font-body-sm text-[12px] text-outline">2 days ago</p>
+</div>
+</div>
+<!-- Empty State (Hidden by default, shown via logic) -->
+<div class="hidden flex-col items-center justify-center py-xl px-lg text-center">
+<div class="w-20 h-20 bg-surface-container-low rounded-full flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-[48px] text-outline">search_off</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary mb-xs">No recent activity found</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                                        We couldn't find any logs matching your current filters. Try adjusting your search criteria.
+                                    </p>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-base flex items-center justify-between">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Showing 1-10 of 482 entries</p>
+<div class="flex items-center gap-xs">
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-low disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 bg-primary text-on-primary rounded-lg font-button">1</button>
+<button class="w-10 h-10 border border-outline-variant rounded-lg font-button hover:bg-surface-container-low">2</button>
+<button class="w-10 h-10 border border-outline-variant rounded-lg font-button hover:bg-surface-container-low">3</button>
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-low">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Sidebar: Security Summary -->
+<aside class="col-span-12 xl:col-span-4 flex flex-col gap-lg">
+<!-- Security Summary Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden">
+<div class="px-md py-base border-b border-outline-variant bg-surface-container-low flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">security</span>
+<h3 class="font-h3 text-h3 text-primary">Security Summary</h3>
+</div>
+<div class="p-md space-y-md">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-label-caps text-label-caps text-outline uppercase mb-xs">Account Integrity</p>
+<p class="font-body-md text-body-md font-bold text-emerald-600">High Protection</p>
+</div>
+<span class="material-symbols-outlined text-emerald-600 text-[32px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="grid grid-cols-1 gap-base">
+<div class="p-sm bg-surface-container-low rounded-lg border border-outline-variant">
+<p class="font-label-caps text-[10px] text-outline uppercase mb-xs">Last Login</p>
+<p class="font-body-sm text-body-sm font-semibold">Today, 02:45 PM</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">from 192.168.1.104</p>
+</div>
+<div class="p-sm bg-surface-container-low rounded-lg border border-outline-variant">
+<p class="font-label-caps text-[10px] text-outline uppercase mb-xs">Active Sessions</p>
+<div class="flex items-center justify-between">
+<p class="font-body-sm text-body-sm font-semibold">2 Devices Connected</p>
+<button class="text-primary font-button text-[12px] underline">Manage</button>
+</div>
+</div>
+<div class="p-sm bg-surface-container-low rounded-lg border border-outline-variant">
+<p class="font-label-caps text-[10px] text-outline uppercase mb-xs">Primary Device</p>
+<p class="font-body-sm text-body-sm font-semibold">MacBook Pro M3</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Verified on Jan 12, 2024</p>
+</div>
+</div>
+<button class="w-full py-md bg-primary text-on-primary rounded-xl font-button hover:opacity-90 transition-opacity active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">shield</span>
+                                        Run Security Audit
+                                    </button>
+</div>
+</div>
+<!-- Alert Card -->
+<div class="bg-primary-container p-md rounded-xl text-on-primary-container relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-h3 text-h3 text-white mb-sm">Unusual Activity?</h4>
+<p class="font-body-sm text-body-sm text-on-primary-fixed-dim mb-md">
+                                        If you see an action you don't recognize, lock your account immediately and contact our support team.
+                                    </p>
+<button class="px-md py-sm bg-white text-primary rounded-lg font-button hover:bg-surface-variant transition-colors">
+                                        Secure Account
+                                    </button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 scale-150 rotate-12">
+<span class="material-symbols-outlined text-[120px] text-white">gpp_maybe</span>
+</div>
+</div>
+<!-- Visual Placeholder (Security Map) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden h-48 relative">
+<img alt="Login Locations Map" class="w-full h-full object-cover opacity-30 grayscale" data-alt="A stylized, minimalist digital map of a global network with glowing nodes connecting major cities. The aesthetic is ultra-clean with a deep slate and white color scheme. The lighting is soft and ambient, representing a high-tech security surveillance dashboard for global banking transactions." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvPswi4Ygj5NJpLC6MOBdHFAy4KYppoVcZi6C2jqbmA7P16HmqmbP1QQHwmmU2jyFX5U9Y2lrJQxGCAti0hBT4gE0R6esyXbZYTsYyb5sUBFuhAbo59NXxAQNVy7yKNRUXoAIEtV1QtBFlOORw9hf2jabDV2LxpFVteMikpvy1-85bFbbm3Ai3pGGw1TWfpAD3TfkrdE9Dr9sXQwr8Tfj9eyYuay5psGR07lJApJl5ee53SWMWazoF7WKRHVUnnbKuLyFGkX5B"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+<div class="absolute bottom-md left-md right-md">
+<p class="font-label-caps text-label-caps text-outline uppercase">Recent Access Locations</p>
+<p class="font-body-sm text-body-sm font-semibold">New York, USA • London, UK</p>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+<script src="../assets/js/modules/audit_logs.js" type="module"></script>
+<script src="../assets/js/modules/dashboard.js" type="module"></script>
+
+</body></html>
