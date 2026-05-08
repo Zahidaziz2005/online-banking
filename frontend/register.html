@@ -1,77 +1,66 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Nexus Bank - Create Your Account</title>
+<title>Nexus Bank - Create Your Corporate Account</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-    </style>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     "colors": {
-                        "primary-fixed-dim": "#bdc2ff",
-                        "on-surface-variant": "#454652",
-                        "on-secondary-fixed-variant": "#005312",
-                        "on-secondary-fixed": "#002204",
-                        "surface-container-highest": "#e4e1ea",
-                        "surface-tint": "#4c56af",
-                        "on-tertiary-fixed-variant": "#7b2e12",
-                        "primary-fixed": "#e0e0ff",
-                        "danger-red": "#C62828",
-                        "surface-dim": "#dbd9e1",
-                        "on-tertiary-container": "#e17c5a",
-                        "on-secondary": "#ffffff",
-                        "tertiary-fixed-dim": "#ffb59d",
-                        "on-error": "#ffffff",
-                        "surface-background": "#F8F9FA",
-                        "surface-border": "#E0E0E0",
-                        "surface-variant": "#e4e1ea",
-                        "primary": "#000666",
-                        "on-tertiary-fixed": "#390c00",
-                        "secondary-fixed": "#a3f69c",
-                        "surface": "#fbf8ff",
-                        "surface-container": "#efecf5",
-                        "on-primary": "#ffffff",
-                        "on-error-container": "#93000a",
-                        "surface-container-high": "#eae7ef",
-                        "on-tertiary": "#ffffff",
-                        "secondary-container": "#a0f399",
-                        "warning-amber": "#F57F17",
-                        "on-surface": "#1b1b21",
                         "surface-container-lowest": "#ffffff",
-                        "primary-container": "#1a237e",
-                        "inverse-surface": "#303036",
-                        "inverse-on-surface": "#f2eff8",
-                        "text-primary": "#1A1A1A",
-                        "secondary": "#1b6d24",
-                        "inverse-primary": "#bdc2ff",
-                        "surface-container-low": "#f5f2fb",
-                        "on-background": "#1b1b21",
-                        "on-primary-fixed": "#000767",
-                        "background": "#fbf8ff",
-                        "on-primary-container": "#8690ee",
-                        "text-secondary": "#546E7A",
+                        "secondary-container": "#d0e1fb",
+                        "on-primary-container": "#7c839b",
+                        "surface": "#f9f9f9",
+                        "tertiary-container": "#191c1e",
+                        "background": "#f9f9f9",
                         "error": "#ba1a1a",
-                        "tertiary-container": "#5c1800",
-                        "tertiary-fixed": "#ffdbd0",
-                        "secondary-fixed-dim": "#88d982",
-                        "tertiary": "#380b00",
+                        "surface-variant": "#e2e2e2",
+                        "inverse-on-surface": "#f0f1f1",
+                        "primary": "#000000",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "outline-variant": "#c6c6cd",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "outline": "#76777d",
+                        "inverse-surface": "#2f3131",
+                        "secondary-fixed": "#d3e4fe",
+                        "primary-fixed": "#dae2fd",
+                        "primary-container": "#131b2e",
+                        "inverse-primary": "#bec6e0",
+                        "on-surface": "#1a1c1c",
+                        "surface-container-low": "#f3f3f4",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-secondary-container": "#54647a",
+                        "on-background": "#1a1c1c",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-container": "#818486",
+                        "on-primary-fixed": "#131b2e",
+                        "tertiary": "#000000",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-surface-variant": "#45464d",
+                        "tertiary-fixed": "#e0e3e5",
+                        "surface-bright": "#f9f9f9",
+                        "secondary": "#505f76",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#0b1c30",
+                        "primary-fixed-dim": "#bec6e0",
+                        "surface-tint": "#565e74",
+                        "tertiary-fixed-dim": "#c4c7c9",
                         "error-container": "#ffdad6",
-                        "on-primary-fixed-variant": "#343d96",
-                        "surface-bright": "#fbf8ff",
-                        "outline-variant": "#c6c5d4",
-                        "outline": "#767683",
-                        "on-secondary-container": "#217128"
+                        "surface-dim": "#dadada",
+                        "surface-container": "#eeeeee"
                     },
                     "borderRadius": {
                         "DEFAULT": "0.125rem",
@@ -80,147 +69,172 @@
                         "full": "0.75rem"
                     },
                     "spacing": {
-                        "sidebar-width": "260px",
-                        "padding-page": "32px",
+                        "xl": "64px",
+                        "container-max": "1280px",
                         "gutter": "24px",
-                        "unit": "8px",
-                        "container-max-width": "1280px"
+                        "sm": "12px",
+                        "base": "8px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "lg": "40px"
                     },
                     "fontFamily": {
-                        "title-sm": ["Inter"],
-                        "label-caps": ["Inter"],
-                        "display-lg": ["Manrope"],
-                        "headline-md": ["Manrope"],
-                        "body-sm": ["Inter"],
-                        "body-md": ["Inter"]
+                        "button": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "h2": ["Public Sans"],
+                        "h1": ["Public Sans"],
+                        "h3": ["Public Sans"],
+                        "label-caps": ["Public Sans"],
+                        "body-sm": ["Public Sans"]
                     },
                     "fontSize": {
-                        "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
-                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
-                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                        "button": ["15px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h2": ["30px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
                     }
                 },
             },
         }
     </script>
 <style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-surface-background min-h-screen flex flex-col font-body-md text-on-surface">
-<main class="flex-grow flex items-center justify-center px-padding-page py-12">
-<div class="w-full max-w-[480px]">
-<!-- Brand Identity Section -->
-<div class="text-center mb-10">
-<div class="inline-flex items-center justify-center mb-6">
-<span class="text-primary font-display-lg text-display-lg tracking-tight">Nexus Bank</span>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background min-h-screen flex flex-col items-center justify-center p-md">
+<!-- Top Navigation Bar - Minimalist for Auth -->
+<header class="fixed top-0 left-0 w-full bg-surface-container-lowest shadow-sm px-gutter h-xl flex justify-between items-center z-50 border-b border-outline-variant">
+<div class="font-h3 text-h3 font-bold text-primary">Apex Bank</div>
+<div class="flex items-center gap-base">
+<span class="font-body-sm text-on-surface-variant hidden md:block">Need assistance?</span>
+<button class="flex items-center gap-xs font-button text-button text-primary px-sm py-xs hover:bg-surface-container-low transition-colors duration-200">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+                Help Center
+            </button>
 </div>
-<h1 class="font-headline-md text-headline-md text-on-surface mb-2">Create Your Account</h1>
-<p class="font-body-md text-body-md text-on-surface-variant">Secure digital banking for the modern professional.</p>
+</header>
+<main class="w-full max-w-[1200px] grid md:grid-cols-2 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm mt-xl">
+<!-- Left Side: Visual Branding & Trust Anchors -->
+<div class="hidden md:flex flex-col justify-between p-lg relative overflow-hidden bg-primary-container text-white">
+<div class="relative z-10">
+<h1 class="font-h1 text-h1 text-white mb-md">Secure Your Financial Future</h1>
+<p class="font-body-lg text-secondary-fixed-dim max-w-md">Join over 10 million users worldwide who trust Nexus Bank for their digital asset management and corporate banking needs.</p>
 </div>
-<!-- Registration Card -->
-<div class="bg-white rounded-xl shadow-sm border border-surface-border p-8 md:p-10">
-<form action="#" class="space-y-6" method="POST">
-<!-- Full Name Field -->
-<div class="space-y-2">
-<label class="block font-label-caps text-label-caps text-primary uppercase" for="full_name">Full Name</label>
-<div class="relative">
-<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-<span class="material-symbols-outlined text-outline text-xl" data-icon="person">person</span>
+<div class="relative z-10 space-y-md">
+<div class="flex items-start gap-base">
+<div class="p-xs bg-white/10 rounded-lg">
+<span class="material-symbols-outlined text-white" data-icon="shield_lock">shield_lock</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200 font-body-md text-body-md" id="full_name" name="full_name" placeholder="John Doe" required="" type="text"/>
-</div>
-</div>
-<!-- Email Field -->
-<div class="space-y-2">
-<label class="block font-label-caps text-label-caps text-primary uppercase" for="email">Email Address</label>
-<div class="relative">
-<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-<span class="material-symbols-outlined text-outline text-xl" data-icon="mail">mail</span>
-</div>
-<input class="block w-full pl-10 pr-3 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200 font-body-md text-body-md" id="email" name="email" placeholder="john@nexus.com" required="" type="email"/>
+<div>
+<h4 class="font-h3 text-body-md font-bold text-white">Military-Grade Security</h4>
+<p class="font-body-sm text-secondary-fixed-dim">Multi-factor authentication and end-to-end encryption for every transaction.</p>
 </div>
 </div>
-<!-- CNIC Field -->
-<div class="space-y-2">
-<label class="block font-label-caps text-label-caps text-primary uppercase" for="cnic">CNIC</label>
-<div class="relative">
-<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-<span class="material-symbols-outlined text-outline text-xl" data-icon="badge">badge</span>
+<div class="flex items-start gap-base">
+<div class="p-xs bg-white/10 rounded-lg">
+<span class="material-symbols-outlined text-white" data-icon="speed">speed</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200 font-body-md text-body-md" id="cnic" name="cnic" placeholder="00000-0000000-0" required="" type="text"/>
-</div>
-</div>
-<!-- Password Field -->
-<div class="space-y-2">
-<label class="block font-label-caps text-label-caps text-primary uppercase" for="password">Password</label>
-<div class="relative">
-<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-<span class="material-symbols-outlined text-outline text-xl" data-icon="lock">lock</span>
-</div>
-<input class="block w-full pl-10 pr-10 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200 font-body-md text-body-md" id="password" name="password" placeholder="••••••••" required="" type="password"/>
-<div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer">
-<span class="material-symbols-outlined text-outline text-xl" data-icon="visibility">visibility</span>
+<div>
+<h4 class="font-h3 text-body-md font-bold text-white">Real-Time Processing</h4>
+<p class="font-body-sm text-secondary-fixed-dim">Experience instant fund transfers and lightning-fast account approvals.</p>
 </div>
 </div>
-<p class="text-[11px] text-on-surface-variant font-body-sm mt-1 italic">Minimum 8 characters with at least one number.</p>
 </div>
-<!-- Submit Button -->
-<div class="pt-4">
-<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-title-sm text-title-sm hover:bg-primary-container active:scale-[0.98] transition-all duration-200 shadow-md" type="submit">
-                            Create Account
-                        </button>
+<!-- Background Decorative Image -->
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<img alt="Corporate Infrastructure" class="w-full h-full object-cover" data-alt="A sophisticated, high-tech server room with glowing blue and white lights reflecting off sleek black metallic surfaces. The atmosphere is quiet, clinical, and projects a sense of advanced digital security and immense computing power. The lighting is low but punctuated by rhythmic LED flashes, creating a professional and institutional aesthetic that communicates safety and technological precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCma57udZBdTa2DVgORHjHJeMyXNiKVxgf_lLbGgkHp85C4RuP36q6UP7ypjpfvAitdeI1IOdFHPe3Ny9oaP74nIChfI8-5NwTu6_USA5p5uR7RsjYf8rHRqro1xAu048cWZV0KTEhSJ7cIecYeJenL7h7BZit3-4KTYHdxvJ8-zyDAsl7zWakUmWppayaR7TG6xouJL9LxYcnd9IgYb5L76xUYhEoLVwcE0R4YTsrQ28ZQnednCxbbg5AzVmA_r4TX2Cu-fAxY"/>
 </div>
+</div>
+<!-- Right Side: Registration Form -->
+<div class="p-md lg:p-lg flex flex-col justify-center">
+<div class="mb-lg">
+<h2 class="font-h2 text-h2 text-primary">Create Account</h2>
+<p class="font-body-md text-on-surface-variant mt-xs">Get started with your corporate banking journey today.</p>
+</div>
+<form class="space-y-md" id="registration-form" method="post">
+<div class="grid md:grid-cols-2 gap-md">
+<!-- Full Name -->
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant block" for="full_name">FULL NAME</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline text-[20px] group-focus-within:text-primary transition-colors" data-icon="person">person</span>
+<input class="w-full pl-[44px] pr-md py-sm bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all outline-none font-body-md" id="full_name" name="full_name" placeholder="John Doe" required="" type="text"/>
+</div>
+</div>
+<!-- Email -->
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant block" for="email">EMAIL ADDRESS</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline text-[20px] group-focus-within:text-primary transition-colors" data-icon="mail">mail</span>
+<input class="w-full pl-[44px] pr-md py-sm bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all outline-none font-body-md" id="email" name="email" placeholder="name@company.com" required="" type="email"/>
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-md">
+<!-- CNIC -->
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant block" for="cnic">CNIC (13 DIGITS)</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline text-[20px] group-focus-within:text-primary transition-colors" data-icon="badge">badge</span>
+<input class="w-full pl-[44px] pr-md py-sm bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all outline-none font-body-md" id="cnic" maxlength="13" name="cnic" pattern="[0-9]{13}" placeholder="4210123456789" required="" type="text"/>
+</div>
+</div>
+<!-- Phone -->
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant block" for="phone">PHONE NUMBER</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline text-[20px] group-focus-within:text-primary transition-colors" data-icon="call">call</span>
+<input class="w-full pl-[44px] pr-md py-sm bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all outline-none font-body-md" id="phone" name="phone" placeholder="0300 1234567" required="" type="tel"/>
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-md">
+<!-- Password -->
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant block" for="password">PASSWORD</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline text-[20px] group-focus-within:text-primary transition-colors" data-icon="lock">lock</span>
+<input class="w-full pl-[44px] pr-md py-sm bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all outline-none font-body-md" id="password" minlength="8" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<!-- Confirm Password -->
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant block" for="confirm_password">CONFIRM PASSWORD</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline text-[20px] group-focus-within:text-primary transition-colors" data-icon="verified_user">verified_user</span>
+<input class="w-full pl-[44px] pr-md py-sm bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/10 focus:border-primary transition-all outline-none font-body-md" id="confirm_password" minlength="8" name="confirm_password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-base py-xs">
+<input class="w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary" id="terms" required="" type="checkbox"/>
+<label class="font-body-sm text-on-secondary-container" for="terms">I agree to the <a class="text-primary font-bold hover:underline" href="#">Terms of Service</a> and <a class="text-primary font-bold hover:underline" href="#">Privacy Policy</a>.</label>
+</div>
+<button class="w-full bg-primary text-white font-button text-button py-sm rounded-lg hover:bg-zinc-800 active:scale-[0.98] transition-all duration-200" type="submit">
+                    Register Account
+                </button>
 </form>
-<div class="mt-8 pt-6 border-t border-surface-border text-center">
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-                        Already have an account? 
-                        <a class="text-primary font-semibold hover:underline" href="#">Sign In</a>
+<div class="mt-lg pt-md border-t border-outline-variant text-center">
+<p class="font-body-md text-on-surface-variant">
+                    Already have an account? 
+                    <a class="text-primary font-bold hover:underline ml-xs" href="login.html">Login here</a>
 </p>
 </div>
 </div>
-<!-- Footer Compliance -->
-<div class="mt-10 grid grid-cols-3 gap-4 items-center opacity-60">
-<div class="flex flex-col items-center">
-<span class="material-symbols-outlined text-2xl mb-1" data-icon="verified_user">verified_user</span>
-<span class="text-[10px] font-label-caps uppercase text-center">Biometric Verified</span>
-</div>
-<div class="flex flex-col items-center border-x border-surface-border">
-<span class="material-symbols-outlined text-2xl mb-1" data-icon="gpp_good">gpp_good</span>
-<span class="text-[10px] font-label-caps uppercase text-center">AES-256 Encrypted</span>
-</div>
-<div class="flex flex-col items-center">
-<span class="material-symbols-outlined text-2xl mb-1" data-icon="account_balance">account_balance</span>
-<span class="text-[10px] font-label-caps uppercase text-center">Member FDIC</span>
-</div>
-</div>
-</div>
 </main>
-<!-- Side Graphic for Web View -->
-<div class="hidden lg:block fixed right-0 top-0 bottom-0 w-[40%] bg-primary-container overflow-hidden">
-<div class="absolute inset-0 opacity-40">
-<img class="w-full h-full object-cover" data-alt="futuristic dark blue microchip circuit pattern with glowing cyan light connections and professional technological aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGHLSIqWNnBaQIU7_Y8tbW3_h2OsYGFMblXVGZfJf7uusYOy0MgxZ5mK4n_wEuEg5IdvmPrf_Ydl7cUsZAxCSwM2er7TiOwyj9daEB8gCfQPi1dwGyh7AH1P0rk9e-zub1O40dF1vHip_XFhc5Y9pF3hVrik6vIY0PxS54PVTv3VKSZmAJlTICnkFDb9NKB_BqV_71R_3WBxIAeyisg4qAm369ZsCeWSeXzXydDkDasMp0PrXQOPl5kdk7QrxKa3nfeX7qkxQDgEY"/>
-</div>
-<div class="relative h-full flex flex-col justify-end p-20 text-on-primary">
-<h2 class="font-display-lg text-[48px] leading-tight mb-6">Redefining <br/>Digital Trust.</h2>
-<p class="text-primary-fixed-dim text-body-md max-w-sm mb-12">Experience the stability of institutional banking with the speed of modern technology. Your assets, secured by Nexus.</p>
-<div class="flex gap-8">
-<div class="flex flex-col">
-<span class="font-display-lg text-display-lg">24/7</span>
-<span class="font-label-caps text-label-caps opacity-70">Expert Support</span>
-</div>
-<div class="flex flex-col">
-<span class="font-display-lg text-display-lg">0.0%</span>
-<span class="font-label-caps text-label-caps opacity-70">Maintenance Fees</span>
-</div>
-</div>
-</div>
-</div>
-
-<script src="assets/js/register-handler.js"></script>
+<footer class="mt-xl text-center pb-md">
+<p class="font-label-caps text-outline text-[10px]">© 2024 NEXUS BANK CORPORATION. ALL RIGHTS RESERVED. PROTECTED BY AES-256 ENCRYPTION.</p>
+</footer>
+<script src="../assets/js/modules/auth.js" type="module"></script>
+<script src="../assets/js/modules/transactions.js" type="module"></script>
 </body></html>

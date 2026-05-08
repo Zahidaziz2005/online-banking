@@ -1,442 +1,338 @@
 <!DOCTYPE html>
 
-<html lang="en">
-
-<head>
-        <meta charset="utf-8" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <title>Nexus Bank | Transfer Money</title>
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap"
-                rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-                rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-                rel="stylesheet" />
-        <script id="tailwind-config">
-                tailwind.config = {
-                        darkMode: "class",
-                        theme: {
-                                extend: {
-                                        "colors": {
-                                                "primary-fixed-dim": "#bdc2ff",
-                                                "on-surface-variant": "#454652",
-                                                "on-secondary-fixed-variant": "#005312",
-                                                "on-secondary-fixed": "#002204",
-                                                "surface-container-highest": "#e4e1ea",
-                                                "surface-tint": "#4c56af",
-                                                "on-tertiary-fixed-variant": "#7b2e12",
-                                                "primary-fixed": "#e0e0ff",
-                                                "danger-red": "#C62828",
-                                                "surface-dim": "#dbd9e1",
-                                                "on-tertiary-container": "#e17c5a",
-                                                "on-secondary": "#ffffff",
-                                                "tertiary-fixed-dim": "#ffb59d",
-                                                "on-error": "#ffffff",
-                                                "surface-background": "#F8F9FA",
-                                                "surface-border": "#E0E0E0",
-                                                "surface-variant": "#e4e1ea",
-                                                "primary": "#000666",
-                                                "on-tertiary-fixed": "#390c00",
-                                                "secondary-fixed": "#a3f69c",
-                                                "surface": "#fbf8ff",
-                                                "surface-container": "#efecf5",
-                                                "on-primary": "#ffffff",
-                                                "on-error-container": "#93000a",
-                                                "surface-container-high": "#eae7ef",
-                                                "on-tertiary": "#ffffff",
-                                                "secondary-container": "#a0f399",
-                                                "warning-amber": "#F57F17",
-                                                "on-surface": "#1b1b21",
-                                                "surface-container-lowest": "#ffffff",
-                                                "primary-container": "#1a237e",
-                                                "inverse-surface": "#303036",
-                                                "inverse-on-surface": "#f2eff8",
-                                                "text-primary": "#1A1A1A",
-                                                "secondary": "#1b6d24",
-                                                "inverse-primary": "#bdc2ff",
-                                                "surface-container-low": "#f5f2fb",
-                                                "on-background": "#1b1b21",
-                                                "on-primary-fixed": "#000767",
-                                                "background": "#fbf8ff",
-                                                "on-primary-container": "#8690ee",
-                                                "text-secondary": "#546E7A",
-                                                "error": "#ba1a1a",
-                                                "tertiary-container": "#5c1800",
-                                                "tertiary-fixed": "#ffdbd0",
-                                                "secondary-fixed-dim": "#88d982",
-                                                "tertiary": "#380b00",
-                                                "error-container": "#ffdad6",
-                                                "on-primary-fixed-variant": "#343d96",
-                                                "surface-bright": "#fbf8ff",
-                                                "outline-variant": "#c6c5d4",
-                                                "outline": "#767683",
-                                                "on-secondary-container": "#217128"
-                                        },
-                                        "borderRadius": {
-                                                "DEFAULT": "0.125rem",
-                                                "lg": "0.25rem",
-                                                "xl": "0.5rem",
-                                                "full": "0.75rem"
-                                        },
-                                        "spacing": {
-                                                "sidebar-width": "260px",
-                                                "padding-page": "32px",
-                                                "gutter": "24px",
-                                                "unit": "8px",
-                                                "container-max-width": "1280px"
-                                        },
-                                        "fontFamily": {
-                                                "title-sm": ["Inter"],
-                                                "label-caps": ["Inter"],
-                                                "display-lg": ["Manrope"],
-                                                "headline-md": ["Manrope"],
-                                                "body-sm": ["Inter"],
-                                                "body-md": ["Inter"]
-                                        },
-                                        "fontSize": {
-                                                "title-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
-                                                "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
-                                                "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                                                "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
-                                                "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
-                                                "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
-                                        }
-                                },
-                        },
-                }
-        </script>
-        <style>
-                .material-symbols-outlined {
-                        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-                }
-
-                body {
-                        background-color: #F8F9FA;
-                }
-        </style>
-        <style>
-                body {
-                        min-height: max(884px, 100dvh);
-                }
-        </style>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fund Transfer - Nexus Bank Corporate Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#d0e1fb",
+                    "on-primary-container": "#7c839b",
+                    "surface": "#f9f9f9",
+                    "tertiary-container": "#191c1e",
+                    "background": "#f9f9f9",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e2e2e2",
+                    "inverse-on-surface": "#f0f1f1",
+                    "primary": "#000000",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "outline-variant": "#c6c6cd",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "outline": "#76777d",
+                    "inverse-surface": "#2f3131",
+                    "secondary-fixed": "#d3e4fe",
+                    "primary-fixed": "#dae2fd",
+                    "primary-container": "#131b2e",
+                    "inverse-primary": "#bec6e0",
+                    "on-surface": "#1a1c1c",
+                    "surface-container-low": "#f3f3f4",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#191c1e",
+                    "on-secondary-container": "#54647a",
+                    "on-background": "#1a1c1c",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary-container": "#818486",
+                    "on-primary-fixed": "#131b2e",
+                    "tertiary": "#000000",
+                    "surface-container-highest": "#e2e2e2",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-surface-variant": "#45464d",
+                    "tertiary-fixed": "#e0e3e5",
+                    "surface-bright": "#f9f9f9",
+                    "secondary": "#505f76",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#0b1c30",
+                    "primary-fixed-dim": "#bec6e0",
+                    "surface-tint": "#565e74",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#dadada",
+                    "surface-container": "#eeeeee"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "button": ["Public Sans"],
+                    "body-md": ["Public Sans"],
+                    "body-lg": ["Public Sans"],
+                    "h2": ["Public Sans"],
+                    "h1": ["Public Sans"],
+                    "h3": ["Public Sans"],
+                    "label-caps": ["Public Sans"],
+                    "body-sm": ["Public Sans"]
+            },
+            "fontSize": {
+                    "button": ["15px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h2": ["30px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
 </head>
+<body class="bg-background text-on-background min-h-screen flex overflow-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-xl bg-surface-container-low border-r border-outline-variant flex flex-col py-md px-sm gap-base z-50">
+<div class="mb-lg px-xs">
+<h1 class="font-h3 text-h3 font-bold text-primary">Apex Bank</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Corporate Portal</p>
+</div>
+<nav class="flex-1 space-y-xs">
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="dashboard.html">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="transactions.html">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="receipt_long">receipt_long</span>
+<span>Transactions</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-base bg-secondary-container text-on-secondary-container font-button rounded-xl active:scale-95 transition-all duration-200" href="transfer.html">
+<span class="material-symbols-outlined" data-icon="group">move_up</span>
+<span>Fund Transfer</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="beneficiaries.html">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="receipt_long">group</span>
+<span>Beneficiaries</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="manage_accounts">manage_accounts</span>
+<span>User Management</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="history_edu">history_edu</span>
+<span>Audit Logs</span>
+</a>
+</nav>
+<div class="mt-auto space-y-xs border-t border-outline-variant pt-md">
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Help Center</span>
+</a>
+<a  id="logoutBtn" class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Workspace -->
+<div class="flex-1 flex flex-col h-screen overflow-y-auto">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 flex justify-between items-center w-full px-gutter h-xl bg-surface-container-lowest border-b border-outline-variant shadow-sm">
+<div class="flex items-center gap-md">
+<h2 class="font-h3 text-h3 font-bold text-primary pl-12">Funds Transfer</h2>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex items-center bg-surface-container-low px-sm py-xs rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-sm px-xs w-48" placeholder="Search transactions..." type="text"/>
+</div>
+<div class="flex items-center gap-md">
+<button class="font-body-md text-body-md text-secondary hover:bg-surface-container-low px-sm py-xs rounded transition-colors">Support</button>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary transition-colors" data-icon="help_outline">help_outline</span>
 
-<body class="font-body-md text-on-surface">
-        <!-- TopAppBar -->
-        <header
-                class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white border-b border-gray-200">
-                <div class="flex items-center gap-4">
-                        <div class="md:hidden">
-                                <span class="material-symbols-outlined text-indigo-900">menu</span>
-                        </div>
-                        <h1 class="text-xl font-bold text-indigo-900 font-manrope font-semibold tracking-tight">Nexus
-                                Bank</h1>
-                </div>
-                <div class="flex items-center gap-4">
-                        <span class="material-symbols-outlined text-indigo-900"
-                                data-icon="notifications">notifications</span>
-                        <img alt="user profile picture" class="w-8 h-8 rounded-full border border-surface-border"
-                                data-alt="professional headshot of a businessman in a suit with a clean office background and natural lighting"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_vjz4fKRKyKK-jJ_2_dnTUMSx2U-EihksEFEiXlSGdEx9GIjX__3rmn8AaaQwKH3KU7YZm7h5D35YR9JlMaxZ3GPjPKliFPOwKIGkgSXI7zsPxM0NYGs_qqz7HrtsjPjnJgyfrv3sF2ia_k-s02CvYx9D620vJkl8bYG6ux0G2AWOo7_MrJD7hOUnnVU41y5yGcrasxxWZ3c8vzCPYsx-W7VgFRk-e7jL1cd2n6gb7CHexEO_gnQ30l5ay_8pvZE3mo45MN--Ho4" />
-                </div>
-        </header>
-        <!-- NavigationDrawer (Desktop) -->
-        <aside
-                class="fixed inset-y-0 left-0 w-80 z-[60] flex flex-col bg-white border-r border-gray-100 hidden md:flex">
-                <div class="p-8 flex flex-col gap-6">
-                        <h2 class="text-indigo-900 font-black text-2xl font-manrope">Nexus Bank</h2>
-                        <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
-                                <img alt="user avatar" class="w-12 h-12 rounded-full"
-                                        data-alt="portrait of a confident financial professional in a modern workspace with soft sunlight"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcCZMpJT0XPSh8b1VXlOK9Nnev5wEz8Ez_IOJvJhia8Iq3zS7JhuEc4DYi_VJTVYDnCjhoM1JgRCyVbJtMK5RP_o38I856YE8pT3ZRus_ZuKwlUIZS1beNRyWKZ7Go4MeaUQxiNscTlwUV8r1Wc3MRF3_j0ecZ1POlyrtnMwPaJdFi-kiofJlU8yLQtGqyEcabJNgFGmXyUZu64-N5sT0Dhrd3Z9SBavIar2MWV4cHl71pxUXBHH6EfPahhPv8rsX5N5vlFUQ8xIs" />
-                                <div>
-                                        <p  id="user-name-side" class="font-manrope text-sm font-bold text-indigo-900">Alex Sterling</p>
-                                        <p class="text-xs text-gray-500">Premium Account</p>
-                                        <span
-                                                class="text-[10px] bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider mt-1 inline-block">Verified</span>
-                                </div>
-                        </div>
-                        <nav class="flex flex-col gap-1">
-                                <a class="flex items-center gap-3 p-3 font-manrope text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg transition-all"
-                                        href="#">
-                                        <span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
-                                        <span>Overview</span>
-                                </a>
-                                <a class="flex items-center gap-3 p-3 font-manrope text-sm bg-gray-50 text-indigo-900 font-bold rounded-lg transition-all"
-                                        href="#">
-                                        <span class="material-symbols-outlined" data-icon="payments">payments</span>
-                                        <span>Move Money</span>
-                                </a>
-                                <a class="flex items-center gap-3 p-3 font-manrope text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg transition-all"
-                                        href="#">
-                                        <span class="material-symbols-outlined"
-                                                data-icon="description">description</span>
-                                        <span>Statements</span>
-                                </a>
-                                <a class="flex items-center gap-3 p-3 font-manrope text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg transition-all"
-                                        href="#">
-                                        <span class="material-symbols-outlined" data-icon="shield">shield</span>
-                                        <span>Security</span>
-                                </a>
-                                <a class="flex items-center gap-3 p-3 font-manrope text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg transition-all"
-                                        href="#">
-                                        <span class="material-symbols-outlined"
-                                                data-icon="help_outline">help_outline</span>
-                                        <span>Help Center</span>
-                                </a>
-                        </nav>
-                </div>
-        </aside>
-        <!-- Main Content -->
-        <main class="pt-24 pb-24 md:pb-8 md:pl-80 min-h-screen">
-                <div class="max-w-[1280px] mx-auto px-6">
-                        <div class="mb-8">
-                                <h2 class="font-display-lg text-display-lg text-primary mb-2">Transfer Money</h2>
-                                <p class="font-body-md text-text-secondary">Send funds securely to any account
-                                        worldwide.</p>
-                        </div>
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                                <!-- Transfer Form Card -->
-                                <div
-                                        class="lg:col-span-8 bg-white p-8 rounded-xl shadow-sm border border-surface-border">
-                                        <form class="space-y-8">
-                                                <!-- Source Account (Visual Only) -->
-
-
-                                                <div
-                                                        class="p-6 bg-primary-container rounded-xl text-white flex justify-between items-center relative overflow-hidden">
-                                                        <div class="relative z-10">
-                                                                <p
-                                                                        class="font-label-caps text-label-caps text-on-primary-container mb-1 uppercase">
-                                                                        Source Account</p>
-                                                                <h3 id="user-name-main"  class="font-headline-md text-headline-md">Alex
-                                                                        Sterling</h3>
-                                                                <p  id="user-account" class="font-body-sm opacity-80">**** **** **** 4290
-                                                                </p>
-                                                        </div>
-                                                        <div class="text-right relative z-10">
-                                                                <p
-                                                                        class="font-label-caps text-label-caps text-on-primary-container mb-1 uppercase">
-                                                                        Available Balance</p>
-                                                                <p id="user-balance" class="font-display-lg text-display-lg">$24,850.00
-                                                                </p>
-                                                        </div>
-                                                        <div
-                                                                class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full">
-                                                        </div>
-                                                </div>
-                                                <!-- Recipient Details -->
-                                                <div class="space-y-6">
-                                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                                <div class="space-y-2">
-                                                                        <label class="font-label-caps text-label-caps text-primary uppercase"
-                                                                                for="account_number">Recipient Account
-                                                                                Number</label>
-                                                                        <div class="relative">
-                                                                                <input class="w-full p-4 border border-surface-border rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md"
-                                                                                        id="account_number"
-                                                                                        placeholder="0000 0000 0000 0000"
-                                                                                        type="text" />
-                                                                                <span class="material-symbols-outlined absolute right-4 top-4 text-gray-400"
-                                                                                        data-icon="account_balance">account_balance</span>
-                                                                        </div>
-                                                                </div>
-                                                                <div class="space-y-2">
-                                                                        <label class="font-label-caps text-label-caps text-primary uppercase"
-                                                                                for="bank_name">Bank Name</label>
-                                                                        <select class="w-full p-4 border border-surface-border rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md appearance-none"
-                                                                                id="bank_name">
-                                                                                <option>Select Destination Bank</option>
-                                                                                <option>Nexus Partner Bank</option>
-                                                                                <option>Global Standard Bank</option>
-                                                                                <option>Meridian Trust</option>
-                                                                        </select>
-                                                                </div>
-                                                        </div>
-                                                        <div class="space-y-2">
-                                                                <label class="font-label-caps text-label-caps text-primary uppercase"
-                                                                        for="amount">Amount (USD)</label>
-                                                                <div class="relative">
-                                                                        <span
-                                                                                class="absolute left-4 top-4 font-bold text-gray-400">$</span>
-                                                                        <input class="w-full p-4 pl-8 border border-surface-border rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-display-lg text-primary"
-                                                                                id="amount" placeholder="0.00"
-                                                                                type="number" />
-                                                                </div>
-                                                        </div>
-                                                        <div class="space-y-2">
-                                                                <label class="font-label-caps text-label-caps text-primary uppercase"
-                                                                        for="purpose">Purpose of Transfer</label>
-                                                                <textarea
-                                                                        class="w-full p-4 border border-surface-border rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md resize-none"
-                                                                        id="purpose"
-                                                                        placeholder="Add a note (e.g., Monthly Rent, Family Support)"
-                                                                        rows="3"></textarea>
-                                                        </div>
-                                                </div>
-                                                <button class="w-full py-5 bg-primary text-white font-manrope font-bold text-lg rounded-xl hover:bg-opacity-90 transition-all flex justify-center items-center gap-2 group"
-                                                        type="submit" id="btn-continue">
-                                                        Continue
-                                                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
-                                                                data-icon="arrow_forward">arrow_forward</span>
-                                                </button>
-                                        </form>
-                                </div>
-
-
-                                
-                                <!-- Secondary Column / Info Area -->
-
-                                <div class="lg:col-span-4 space-y-6">
-                                        <div class="bg-white p-6 rounded-xl border border-surface-border">
-                                                <h4
-                                                        class="font-title-sm text-title-sm text-primary mb-4 flex items-center gap-2">
-                                                        <span class="material-symbols-outlined text-warning-amber"
-                                                                data-icon="security"
-                                                                style="font-variation-settings: 'FILL' 1;">security</span>
-                                                        Security Assurance
-                                                </h4>
-                                                <p class="text-body-sm text-text-secondary leading-relaxed">
-                                                        Every transaction is encrypted and monitored by our real-time
-                                                        fraud detection system. Nexus Bank never asks for your PIN via
-                                                        message.
-                                                </p>
-                                        </div>
-                                        <div
-                                                class="bg-secondary-container/10 p-6 rounded-xl border border-secondary-container/20">
-                                                <h4
-                                                        class="font-title-sm text-title-sm text-on-secondary-container mb-4">
-                                                        Frequent Recipients</h4>
-                                                <div class="space-y-4">
-                                                        <div
-                                                                class="flex items-center justify-between p-3 hover:bg-white rounded-lg transition-all cursor-pointer group">
-                                                                <div class="flex items-center gap-3">
-                                                                        <div
-                                                                                class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-700">
-                                                                                JS</div>
-                                                                        <div>
-                                                                                <p
-                                                                                        class="font-body-sm font-bold text-primary">
-                                                                                        James Smith</p>
-                                                                                <p class="text-[11px] text-gray-500">
-                                                                                        **** 8821</p>
-                                                                        </div>
-                                                                </div>
-                                                                <span class="material-symbols-outlined text-gray-300 group-hover:text-primary"
-                                                                        data-icon="chevron_right">chevron_right</span>
-                                                        </div>
-                                                        <div
-                                                                class="flex items-center justify-between p-3 hover:bg-white rounded-lg transition-all cursor-pointer group">
-                                                                <div class="flex items-center gap-3">
-                                                                        <div
-                                                                                class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center font-bold text-emerald-700">
-                                                                                MD</div>
-                                                                        <div>
-                                                                                <p
-                                                                                        class="font-body-sm font-bold text-primary">
-                                                                                        Maria Delgado</p>
-                                                                                <p class="text-[11px] text-gray-500">
-                                                                                        **** 4409</p>
-                                                                        </div>
-                                                                </div>
-                                                                <span class="material-symbols-outlined text-gray-300 group-hover:text-primary"
-                                                                        data-icon="chevron_right">chevron_right</span>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                        <div class="relative rounded-xl overflow-hidden aspect-[4/3] group">
-                                                <img alt="Nexus Lifestyle"
-                                                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                                        data-alt="abstract architectural glass facade reflecting deep blue sky and modern corporate aesthetic"
-                                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI1So-NmcECTzUJ54_YX12UO03wob3A6FhjfjdlXHiSxUaUIhqUMZQ09tqrXzVci4IQsRWJy3qFGlVGxsf5pX6pbfm8ZglkEq9kCjrgOkN8OPLheatp3onAU90WzPCFk4KhWEEUQecDwodIzKGsZtrqke5qCCXVmbAppIlrskHbmiQabD1ng79GUesJEIB7248stW71Wa07ae0SEKBLk5QYrvvEZUPB2cCFCUf2KJkLoi0C7xJr0c3soD0BxGLQnZhgT8QX0o9vxw" />
-                                                <div
-                                                        class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
-                                                        <div class="text-white">
-                                                                <p
-                                                                        class="font-label-caps text-[10px] text-primary-fixed-dim mb-1">
-                                                                        PROMOTION</p>
-                                                                <p class="font-title-sm mb-2">Upgrade to Nexus Gold</p>
-                                                                <p class="text-[12px] opacity-80">Get 0% fees on all
-                                                                        international wire transfers.</p>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
-        </main>
-        <!-- BottomNavBar (Mobile) -->
-        <nav
-                class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 h-20 bg-white border-t border-gray-200 md:hidden">
-                <a class="flex flex-col items-center justify-center text-gray-400" href="#">
-                        <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-                        <span class="text-[10px] font-bold uppercase tracking-wider font-manrope">Dashboard</span>
-                </a>
-                <a class="flex flex-col items-center justify-center text-indigo-900 font-bold scale-95 transition-transform"
-                        href="#">
-                        <span class="material-symbols-outlined" data-icon="swap_horiz"
-                                style="font-variation-settings: 'FILL' 1;">swap_horiz</span>
-                        <span class="text-[10px] font-bold uppercase tracking-wider font-manrope">Transfer</span>
-                </a>
-                <a class="flex flex-col items-center justify-center text-gray-400" href="#">
-                        <span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
-                        <span class="text-[10px] font-bold uppercase tracking-wider font-manrope">History</span>
-                </a>
-                <a class="flex flex-col items-center justify-center text-gray-400" href="#">
-                        <span class="material-symbols-outlined" data-icon="person">person</span>
-                        <span class="text-[10px] font-bold uppercase tracking-wider font-manrope">Account</span>
-                </a>
-        </nav>
-
-        <div id="overlay-loading"
-                class="fixed inset-0 z-[100] flex items-center justify-center bg-primary/40 backdrop-blur-sm hidden">
-                <div class="bg-white p-8 rounded-2xl shadow-2xl flex flex-col items-center gap-4">
-                        <div class="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin">
-                        </div>
-                        <p id="loading-title" class="font-manrope font-bold text-primary text-lg">Processing...</p>
-                </div>
+<span id="user-display-name" class="font-bold">Welcome, User</span>
+</div>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile avatar" data-alt="A professional headshot of a corporate executive in a modern workspace, characterized by soft natural light and a clean background. The individual is dressed in business casual attire with a friendly, confident expression. The lighting is bright and even, reinforcing a light-mode UI aesthetic of trust and clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYjPpBHgLlgKQT4KKaEy-zuC760MfUp-KCLxNUxCVWpLvK_IJey1doHNlfAMNrPr25-Oj3itGT8mTiPD_2hrQJaNf802T7BE9V6LuXuEUb8HMxhXZw6f2qYucAFqbjBkcXIIHsP7PxDX0bxy7HptL-EBbCskAEa1bDIFqy7hob7GLG5RSqiTsTJ59dnUlbNHbHPEcQAooQYIplWwBeJAUEYn_mjVB6tlkmjEUAKDurvNt0Bn6bkZtoi-fpN4c791TsLHpJxFxB"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 p-lg max-w-container-max mx-auto w-full">
+<div class="grid grid-cols-12 gap-lg">
+<!-- Send Money Form -->
+<div class="col-span-12 lg:col-span-8">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-sm">
+<div class="flex items-center justify-between mb-lg">
+<div>
+<h3 class="font-h3 text-h3 text-primary">New Transfer</h3>
+<p class="font-body-sm text-on-surface-variant">Securely move funds between corporate accounts or external beneficiaries.</p>
+</div>
+<div class="px-sm py-xs bg-secondary-fixed text-on-secondary-fixed-variant rounded-lg flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="security" data-weight="fill" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-label-caps text-label-caps">End-to-End Encrypted</span>
+</div>
+</div>
+<form class="space-y-md">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+        <div class="space-y-xs">
+            <label class="font-label-caps text-label-caps text-outline uppercase">Beneficiary Selection</label>
+            <div class="relative">
+                <select id="beneficiary_select" class="w-full border border-outline rounded-lg px-md py-base font-body-md focus:border-primary focus:ring-2 focus:ring-secondary-container appearance-none">
+                    <option>Select a beneficiary</option>
+                    <option>Apex Bank</option>
+                    <option>Allied Bank</option>
+                    <option>Jazz Cash</option>
+                    <option>others</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline" data-icon="expand_more">expand_more</span>
+            </div>
         </div>
-
-        <div id="modal-success"
-                class="fixed inset-0 z-[110] flex items-center justify-center bg-black/60 backdrop-blur-md hidden">
-                <div
-                        class="bg-white w-full max-w-md mx-4 p-8 rounded-3xl shadow-2xl text-center transform transition-all">
-                        <div
-                                class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <span class="material-symbols-outlined text-5xl">check_circle</span>
-                        </div>
-                        <h3 class="text-2xl font-manrope font-bold text-gray-900 mb-2">Transfer Successful!</h3>
-                        <p class="text-gray-500 mb-6">Sent <span id="display-amount"
-                                        class="font-bold text-primary"></span> to <span id="display-recipient"
-                                        class="font-bold text-primary"></span></p>
-                        <button onclick="closeSuccessModal()"
-                                class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-opacity-90 transition-all">
-                                Return to Dashboard
+        <div class="space-y-xs">
+            <label class="font-label-caps text-label-caps text-outline uppercase">Receiver Account Number</label>
+            <input id="receiver_account_number" class="w-full border border-outline rounded-lg px-md py-base font-body-md focus:border-primary focus:ring-2 focus:ring-secondary-container" name="receiver_account_number" placeholder="Enter account number" type="text"/>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+        <div class="space-y-xs md:col-span-2">
+            <label class="font-label-caps text-label-caps text-outline uppercase">Amount</label>
+            <div class="relative">
+                <span class="absolute left-md top-1/2 -translate-y-1/2 font-body-md text-outline">$</span>
+                <input id="transfer_amount" class="w-full border border-outline rounded-lg pl-xl pr-md py-base font-body-md focus:border-primary focus:ring-2 focus:ring-secondary-container" name="amount" placeholder="0.00" type="number"/>
+            </div>
+        </div>
+        <div class="space-y-xs">
+            <label class="font-label-caps text-label-caps text-outline uppercase">Currency</label>
+            <div class="relative">
+                <select id="currency_select" class="w-full border border-outline rounded-lg px-md py-base font-body-md focus:border-primary focus:ring-2 focus:ring-secondary-container appearance-none">
+                    <option value="PKR">PKR - Pakistan</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - British Pound</option>
+                    <option value="USD">USD - USD Dollar</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline" data-icon="stat_0">stat_0</span>
+            </div>
+        </div>
+    </div>
+    <div class="space-y-xs">
+        <label class="font-label-caps text-label-caps text-outline uppercase">Description</label>
+        <textarea id="transfer_description" class="w-full border border-outline rounded-lg px-md py-base font-body-md focus:border-primary focus:ring-2 focus:ring-secondary-container resize-none" name="description" placeholder="Reference for this transaction..." rows="3"></textarea>
+    </div>
+    <div class="pt-base border-t border-outline-variant mt-lg flex items-center justify-between">
+        <div class="flex items-center gap-xs text-on-surface-variant">
+            <span class="material-symbols-outlined text-[20px]" data-icon="info">info</span>
+            <p class="font-body-sm text-body-sm">Funds arrive within 24 hours.</p>
+        </div>
+        <button id="confirmTransferBtn" class="bg-primary text-on-primary px-lg py-base rounded-lg font-button text-button hover:opacity-90 active:scale-95 transition-all" type="button">
+            Confirm Transfer
+        </button>
+    </div>
+</form>
+</div>
+<!-- Transfer Summary / Bento style cards -->
+<div class="grid grid-cols-2 gap-md mt-md">
+<div class="bg-surface-container-high p-md rounded-xl border border-outline-variant flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-outline">DAILY LIMIT REMAINING</p>
+<p class="font-h3 text-h3 text-primary">$452,000.00</p>
+</div>
+</div>
+<div class="bg-surface-container-high p-md rounded-xl border border-outline-variant flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-outline">CUT-OFF TIME</p>
+<p class="font-h3 text-h3 text-primary">16:00 EST</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Beneficiaries Sidebar -->
+<div class="col-span-12 lg:col-span-4 space-y-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-sm">
+<h3 class="font-h3 text-h3 text-primary mb-md">Recent Beneficiaries</h3>
+<div class="space-y-sm">
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer group">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 bg-secondary-fixed rounded-full flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="factory">factory</span>
+</div>
+<div>
+<p class="font-button text-button text-primary">Logistics International</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">....8920 • Chase</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer group">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 bg-secondary-fixed rounded-full flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="computer">computer</span>
+</div>
+<div>
+<p class="font-button text-button text-primary">Tech Solutions Inc</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">....4412 • Wells Fargo</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer group">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 bg-secondary-fixed rounded-full flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+</div>
+<div>
+<p class="font-button text-button text-primary">Vertex Global</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">....2209 • HSBC</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<button class="w-full mt-md py-base border border-outline text-primary font-button text-button rounded-lg hover:bg-surface-container-low transition-colors">
+                            Manage Beneficiaries
                         </button>
-                </div>
-        </div>
+</div>
+<!-- Security Banner -->
+<div class="relative h-64 rounded-xl overflow-hidden shadow-sm">
+<div class="absolute inset-0 bg-primary/40 z-10 flex flex-col justify-end p-md text-on-primary">
+<h4 class="font-h3 text-h3">Fraud Protection</h4>
+<p class="font-body-sm text-body-sm opacity-90">Nexus Shield monitors all transactions in real-time to prevent unauthorized transfers.</p>
+</div>
+<img alt="Security Technology" class="w-full h-full object-cover" data-alt="A macro close-up of a high-tech digital security interface featuring glowing blue circuit patterns and data encryption symbols. The lighting is dark and cinematic with neon accents, conveying a sense of advanced protection and cryptographic security. The style is futuristic and crisp, emphasizing precision and reliability in financial data safety." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvK2_C1x2pcajKHeDo9p-B0mqvAxnGVlELAcTpZTH7iJEE4ZHNEHc8Z3P5b6BAeBnUNujf0DkZ3c0SL_nc9ZQWKJr4Gsp0pFGO8dkYX3ZD9eKTZQKc7Mg9WpeP_o-N2oFE1118opl3-on7AUm-YV_D3mdPXK_Ivcn5aVLUB9FRp0B9pTLfNSuQnH-ccnrHVuSqzh-whBAv9vwi1S2hLv_FD0R7PXc-Ke09-n2dl7xNiqzuiRXktj7sUTbg8lrUhFdKT2HS7MvU"/>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Script Injection -->
+<script src="../assets/js/modules/transfer.js" type="module"></script>
+<script src="../assets/js/modules/dashboard.js" type="module"></script>
 
-        <div id="toast-error"
-                class="fixed bottom-10 left-1/2 -translate-x-1/2 z-[120] flex items-center gap-3 bg-white border-l-4 border-danger-red p-4 shadow-xl rounded-lg min-w-[300px] hidden">
-                <span class="material-symbols-outlined text-danger-red">error</span>
-                <div>
-                        <p id="toast-title" class="font-bold text-sm text-gray-900"></p>
-                        <p id="toast-message" class="text-xs text-gray-500"></p>
-                </div>
-                <button onclick="closeToast()" class="ml-auto text-gray-400 hover:text-gray-600">
-                        <span class="material-symbols-outlined text-sm">close</span>
-                </button>
-        </div>
-
-
-
-        
-<script src="assets/js/ui-helper.js"></script>
-
-<script src="assets/js/transactions.js"></script>
-<script src="assets/js/transfer-handler.js"></script>
-</body>
-
-
-</html>
+</body></html>

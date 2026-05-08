@@ -3,7 +3,7 @@
 $host = "localhost";
 $username = "root";
 $password = ""; 
-$dbname = "nexus_bank";
+$dbname = "apex";
 
 // Connection بنانا
 $conn = new mysqli($host, $username, $password, $dbname);

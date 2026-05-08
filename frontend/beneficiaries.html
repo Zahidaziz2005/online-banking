@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "on-primary-fixed": "#131b2e",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "outline-variant": "#c6c6cd",
+                    "inverse-surface": "#2f3131",
+                    "primary": "#000000",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-error": "#ffffff",
+                    "primary-container": "#131b2e",
+                    "on-surface": "#1a1c1c",
+                    "inverse-on-surface": "#f0f1f1",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "secondary-container": "#d0e1fb",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e2e2e2",
+                    "tertiary-fixed": "#e0e3e5",
+                    "surface-container-low": "#f3f3f4",
+                    "surface-variant": "#e2e2e2",
+                    "primary-fixed": "#dae2fd",
+                    "outline": "#76777d",
+                    "error-container": "#ffdad6",
+                    "surface": "#f9f9f9",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#191c1e",
+                    "on-tertiary-container": "#818486",
+                    "secondary-fixed": "#d3e4fe",
+                    "background": "#f9f9f9",
+                    "secondary": "#505f76",
+                    "primary-fixed-dim": "#bec6e0",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "surface-dim": "#dadada",
+                    "surface-bright": "#f9f9f9",
+                    "on-surface-variant": "#45464d",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "inverse-primary": "#bec6e0",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-container": "#eeeeee",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#7c839b",
+                    "on-tertiary-fixed": "#191c1e",
+                    "on-secondary-container": "#54647a",
+                    "surface-tint": "#565e74",
+                    "tertiary": "#000000",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "lg": "40px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "xl": "64px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "container-max": "1280px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "h1": ["Public Sans"],
+                    "button": ["Public Sans"],
+                    "label-caps": ["Public Sans"],
+                    "h3": ["Public Sans"],
+                    "body-lg": ["Public Sans"],
+                    "body-sm": ["Public Sans"],
+                    "body-md": ["Public Sans"],
+                    "h2": ["Public Sans"]
+            },
+            "fontSize": {
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "button": ["15px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h2": ["30px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- Sidebar Navigation Shell -->
+<aside class="fixed left-0 top-0 h-screen w-xl bg-surface-container-low border-r border-outline-variant flex flex-col py-md px-sm gap-base z-50">
+<div class="mb-lg px-xs">
+<h1 class="font-h3 text-h3 font-bold text-primary">Apex Bank</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Corporate Portal</p>
+</div>
+<nav class="flex-1 space-y-xs">
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="dashboard.html">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="transactions.html">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="receipt_long">receipt_long</span>
+<span>Transactions</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="transfer.html">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="move_up">move_up</span>
+<span>Fund Transfer</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-base bg-secondary-container text-on-secondary-container font-button rounded-xl active:scale-95 transition-all duration-200" href="beneficiaries.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Beneficiaries</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="manage_accounts">manage_accounts</span>
+<span>User Management</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="history_edu">history_edu</span>
+<span>Audit Logs</span>
+</a>
+</nav>
+<div class="mt-auto space-y-xs border-t border-outline-variant pt-md">
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Help Center</span>
+</a>
+<a   id="logoutBtn" class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-xl flex flex-col min-h-screen">
+<!-- TopAppBar Shell -->
+<header class="sticky top-0 z-40 flex justify-between items-center w-full px-gutter h-xl bg-surface-container-lowest border-b border-outline-variant shadow-sm">
+<div class="flex items-center gap-md">
+<h2 class="font-h3 text-h3 font-bold text-primary">Beneficiaries</h2>
+</div>
+<div class="flex items-center gap-gutter">
+<div class="relative flex items-center bg-surface-container-low rounded-full px-sm py-xs min-w-[320px]">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-sm font-body-sm w-full outline-none px-xs" placeholder="Search saved recipients..." type="text"/>
+</div>
+<div class="flex items-center gap-md">
+<button class="font-body-md text-body-md text-secondary hover:bg-surface-container-low px-sm py-xs rounded transition-colors">Support</button>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary transition-colors" data-icon="help_outline">help_outline</span>
+
+<span id="user-display-name" class="font-bold">Welcome, User</span>
+</div>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile avatar" data-alt="A professional headshot of a corporate executive in a modern workspace, characterized by soft natural light and a clean background. The individual is dressed in business casual attire with a friendly, confident expression. The lighting is bright and even, reinforcing a light-mode UI aesthetic of trust and clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYjPpBHgLlgKQT4KKaEy-zuC760MfUp-KCLxNUxCVWpLvK_IJey1doHNlfAMNrPr25-Oj3itGT8mTiPD_2hrQJaNf802T7BE9V6LuXuEUb8HMxhXZw6f2qYucAFqbjBkcXIIHsP7PxDX0bxy7HptL-EBbCskAEa1bDIFqy7hob7GLG5RSqiTsTJ59dnUlbNHbHPEcQAooQYIplWwBeJAUEYn_mjVB6tlkmjEUAKDurvNt0Bn6bkZtoi-fpN4c791TsLHpJxFxB"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-lg max-w-container-max mx-auto w-full space-y-lg">
+<!-- Hero Header Section -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-center gap-md">
+<div class="space-y-xs">
+<p class="font-label-caps text-label-caps text-on-primary-container tracking-wider">MANAGE TRANSFERS</p>
+<h3 class="font-h2 text-h2 text-primary">Your Recipients</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Manage your verified beneficiaries and frequently used account details for rapid fund transfers across global networks.</p>
+</div>
+<button id="addBtn" onclick="openAddModal()"class="bg-primary text-on-primary font-button px-gutter py-sm rounded-lg flex items-center gap-xs hover:opacity-90 active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+<span>Add New Beneficiary</span>
+</button>
+</section>
+<!-- Filter and Sort Bar -->
+<div class="flex flex-wrap items-center justify-between gap-md bg-white p-sm rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-sm">
+<div class="flex items-center gap-xs bg-surface-container-low px-sm py-xs rounded-full cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="filter_list">filter_list</span>
+<span class="font-button text-[14px]">Filter Banks</span>
+</div>
+<div class="flex items-center gap-xs bg-surface-container-low px-sm py-xs rounded-full cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="font-button text-[14px]">Sort by: Nickname</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">
+                    Displaying 12 recipients
+                </div>
+</div>
+<!-- Beneficiaries Grid -->
+<div id="beneficiaries-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+    <p class="col-span-full text-center opacity-50 py-xl">Loading beneficiaries...</p>
+</div>
+<!-- Recent Activity/Context Section -->
+<section class="mt-xl grid grid-cols-1 lg:grid-cols-2 gap-lg">
+<div class="bg-white p-md rounded-xl border border-outline-variant shadow-sm">
+<h4 class="font-h3 text-h3 text-primary mb-md">Transfer Policy</h4>
+<div class="space-y-sm">
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="security">security</span>
+<div>
+<p class="font-body-md font-bold text-primary">Two-Factor Authentication</p>
+<p class="font-body-sm text-on-surface-variant">Adding a new beneficiary requires a one-time passcode sent to your registered device for enhanced security.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+<div>
+<p class="font-body-md font-bold text-primary">Cooldown Period</p>
+<p class="font-body-sm text-on-surface-variant">Newly added recipients have a 12-hour limit on transaction amounts as a preventative fraud measure.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl h-full min-h-[200px] border border-outline-variant bg-primary-container group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/80 to-primary-container z-10"></div>
+<img alt="Financial Success" class="absolute inset-0 object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" data-alt="A clean, minimalist workspace with a sleek laptop displaying complex financial data and growth charts. The environment is flooded with soft, high-key natural light from large windows, creating an atmosphere of professional excellence and digital precision. The color palette is dominated by deep blacks and cool greys, following the Apex Bank institutional branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSTontAp0cCjzX9DA2F6Y-FQWisbazGkUSVpx-5GVU397WHOAelPvEv14zrWAl0oBfndH3ZGToMn90QMdRveL0zZMoq6ClNVuPJMMLYziV1PpdNDJQK05UWnTksS5xyt8xxqP5Wr-GkgQNSz2RDBsKIFA7MBAHU5fl9SZsjEyiuyrBEMb_lp8RtiRaIEFY6pERfIcc6nlP_bjAE8RtOGceX9IhTdd74M_ffC717sTCY1beKjYZvxNor1o0JpKF9cTYzGg8RfZu"/>
+<div class="relative z-20 p-md flex flex-col justify-end h-full">
+<h4 class="font-h2 text-h2 text-on-primary">Need Business Help?</h4>
+<p class="font-body-md text-on-primary-container mt-xs mb-md">Our corporate support desk is available 24/7 for international transfer assistance.</p>
+<button class="bg-on-primary text-primary font-button px-gutter py-sm rounded-lg self-start hover:bg-surface-container transition-colors">Contact Support</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Info -->
+<footer class="mt-auto px-gutter py-md bg-surface-container-lowest border-t border-outline-variant">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="flex gap-lg font-body-sm text-body-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Security Agreement</a>
+<a class="hover:text-primary transition-colors" href="#">Term of Service</a>
+</div>
+<p class="font-body-sm text-body-sm text-outline">© 2024 Apex Bank. Member FDIC. Institutional Trust Assured.</p>
+</div>
+</footer>
+</main>
+
+<div id="addBeneficiaryModal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity"></div>
+
+    <div class="relative min-h-screen flex items-center justify-center p-4">
+        <div class="relative bg-white w-full max-w-md rounded-2xl shadow-xl border border-outline-variant overflow-hidden">
+            <div class="px-6 py-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+                <h3 class="text-xl font-bold text-primary">Add New Beneficiary</h3>
+                <button onclick="closeAddModal()" class="p-1 hover:bg-surface-container rounded-full transition-colors">
+                    <span class="material-symbols-outlined text-on-surface-variant">close</span>
+                </button>
+            </div>
+
+            <form id="addBeneficiaryForm" class="p-6 space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-on-surface-variant mb-1">Nickname / Name</label>
+                    <input type="text" name="nickname" required maxlength="50"
+                        class="w-full px-4 py-2 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                        placeholder="e.g. Hassan Khalid">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-on-surface-variant mb-1">Bank Name</label>
+                    <input type="text" name="bank_name" required maxlength="100"
+                        class="w-full px-4 py-2 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                        placeholder="e.g. Apex Bank">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-on-surface-variant mb-1">Account Number</label>
+                    <input type="text" name="account_number" required maxlength="24"
+                        class="w-full px-4 py-2 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-mono"
+                        placeholder="APEX00000010">
+                </div>
+
+                <div class="flex gap-3 mt-6">
+                    <button type="button" onclick="closeAddModal()" 
+                        class="flex-1 px-4 py-2 border border-outline text-primary font-medium rounded-lg hover:bg-surface-container transition-colors">
+                        Cancel
+                    </button>
+                    <button type="submit" 
+                        class="flex-1 px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-shadow shadow-md">
+                        Save Beneficiary
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../assets/js/modules/get_beneficiaries.js" type="module"></script>
+<script src="../assets/js/modules/dashboard.js" type="module"></script>
+</body></html>

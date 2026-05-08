@@ -1,489 +1,314 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Nexus Bank | Secure Digital Banking</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary-fixed-dim": "#bdc2ff",
-                        "on-surface-variant": "#454652",
-                        "on-secondary-fixed-variant": "#005312",
-                        "on-secondary-fixed": "#002204",
-                        "surface-container-highest": "#e4e1ea",
-                        "surface-tint": "#4c56af",
-                        "on-tertiary-fixed-variant": "#7b2e12",
-                        "primary-fixed": "#e0e0ff",
-                        "danger-red": "#C62828",
-                        "surface-dim": "#dbd9e1",
-                        "on-tertiary-container": "#e17c5a",
-                        "on-secondary": "#ffffff",
-                        "tertiary-fixed-dim": "#ffb59d",
-                        "on-error": "#ffffff",
-                        "surface-background": "#F8F9FA",
-                        "surface-border": "#E0E0E0",
-                        "surface-variant": "#e4e1ea",
-                        "primary": "#000666",
-                        "on-tertiary-fixed": "#390c00",
-                        "secondary-fixed": "#a3f69c",
-                        "surface": "#fbf8ff",
-                        "surface-container": "#efecf5",
-                        "on-primary": "#ffffff",
-                        "on-error-container": "#93000a",
-                        "surface-container-high": "#eae7ef",
-                        "on-tertiary": "#ffffff",
-                        "secondary-container": "#a0f399",
-                        "warning-amber": "#F57F17",
-                        "on-surface": "#1b1b21",
-                        "surface-container-lowest": "#ffffff",
-                        "primary-container": "#1a237e",
-                        "inverse-surface": "#303036",
-                        "inverse-on-surface": "#f2eff8",
-                        "text-primary": "#1A1A1A",
-                        "secondary": "#1b6d24",
-                        "inverse-primary": "#bdc2ff",
-                        "surface-container-low": "#f5f2fb",
-                        "on-background": "#1b1b21",
-                        "on-primary-fixed": "#000767",
-                        "background": "#fbf8ff",
-                        "on-primary-container": "#8690ee",
-                        "text-secondary": "#546E7A",
-                        "error": "#ba1a1a",
-                        "tertiary-container": "#5c1800",
-                        "tertiary-fixed": "#ffdbd0",
-                        "secondary-fixed-dim": "#88d982",
-                        "tertiary": "#380b00",
-                        "error-container": "#ffdad6",
-                        "on-primary-fixed-variant": "#343d96",
-                        "surface-bright": "#fbf8ff",
-                        "outline-variant": "#c6c5d4",
-                        "outline": "#767683",
-                        "on-secondary-container": "#217128"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "sidebar-width": "260px",
-                        "padding-page": "32px",
-                        "gutter": "24px",
-                        "unit": "8px",
-                        "container-max-width": "1280px"
-                    },
-                    "fontFamily": {
-                        "title-sm": ["Inter"],
-                        "label-caps": ["Inter"],
-                        "display-lg": ["Manrope"],
-                        "headline-md": ["Manrope"],
-                        "body-sm": ["Inter"],
-                        "body-md": ["Inter"]
-                    },
-                    "fontSize": {
-                        "title-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
-                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
-                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
-                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
-                    }
-                }
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apex Banking | Modern Financial Infrastructure</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#bec6e0",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#0b1c30",
+                    "secondary": "#505f76",
+                    "tertiary": "#000000",
+                    "outline": "#76777d",
+                    "surface-variant": "#e2e2e2",
+                    "inverse-primary": "#bec6e0",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#54647a",
+                    "on-surface-variant": "#45464d",
+                    "tertiary-container": "#191c1e",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#565e74",
+                    "primary-fixed": "#dae2fd",
+                    "on-surface": "#1a1c1c",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-primary-fixed": "#131b2e",
+                    "surface-container-highest": "#e2e2e2",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "primary": "#000000",
+                    "on-tertiary-fixed": "#191c1e",
+                    "surface-dim": "#dadada",
+                    "surface": "#f9f9f9",
+                    "secondary-container": "#d0e1fb",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#d3e4fe",
+                    "error": "#ba1a1a",
+                    "background": "#f9f9f9",
+                    "on-primary-container": "#7c839b",
+                    "on-tertiary-container": "#818486",
+                    "on-background": "#1a1c1c",
+                    "surface-container": "#eeeeee",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface-container-low": "#f3f3f4",
+                    "tertiary-fixed": "#e0e3e5",
+                    "primary-container": "#131b2e",
+                    "inverse-surface": "#2f3131",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "outline-variant": "#c6c6cd",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "surface-container-high": "#e8e8e8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "xl": "64px",
+                    "lg": "40px",
+                    "xs": "4px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-md": ["Public Sans"],
+                    "label-caps": ["Public Sans"],
+                    "h3": ["Public Sans"],
+                    "button": ["Public Sans"],
+                    "body-lg": ["Public Sans"],
+                    "h2": ["Public Sans"],
+                    "body-sm": ["Public Sans"],
+                    "h1": ["Public Sans"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "button": ["15px", {"lineHeight": "1", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h2": ["30px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
             }
+          }
         }
+      }
     </script>
-    <style>
+<style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             vertical-align: middle;
         }
-
-        body {
-            background-color: #F8F9FA;
-        }
-    </style>
-    <style>
-        body {
-            min-height: max(884px, 100dvh);
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
         }
     </style>
 </head>
-
-<body class="font-body-md text-on-surface">
-    <!-- TopAppBar -->
-    <header
-        class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white border-b border-gray-200 transition-colors duration-200">
-        <div class="flex items-center gap-8">
-            <span class="text-xl font-bold text-indigo-900 tracking-tight font-manrope">Nexus Bank</span>
-            <nav class="hidden md:flex gap-6">
-                <a class="text-indigo-900 font-manrope font-semibold tracking-tight text-sm" href="#">Personal</a>
-                <a class="text-gray-500 font-manrope font-semibold tracking-tight text-sm hover:bg-gray-50 transition-colors"
-                    href="#">Business</a>
-                <a class="text-gray-500 font-manrope font-semibold tracking-tight text-sm hover:bg-gray-50 transition-colors"
-                    href="#">Premium</a>
-            </nav>
-        </div>
-        <div class="flex items-center gap-4">
-
-          <button onclick="toggleStaffModal()" class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-slate-600 hover:text-indigo-900 transition-all rounded-lg group">
-    <span class="material-symbols-outlined text-[20px] group-hover:rotate-12 transition-transform">admin_panel_settings</span>
-    Staff Portal
-</button>
-
-            <a href="login.html">
-                <button
-                    class="text-indigo-900 font-manrope font-semibold tracking-tight text-sm px-4 py-2 hover:bg-gray-50 transition-colors">Log
-                    In</button>
-            </a>
-            <a href="register.html">
-                <button
-                    class="bg-primary text-white px-6 py-2 rounded-lg font-manrope font-semibold tracking-tight text-sm transition-colors hover:bg-opacity-90">
-                    Open Account
-                </button>
-            </a>
-
-            <div class="hidden md:flex items-center gap-2 ml-2">
-                <span class="material-symbols-outlined text-gray-500" data-icon="notifications">notifications</span>
-            </div>
-        </div>
-    </header>
-    <main class="pt-16">
-        <!-- Hero Section -->
-        <section class="relative min-h-[751px] flex items-center overflow-hidden bg-white">
-            <div class="max-w-[1280px] mx-auto px-8 grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-                <div class="md:col-span-6 z-10 py-12">
-                    <span
-                        class="inline-block px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps mb-6">TRUSTED
-                        BY 2M+ USERS</span>
-                    <h1 class="font-display-lg text-[56px] leading-[64px] text-primary mb-6">Secure Banking for the
-                        Digital Age</h1>
-                    <p class="font-body-md text-text-secondary text-lg mb-8 max-w-lg">Experience the next generation of
-                        financial stability. Minimalist design meets institutional security to help you grow, manage,
-                        and protect your wealth effortlessly.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <button
-                            class="bg-primary text-white px-8 py-4 rounded-xl font-headline-md text-body-md flex items-center gap-2 hover:bg-opacity-95 transition-all">
-                            Open Account
-                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
-                        </button>
-                        <button
-                            class="border border-surface-border text-primary px-8 py-4 rounded-xl font-headline-md text-body-md hover:bg-gray-50 transition-all">
-                            Compare Plans
-                        </button>
-                    </div>
-                    <div class="mt-12 flex items-center gap-6">
-                        <div class="flex -space-x-3">
-                            <img alt="" class="w-10 h-10 rounded-full border-2 border-white"
-                                data-alt="professional portrait of a young woman with a confident smile, clean studio background"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFWnxvn6PE9-6acGqLEGQtGzW4LT3YfErsNO22NooNtDvk8Wjw4MrdLSJFWPhue3b-vowLXznpdLYMC8s_cmQSapYkX3JRlnPHGtjFviQgOrRY6aBG6osvnTXgHi8S-EomaaIU-LG6RQ9lhZFUPNqovOMGbvBWyxzIXbIOOT4reTWjHUU32jVP9o16xwcwoweIXR8RnHkMFXq4SEn-1ZqVzDxvRLljBv4dW1CZteP7BuQiNTSq9xK8XzjowSOmHRkKfDu2H-GAH8U" />
-                            <img alt="" class="w-10 h-10 rounded-full border-2 border-white"
-                                data-alt="close-up of a smiling businessman in a professional environment with natural lighting"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdV7ZJucqU3OF4zviS3CV_E3B0o6cJ5GwuVBH6gKY6LjxjWNp7bp10DhGeltLekto5m5TjH0LB4cFs2kDG-xGKyxVpuSL_M1sey3qIplS-AcaIz4HwGjezEn_MltJFbPKbpIJAMWi4FxIXpiIkW-cNP9qzeDGN3RVlImDL9oqjktj8rNEOMpYefVt7EauoqFceC1FTdoZToGZrdd-HYar_wmxnIwjxLZkd3SavYVCtRtcA88FBb5SdqS-gjDh7_a4-ueGxm85eSLQ" />
-                            <img alt="" class="w-10 h-10 rounded-full border-2 border-white"
-                                data-alt="portrait of a focused professional person in a minimalist office setting"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWimoGsp6ZNRVfLNLCFoioGYxl3hw5CgGlXezQ4vVszXkLf4Nt-RXfOgRvVR9H8Uq6CSLDermqYx4Cxix6AQorvwlag5TrfNZP8bpK13LsZONThvHCPhTiGy50veE4eHYDNyw33d4XpqFJFwJNdvH6-dPLBm4WrO-SufQUUd1vh6dyVe26Kf9N7rftc9ESvDYr628MULYjOvowibOsa2VAEI3XrgdSyFhmfvBvCJSdfpPQVdVJcR9GCCOFFW6XqWXzgbKcalb3wKU" />
-                        </div>
-                        <p class="text-body-sm text-text-secondary">Join thousands of satisfied premium members</p>
-                    </div>
-                </div>
-                <div class="md:col-span-6 relative flex justify-center items-center">
-                    <!-- Bento Layout Mockup -->
-                    <div class="grid grid-cols-2 gap-4 w-full max-w-md relative z-10">
-                        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex flex-col gap-4">
-                            <div class="w-10 h-10 bg-secondary-container flex items-center justify-center rounded-lg">
-                                <span class="material-symbols-outlined text-secondary" data-icon="shield">shield</span>
-                            </div>
-                            <span class="font-title-sm text-title-sm text-primary">Biometric Security</span>
-                            <div class="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
-                                <div class="h-full bg-secondary w-3/4"></div>
-                            </div>
-                        </div>
-                        <div class="bg-primary p-6 rounded-xl shadow-xl flex flex-col justify-between text-white">
-                            <span class="material-symbols-outlined text-secondary-fixed"
-                                data-icon="contactless">contactless</span>
-                            <div class="mt-8">
-                                <p class="text-[10px] opacity-70 font-label-caps mb-1">TOTAL BALANCE</p>
-                                <p class="font-headline-md text-headline-md">$42,920.00</p>
-                            </div>
-                        </div>
-                        <div
-                            class="col-span-2 bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-center justify-between">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-primary"
-                                        data-icon="payments">payments</span>
-                                </div>
-                                <div>
-                                    <p class="font-title-sm text-title-sm text-primary">Transfer Sent</p>
-                                    <p class="text-body-sm text-text-secondary">To Alex Sterling</p>
-                                </div>
-                            </div>
-                            <span class="text-secondary font-bold">+$1,200.00</span>
-                        </div>
-                    </div>
-                    <!-- Decorative Background -->
-                    <div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl -z-0 scale-125"></div>
-                </div>
-            </div>
-        </section>
-        <!-- Features Grid (High Trust) -->
-        <section class="py-24 bg-surface-background">
-            <div class="max-w-[1280px] mx-auto px-8">
-                <div class="text-center mb-16">
-                    <h2 class="font-headline-md text-[40px] text-primary mb-4">Banking built for stability</h2>
-                    <p class="text-text-secondary max-w-2xl mx-auto font-body-md">We combine the speed of a startup with
-                        the security of a centuries-old institution.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-                    <!-- Feature 1 -->
-                    <div class="bg-white p-8 rounded-xl border border-surface-border hover:shadow-lg transition-shadow">
-                        <div class="w-12 h-12 bg-gray-50 flex items-center justify-center rounded-lg mb-6">
-                            <span class="material-symbols-outlined text-primary text-3xl"
-                                data-icon="account_balance">account_balance</span>
-                        </div>
-                        <h3 class="font-title-sm text-title-sm text-primary mb-3">Institutional Grade</h3>
-                        <p class="text-text-secondary text-body-sm">Your assets are protected by top-tier encryption and
-                            full FDIC insurance coverage up to $250k.</p>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="bg-white p-8 rounded-xl border border-surface-border hover:shadow-lg transition-shadow">
-                        <div class="w-12 h-12 bg-gray-50 flex items-center justify-center rounded-lg mb-6">
-                            <span class="material-symbols-outlined text-secondary text-3xl"
-                                data-icon="trending_up">trending_up</span>
-                        </div>
-                        <h3 class="font-title-sm text-title-sm text-primary mb-3">Smart Yields</h3>
-                        <p class="text-text-secondary text-body-sm">Earn competitive interest rates on your savings with
-                            our automated high-yield account structures.</p>
-                    </div>
-                    <!-- Feature 3 -->
-                    <div class="bg-white p-8 rounded-xl border border-surface-border hover:shadow-lg transition-shadow">
-                        <div class="w-12 h-12 bg-gray-50 flex items-center justify-center rounded-lg mb-6">
-                            <span class="material-symbols-outlined text-indigo-400 text-3xl"
-                                data-icon="public">public</span>
-                        </div>
-                        <h3 class="font-title-sm text-title-sm text-primary mb-3">Global Access</h3>
-                        <p class="text-text-secondary text-body-sm">No foreign transaction fees and seamless
-                            multi-currency support for the modern explorer.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Asymmetric Value Prop -->
-        <section class="py-24 bg-white overflow-hidden">
-            <div class="max-w-[1280px] mx-auto px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                    <div class="order-2 lg:order-1">
-                        <div class="relative group">
-                            <img alt="" class="rounded-2xl shadow-2xl"
-                                data-alt="professional workspace with high-end tech, minimalist desk, and glass windows reflecting a city skyline at dusk"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD37vmJhpezZ4GCpdZjnLsgM17UHmXMz0UG6Q1_kgH8jZik8jfCVekvDYYRNSGCpR5SiEp6Oa-_vCRigOq-54hXw4xo9DX884m_uprduDv3tRp3ZPoroVf54rG-Hq9RhrBrEkvLdOwbm3pM2Haw-raJS9KGjXNM3_jXCRFLpsP9yqjczSXZPlpavc2UfqL2NwjiqjBkyKNKy8pcll6kgwhqeMOjweebLXRFwcpQsVcueudZdftVRNlyOJqgxd38COw4IZ0q9HTfW4U" />
-                            <div
-                                class="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-xl border border-gray-100 hidden md:block">
-                                <div class="flex items-center gap-4 mb-4">
-                                    <div class="w-2 h-10 bg-secondary rounded-full"></div>
-                                    <div>
-                                        <p class="text-[10px] text-text-secondary font-label-caps">PORTFOLIO GROWTH</p>
-                                        <p class="font-headline-md text-primary">+12.4%</p>
-                                    </div>
-                                </div>
-                                <div class="w-32 h-12 bg-gray-50 rounded-lg flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-gray-300"
-                                        data-icon="show_chart">show_chart</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order-1 lg:order-2">
-                        <h2 class="font-headline-md text-[40px] text-primary mb-6">Control your finances from one
-                            beautiful interface.</h2>
-                        <ul class="space-y-6">
-                            <li class="flex gap-4">
-                                <div
-                                    class="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-secondary text-sm" data-icon="check"
-                                        data-weight="fill">check</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-title-sm text-primary">Real-time alerts</h4>
-                                    <p class="text-body-sm text-text-secondary">Instant notifications for every
-                                        transaction, no matter where you are.</p>
-                                </div>
-                            </li>
-                            <li class="flex gap-4">
-                                <div
-                                    class="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-secondary text-sm" data-icon="check"
-                                        data-weight="fill">check</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-title-sm text-primary">Advanced budgeting</h4>
-                                    <p class="text-body-sm text-text-secondary">Categorize spending automatically and
-                                        set limits that actually help you save.</p>
-                                </div>
-                            </li>
-                            <li class="flex gap-4">
-                                <div
-                                    class="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-secondary text-sm" data-icon="check"
-                                        data-weight="fill">check</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-title-sm text-primary">One-tap freeze</h4>
-                                    <p class="text-body-sm text-text-secondary">Misplaced your card? Freeze it instantly
-                                        in the app with zero downtime.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- CTA Section -->
-        <section class="py-24 bg-primary relative overflow-hidden">
-            <div class="absolute inset-0 opacity-10">
-                <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-[120px]"></div>
-                <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-fixed rounded-full blur-[120px]"></div>
-            </div>
-            <div class="max-w-[800px] mx-auto text-center px-8 relative z-10">
-                <h2 class="font-display-lg text-white text-[48px] mb-8">Ready to upgrade your banking experience?</h2>
-                <p class="text-indigo-100/80 text-lg mb-10">Join over 2 million users who trust Nexus Bank for their
-                    daily financial needs. Opening an account takes less than 3 minutes.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button
-                        class="bg-secondary text-white px-10 py-4 rounded-xl font-headline-md hover:bg-opacity-90 transition-all shadow-lg">Start
-                        for free</button>
-                    <button
-                        class="border border-white/20 text-white px-10 py-4 rounded-xl font-headline-md hover:bg-white/10 transition-all">Talk
-                        to sales</button>
-                </div>
-            </div>
-        </section>
-
-        <div id="staff-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4">
-    <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
-        <div class="bg-indigo-900 p-6 text-white flex justify-between items-center">
-            <div>
-                <h2 class="text-xl font-bold">Staff Access</h2>
-                <p class="text-xs text-indigo-200">Institutional control panel login</p>
-            </div>
-            <button onclick="toggleStaffModal()" class="hover:bg-white/10 p-2 rounded-full transition-colors">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-        </div>
-
-        <form id="staff-login-form" class="p-8 space-y-5">
-            <div class="space-y-1">
-                <label class="text-xs font-bold text-slate-500 uppercase">Staff Email</label>
-                <input type="email" id="staff-email" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-indigo-900 transition-all" placeholder="name@nexus.com">
-            </div>
-            <div class="space-y-1">
-                <label class="text-xs font-bold text-slate-500 uppercase">Secret Password</label>
-                <input type="password" id="staff-password" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-indigo-900 transition-all" placeholder="••••••••">
-            </div>
-            
-            <button type="submit" class="w-full py-4 bg-indigo-900 text-white font-bold rounded-xl hover:bg-indigo-800 shadow-lg shadow-indigo-200 transition-all active:scale-95">
-                Authenticate & Enter
-            </button>
-        </form>
-    </div>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopNavBar (Shared Component) -->
+<header class="w-full top-0 sticky bg-surface dark:bg-surface-container-highest border-b border-outline-variant dark:border-outline shadow-sm z-40">
+<div class="flex justify-between items-center px-gutter py-sm w-full">
+<div class="flex items-center gap-lg">
+<span class="text-h3 font-h3 text-primary dark:text-on-primary-fixed">Apex Banking</span>
+<!-- Search Bar (on_left as per JSON) -->
+<div class="hidden lg:flex items-center bg-surface-container-low px-sm py-xs rounded border border-outline-variant">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-sm w-64" placeholder="Search markets or accounts" type="text"/>
 </div>
+</div>
+<nav class="hidden md:flex items-center gap-md">
+<a class="text-primary font-bold border-b-2 border-primary py-xs font-body-md text-body-md transition-colors" href="index.html">Home</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container px-sm py-xs transition-colors font-body-md text-body-md" href="#">Products</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container px-sm py-xs transition-colors font-body-md text-body-md" href="#">Enterprise</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-container px-sm py-xs transition-colors font-body-md text-body-md" href="#">Support</a>
+</nav>
+<div class="flex items-center gap-sm">
+<div class="flex items-center gap-xs mr-md">
+<button class="material-symbols-outlined text-secondary hover:bg-surface-container-low p-xs transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-secondary hover:bg-surface-container-low p-xs transition-colors" data-icon="help_outline">help_outline</button>
+</div>
+<div class="flex gap-sm border-l border-outline-variant pl-md">
+<a class="px-md py-sm font-button text-button text-secondary border border-outline rounded-lg hover:bg-surface-container transition-all" href="login.html">Login</a>
+<a class="px-md py-sm font-button text-button bg-primary-container text-on-primary border border-primary-container rounded-lg active:opacity-80 transition-opacity" href="register.html">Register</a>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-gutter">
+<!-- Hero Section: Security & Modern Banking -->
+<section class="py-xl flex flex-col lg:flex-row items-center gap-xl">
+<div class="flex-1 space-y-lg">
+<div class="inline-flex items-center gap-xs bg-secondary-container/30 px-sm py-xs rounded-full">
+<span class="material-symbols-outlined text-primary-container text-[18px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-caps text-label-caps text-on-secondary-container">Institutional Grade Security</span>
+</div>
+<h1 class="font-h1 text-h1 text-primary max-w-2xl">
+                    Banking Infrastructure for the <span class="text-on-primary-container">Next Generation</span>
+</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-xl">
+                    Experience a digital fortress for your capital. Apex Banking combines deep-liquidity access with modern cryptographic security to protect your institutional and personal assets.
+                </p>
+<div class="flex flex-wrap gap-md pt-md">
+<button class="px-xl py-md font-button text-button bg-primary text-on-primary rounded active:scale-95 transition-transform">
+                        Open Account
+                    </button>
+<button class="px-xl py-md font-button text-button border border-outline text-secondary rounded hover:bg-surface-container transition-all">
+                        View Security Protocol
+                    </button>
+</div>
+</div>
+<div class="flex-1 w-full relative">
+<div class="aspect-square bg-surface-container-high rounded-xl overflow-hidden shadow-sm border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A high-fidelity 3D abstract visualization of secure data flowing through a crystalline architecture. The lighting is cold and precise with deep blues and crisp whites. The scene conveys a sense of high-end corporate security and digital precision. Cinematic shadows create depth, emphasizing the mathematical harmony of the structure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-E7dMQR14Tjb4WyO6Mom0Ijxq7NeL04iPunC2brToeF_xpjXmwf0nKMEG-1ngLjx9QDTIYpUdvJBOWBS9P7gRnXijaw1jJ4ZUuCaRAeK-0CtIP89KApneE77YnHiFh31SUAY_xhJGAZyDqpDcqwheBi41i2fpSkCFBbMq7mpZrAn-NRkWmW668RzC5-WOgCVWHniEe_AAF6Fnvew1_rEvl6WzVBZOW8wA_vEbeBq1HxbMgXAjZH4VoNEh7nXarUOIQe-vDKIt"/>
+</div>
+<!-- Float Card -->
+<div class="absolute -bottom-md -left-md bg-surface p-md rounded shadow-lg border border-outline-variant max-w-xs">
+<div class="flex gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-secondary">REAL-TIME PROTECTION</p>
+<p class="font-body-md text-body-md font-bold">Encrypted End-to-End</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Modern Features -->
+<section class="py-xl">
+<div class="mb-lg">
+<h2 class="font-h2 text-h2 text-primary">Advanced Features</h2>
+<p class="font-body-md text-body-md text-secondary">Engineered for speed, built for reliability.</p>
+</div>
+<div class="bento-grid">
+<!-- Large Feature Card -->
+<div class="col-span-12 md:col-span-8 bg-surface-container-lowest border border-outline-variant p-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary-container text-4xl mb-md">account_balance_wallet</span>
+<h3 class="font-h3 text-h3 mb-sm">Multi-Currency Liquidity</h3>
+<p class="font-body-md text-body-md text-secondary max-w-md">Seamlessly manage and move capital across 40+ global currencies with real-time exchange rates and zero hidden fees.</p>
+</div>
+<div class="mt-xl h-48 overflow-hidden rounded-lg border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A macro photograph of professional financial trading screens showing complex line graphs and data visualizations. The palette is dominated by slate greys and whites with subtle blue glows. The lighting is soft and ambient, representing a high-stakes yet calm professional environment. The focus is sharp on the data patterns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDPtPLFCOOSafwM1ah7FwnGs4Kud_fNQjFx9NLjrv86PVWIcJW45vgY-NppuO7g80dPYlRWQ8MmsHJ6frRI383rBmJjj18QWx6kYPy3FCFdLofhbM_OlYIpdsi4pVJhQfgzjm0HUdPQV3ITzeCfNW2JEPTG6NvgZkan6JxMZ8CU9XK_DFMXS2qvb8E_BFGTfLqcJDVmijzZ3y5llYxFOcLZhC46Q7GGV4bHq6waZmYVn4VzPsgtUzEd9_5NBjIDnzGhbESuLsX"/>
+</div>
+</div>
+<!-- Secondary Card -->
+<div class="col-span-12 md:col-span-4 bg-primary-container text-on-primary p-lg rounded-xl shadow-sm space-y-md">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h3 class="font-h3 text-h3">Instant Settlement</h3>
+<p class="font-body-sm text-body-sm text-on-primary-container opacity-90">Our proprietary network handles thousands of transactions per second with sub-second finality, ensuring your capital is always where it needs to be.</p>
+<div class="pt-sm">
+<ul class="space-y-sm">
+<li class="flex items-center gap-sm font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-sm">check_circle</span> 24/7 Availability
+                            </li>
+<li class="flex items-center gap-sm font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-sm">check_circle</span> Automated Compliance
+                            </li>
+</ul>
+</div>
+</div>
+<!-- Small Card 1 -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-lowest border border-outline-variant p-lg rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-secondary text-3xl mb-md">shield</span>
+<h3 class="font-h3 text-h3 text-body-md">Cold-Storage Custody</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-sm">Your most valuable assets are kept in air-gapped environments, protected by multi-signature governance.</p>
+</div>
+<!-- Small Card 2 -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-lowest border border-outline-variant p-lg rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-secondary text-3xl mb-md">analytics</span>
+<h3 class="font-h3 text-h3 text-body-md">Predictive Analytics</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-sm">Harness the power of AI to forecast cash flow trends and optimize your treasury management strategies.</p>
+</div>
+<!-- Small Card 3 -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-lowest border border-outline-variant p-lg rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-secondary text-3xl mb-md">hub</span>
+<h3 class="font-h3 text-h3 text-body-md">Developer-First API</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-sm">Integrate banking directly into your software with our robust, documented REST and WebSocket APIs.</p>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="py-xl border-t border-outline-variant text-center">
+<p class="font-label-caps text-label-caps text-outline mb-lg">TRUSTED BY INDUSTRY LEADERS</p>
+<div class="flex flex-wrap justify-center items-center gap-xl grayscale opacity-50">
+<span class="font-h3 text-h3">VELOCITY</span>
+<span class="font-h3 text-h3">STRATOS</span>
+<span class="font-h3 text-h3">APEX/span>
+<span class="font-h3 text-h3">QUANTUM</span>
+<span class="font-h3 text-h3">ETHERIA</span>
+</div>
+</section>
+<!-- CTA Canvas -->
+<section class="py-xl mb-xl">
+<div class="bg-surface-container p-xl rounded-xl border border-outline-variant flex flex-col md:flex-row items-center justify-between gap-lg">
+<div class="max-w-xl">
+<h2 class="font-h2 text-h2 text-primary">Ready to elevate your financial infrastructure?</h2>
+<p class="font-body-lg text-body-lg text-secondary mt-sm">Join over 5,000 institutions that trust Apex Banking for their daily operations.</p>
+</div>
+<div class="flex gap-md">
+<button class="px-xl py-md font-button text-button bg-primary text-on-primary rounded active:scale-95 transition-transform">Get Started Now</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-high border-t border-outline-variant py-xl">
+<div class="max-w-[1280px] mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="col-span-1 md:col-span-1">
+<span class="text-h3 font-h3 text-primary">Apex Banking</span>
+<p class="font-body-sm text-body-sm text-secondary mt-md">The modern standard for corporate and personal wealth management.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-md">Company</h4>
+<ul class="space-y-sm">
+<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-colors" href="#">Leadership</a></li>
+<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-md">Security</h4>
+<ul class="space-y-sm">
+<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-colors" href="#">Audit Logs</a></li>
+<li><a class="font-body-sm text-body-sm text-secondary hover:text-primary transition-colors" href="#">Legal Compliance</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-md">Social</h4>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary">language</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary">share</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary">alternate_email</span>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-gutter mt-xl pt-lg border-t border-outline-variant flex justify-between items-center">
+<p class="font-body-sm text-body-sm text-outline">© 2024 Apex Banking. All rights reserved.</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-xs text-secondary" style="font-variation-settings: 'FILL' 1;">circle</span>
+<span class="font-label-caps text-[10px] text-secondary">SYSTEMS OPERATIONAL</span>
+</div>
+</div>
+</footer>
+<!-- Core API - Module type is essential -->
+<script type="module" src="../assets/js/core/api.js"></script>
 
+<!-- UI Components -->
+<script src="../assets/js/ui/loading.js"></script>
+<script src="../assets/js/ui/toast.js"></script>
 
-    </main>
-    <!-- Footer -->
-    <footer class="bg-white border-t border-surface-border pt-20 pb-10">
-        <div class="max-w-[1280px] mx-auto px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-gutter mb-16">
-                <div class="col-span-2">
-                    <span class="text-2xl font-black text-indigo-900 block mb-6">Nexus Bank</span>
-                    <p class="text-text-secondary text-body-sm max-w-xs">Building the bridge between traditional
-                        reliability and future-proof digital financial technology.</p>
-                </div>
-                <div>
-                    <h5 class="font-label-caps text-label-caps text-primary mb-6">PRODUCTS</h5>
-                    <ul class="space-y-4 text-body-sm text-text-secondary">
-                        <li><a class="hover:text-primary transition-colors" href="#">Personal</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Business</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Checking</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Savings</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-label-caps text-label-caps text-primary mb-6">COMPANY</h5>
-                    <ul class="space-y-4 text-body-sm text-text-secondary">
-                        <li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Press</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Security</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-label-caps text-label-caps text-primary mb-6">RESOURCES</h5>
-                    <ul class="space-y-4 text-body-sm text-text-secondary">
-                        <li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">API Docs</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Community</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-label-caps text-label-caps text-primary mb-6">LEGAL</h5>
-                    <ul class="space-y-4 text-body-sm text-text-secondary">
-                        <li><a class="hover:text-primary transition-colors" href="#">Privacy</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Terms</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="#">Cookies</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-100 pt-8 flex flex-col md:row items-center justify-between gap-4">
-                <p class="text-body-sm text-text-secondary">© 2024 Nexus Digital Bank Inc. Member FDIC.</p>
-                <div class="flex gap-6">
-                    <span class="material-symbols-outlined text-gray-400 hover:text-primary cursor-pointer"
-                        data-icon="language">language</span>
-                    <span class="material-symbols-outlined text-gray-400 hover:text-primary cursor-pointer"
-                        data-icon="share">share</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Bottom Navigation (Mobile Only) -->
-    <div
-        class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 h-20 bg-white border-t border-gray-200">
-        <div class="flex flex-col items-center justify-center text-indigo-900 font-bold">
-            <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-            <span class="text-[10px] font-bold uppercase tracking-wider font-manrope">Dashboard</span>
-        </div>
-        <div class="flex flex-col items-center justify-center text-gray-400">
-            <span class="material-symbols-outlined" data-icon="swap_horiz">swap_horiz</span>
-            <span class="text-[10px] font-bold uppercase tracking-wider font-manrope">Transfer</span>
-        </div>
-        <div class="flex flex-col items-center justify-center text-gray-400">
-            <span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
-            <span class="text-[10px] font-bold uppercase tracking-wider font-manrope">History</span>
-        </div>
-        <div class="flex flex-col items-center justify-center text-gray-400">
-            <span class="material-symbols-outlined" data-icon="person">person</span>
-            <span class="text-[10px] font-bold uppercase tracking-wider font-manrope">Account</span>
-        </div>
-    </div>
-    <script src="assets/js/auth-costomer.js"></script>
-      <script src="assets/js/auth-staff.js"></script>
-</body>
-
-</html>
+<!-- Main Entry Point -->
+<script type="module" src="../assets/js/main.js"></script>
+</body></html>
