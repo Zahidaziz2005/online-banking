@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($data)) {
 
     // 1. بنیادی تصدیق (Validation)
     if (empty($full_name) || empty($email) || empty($password) || empty($cnic)) {
-        echo json_encode(["success" => false, "message" => "تمام ضروری فیلڈز (Name, Email, Password, CNIC) پر کریں۔"]);
+        echo json_encode(["success" => false, "message" => "Fill all necessary (Name, Email, Password, CNIC)  fields"]);
         exit;
     }
 
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($data)) {
         $checkEmail->bind_param("s", $email);
         $checkEmail->execute();
         if ($checkEmail->get_result()->num_rows > 0) {
-            throw new Exception("یہ ای میل پہلے سے رجسٹرڈ ہے۔");
+            throw new Exception("Email is already registered");
         }
 
         // 3. پاس ورڈ ہیش کرنا
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($data)) {
     if (isset($stmt2)) $stmt2->close();
 
 } else {
-    echo json_encode(["success" => false, "message" => "درخواست کا طریقہ غلط ہے۔"]);
+    echo json_encode(["success" => false, "message" => "Applicaton method is wrong"]);
 }
 
 $conn->close();

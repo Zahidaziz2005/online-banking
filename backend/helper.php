@@ -1,5 +1,5 @@
 <?php
-function logAction($conn, $user_id, $action) {
+function logAction(mysqli $conn, int $user_id,string $action) {
     $ip = $_SERVER['REMOTE_ADDR'];
     $device = $_SERVER['HTTP_USER_AGENT'];
     

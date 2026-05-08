@@ -32,17 +32,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($data)) {
                 "success" => true,
                 "token" => $token,
                 "user" => $user,
-                "message" => "لاگ ان کامیاب!"
+                "message" => "Successful Login"
             ]);
         } else {
-            echo json_encode(["success" => false, "message" => "غلط پاس ورڈ۔"]);
+            echo json_encode(["success" => false, "message" => "Wrong Password"]);
         }
     } else {
-        echo json_encode(["success" => false, "message" => "اس ای میل سے کوئی اکاؤنٹ نہیں ملا۔"]);
+        echo json_encode(["success" => false, "message" => "No record of this Email"]);
     }
     $stmt->close();
 } else {
-    echo json_encode(["success" => false, "message" => "درخواست کا طریقہ غلط ہے۔"]);
+    echo json_encode(["success" => false, "message" => "Application method is wrong"]);
 }
 $conn->close();
 ?>

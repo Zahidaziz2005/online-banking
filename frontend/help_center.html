@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Help Center | Apex Bank</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eeeeee",
+                        "primary-fixed-dim": "#bec6e0",
+                        "surface-container-low": "#f3f3f4",
+                        "primary-fixed": "#dae2fd",
+                        "on-background": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "inverse-primary": "#bec6e0",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-secondary-container": "#54647a",
+                        "secondary-container": "#d0e1fb",
+                        "on-primary-container": "#7c839b",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary": "#505f76",
+                        "on-surface": "#1a1c1c",
+                        "outline": "#76777d",
+                        "surface-variant": "#e2e2e2",
+                        "outline-variant": "#c6c6cd",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "primary": "#000000",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#000000",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-primary-fixed": "#131b2e",
+                        "on-tertiary-container": "#818486",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#565e74",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "background": "#f9f9f9",
+                        "secondary-fixed": "#d3e4fe",
+                        "tertiary-fixed": "#e0e3e5",
+                        "surface-bright": "#f9f9f9",
+                        "surface-dim": "#dadada",
+                        "surface": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#191c1e",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-error": "#ffffff",
+                        "primary-container": "#131b2e",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-surface-variant": "#45464d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "body-sm": ["Public Sans"],
+                        "h1": ["Public Sans"],
+                        "button": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "label-caps": ["Public Sans"],
+                        "h2": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "button": ["15px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "h2": ["30px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-xl bg-surface-container-low border-r border-outline-variant flex flex-col py-md px-sm gap-base z-50">
+<div class="mb-lg px-xs">
+<h1 class="font-h3 text-h3 font-bold text-primary">Apex Bank</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Corporate Portal</p>
+</div>
+<nav class="flex-1 space-y-xs">
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="dashboard.html">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="transactions.html">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="receipt_long">receipt_long</span>
+<span>Transactions</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="transfer.html">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="move_up">move_up</span>
+<span>Fund Transfer</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="beneficiaries.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Beneficiaries</span>
+</a>
+<!-- <a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="manage_accounts">manage_accounts</span>
+<span>User Management</span>
+</a> -->
+<a class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 active:scale-95 group font-body-sm text-body-sm" href="audit_logs.html">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="history_edu">history_edu</span>
+<span>Audit Logs</span>
+</a>
+</nav>
+<div class="mt-auto space-y-xs border-t border-outline-variant pt-md">
+<a class="flex items-center gap-sm px-sm py-base bg-secondary-container text-on-secondary-container font-button rounded-xl active:scale-95 transition-all duration-200" href="help_center.html">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Help Center</span>
+</a>
+<a   id="logoutBtn" class="flex items-center gap-sm px-sm py-base text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col min-w-0">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 flex justify-between items-center w-full px-gutter h-xl bg-surface-container-lowest border-b border-outline-variant shadow-sm">
+<div class="flex items-center gap-md">
+<h2 class="font-h3 text-h3 font-bold text-primary pl-20">Help Centre</h2>
+</div>
+<div class="flex items-center gap-md">
+<button class="font-body-md text-body-md text-secondary hover:bg-surface-container-low px-sm py-xs rounded transition-colors">Support</button>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary transition-colors" data-icon="help_outline">help_outline</span>
+
+<span id="user-display-name" class="font-bold">Welcome, User</span>
+</div>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile avatar" data-alt="A professional headshot of a corporate executive in a modern workspace, characterized by soft natural light and a clean background. The individual is dressed in business casual attire with a friendly, confident expression. The lighting is bright and even, reinforcing a light-mode UI aesthetic of trust and clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYjPpBHgLlgKQT4KKaEy-zuC760MfUp-KCLxNUxCVWpLvK_IJey1doHNlfAMNrPr25-Oj3itGT8mTiPD_2hrQJaNf802T7BE9V6LuXuEUb8HMxhXZw6f2qYucAFqbjBkcXIIHsP7PxDX0bxy7HptL-EBbCskAEa1bDIFqy7hob7GLG5RSqiTsTJ59dnUlbNHbHPEcQAooQYIplWwBeJAUEYn_mjVB6tlkmjEUAKDurvNt0Bn6bkZtoi-fpN4c791TsLHpJxFxB"/>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="p-gutter lg:p-xl space-y-xl max-w-container-max mx-auto w-full">
+<!-- Support Portal Header & Search -->
+<!-- ہائٹ کو h-xl سے بدل کر min-h-[400px] یا py-32 کر دیں -->
+<section class="relative min-h-[400px] rounded-xl overflow-hidden flex flex-col items-center justify-center text-center p-md">
+    <!-- Background Image -->
+    <div class="absolute inset-0 bg-primary-container z-0">
+        <img class="w-full h-full object-cover opacity-20" 
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC7Sc0f6FxQuDx6O-OCV-BoUhPI6gKb_QVffF8245x2zxx1-0bBHIkwncW4si23jHEgCwLP3RRripYGWgurUknTjNAOWRRTPoJKx5FTPnW_nS0u7hy8klxacvq6JlKgG9tSLAWynsyut0JsFw5xFq_vkorfmHbzJzo1NggNcnXZCPbgf4S-ShPZy3yC9SYHm-8-nqfvM7bYbABXXYKWb35wKscWKt4fSiZMXwlLqbBH310d_6gDQIlFm5_lHuPbD8hV-9abLby"/>
+    </div>
+
+    <!-- Content Container -->
+    <div class="relative z-10 space-y-xl w-full max-w-2xl px-md">
+        <h2 class="font-h1 text-h1 text-on-primary font-bold">How can we help?</h2>
+        <div class="relative">
+            <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant text-xl" data-icon="search">search</span>
+            <input class="w-full pl-xl pr-md py-md rounded-xl border-none shadow-2xl text-body-lg focus:ring-4 focus:ring-primary/20 outline-none" 
+                   id="main-search-input" 
+                   placeholder="Search for help or articles (e.g. wire transfer, login security)" 
+                   type="text"/>
+        </div>
+    </div>
+</section>
+<!-- FAQ/Knowledge Base Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl hover:shadow-md transition-shadow cursor-pointer group">
+<div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center text-on-secondary-container mb-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+</div>
+<h3 class="font-h3 text-h3 mb-xs">Account Security</h3>
+<p class="font-body-sm text-on-surface-variant">Multi-factor authentication, fraud protection, and password management.</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl hover:shadow-md transition-shadow cursor-pointer group">
+<div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center text-on-secondary-container mb-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<h3 class="font-h3 text-h3 mb-xs">Fund Transfers</h3>
+<p class="font-body-sm text-on-surface-variant">International wires, ACH limits, and instant settlement issues.</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl hover:shadow-md transition-shadow cursor-pointer group">
+<div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center text-on-secondary-container mb-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="error_outline">error_outline</span>
+</div>
+<h3 class="font-h3 text-h3 mb-xs">Transaction Issues</h3>
+<p class="font-body-sm text-on-surface-variant">Disputing a charge, pending transactions, and failed payments.</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl hover:shadow-md transition-shadow cursor-pointer group">
+<div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center text-on-secondary-container mb-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="help_center">help_center</span>
+</div>
+<h3 class="font-h3 text-h3 mb-xs">General Inquiries</h3>
+<p class="font-body-sm text-on-surface-variant">Opening new accounts, fee schedules, and corporate services.</p>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Complaint Submission Form -->
+<section class="lg:col-span-7 space-y-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-sm">
+<h2 class="font-h3 text-h3 mb-md">Submit a Complaint</h2>
+<form class="space-y-sm" id="complaint-form" enctype="multipart/form-data">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Complaint Category</label>
+<select name="category" id="category" class="w-full border border-outline-variant rounded-lg p-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-background">
+<option value="Account Discrepancy">Account Discrepancy</option>
+<option value="Technical Error">Technical Error</option>
+<option value="Service Feedback">Service Feedback</option>
+<option value="Fraud Report">Fraud Report</option>
+<option value="Other">Other</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Subject</label>
+<input name="subject" id="subject" class="w-full border border-outline-variant rounded-lg p-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-background" placeholder="Brief summary" type="text" required/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Detailed Description</label>
+<textarea name="description" id="description" class="w-full border border-outline-variant rounded-lg p-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-background" placeholder="Please provide as much detail as possible..." rows="4" required></textarea>
+</div>
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Attachment (Optional)</label>
+<input type="file" name="attachment" id="attachment-input" class="hidden" accept=".pdf,.jpg,.png">
+<div onclick="document.getElementById('attachment-input').click()" class="border-2 border-dashed border-outline-variant rounded-lg p-lg text-center hover:bg-surface-container-low transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary mb-xs" data-icon="upload_file">upload_file</span>
+<p class="font-body-sm text-on-surface-variant">Drag and drop files or <span class="text-primary font-bold">browse</span></p>
+<p id="file-name-display" class="text-[10px] text-outline uppercase mt-xs">PDF, JPG, PNG (Max 5MB)</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-button rounded-lg py-md hover:opacity-90 active:scale-[0.98] transition-all" id="submit-ticket-btn" type="submit">Submit Ticket</button>
+</form>
+</div>
+</section>
+<!-- Ticket Tracking Section -->
+<section class="lg:col-span-5 space-y-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-sm h-full">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-h3 text-h3">My Support Tickets</h2>
+<button class="text-primary font-button flex items-center gap-xs">View All <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></button>
+</div>
+<div class="space-y-sm" id="tickets-container">
+<!-- Ticket Item -->
+<div class="p-sm bg-surface-container-low rounded-lg flex items-center justify-between border-l-4 border-error">
+<div>
+<p class="font-body-sm font-bold">#TK-8429 — Disputed Wire</p>
+<p class="text-[12px] text-on-surface-variant">Oct 24, 2023 • High Priority</p>
+</div>
+<span class="bg-error-container text-on-error-container text-[10px] font-bold px-sm py-1 rounded-full uppercase">Open</span>
+</div>
+<!-- Ticket Item -->
+<div class="p-sm bg-surface-container-low rounded-lg flex items-center justify-between border-l-4 border-primary">
+<div>
+<p class="font-body-sm font-bold">#TK-8311 — Password Reset</p>
+<p class="text-[12px] text-on-surface-variant">Oct 22, 2023 • Medium Priority</p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-sm py-1 rounded-full uppercase">In Progress</span>
+</div>
+<!-- Ticket Item -->
+<div class="p-sm bg-surface-container-low rounded-lg flex items-center justify-between border-l-4 border-outline-variant">
+<div>
+<p class="font-body-sm font-bold">#TK-8104 — Address Change</p>
+<p class="text-[12px] text-on-surface-variant">Oct 15, 2023 • Low Priority</p>
+</div>
+<span class="bg-surface-variant text-on-surface-variant text-[10px] font-bold px-sm py-1 rounded-full uppercase">Resolved</span>
+</div>
+</div>
+<div class="mt-xl text-center">
+<img class="w-full h-32 object-cover rounded-lg mb-sm" data-alt="A clean and modern customer service workspace with a minimalist headset and high-end digital tablet showing support metrics. The aesthetic is bright and corporate, featuring soft shadows and an organized, trustworthy layout that reflects the bank's dedication to user assistance and security." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMvUPilP92xPqqkW-iHBPEKroq8FCKlTECpZB2II_qwtlGYeq5EaYxU0mAiqKtQGOzbBamRZkSMydSO-_fW9yWQRQUhuTeICcmqYBnE8TjxIXd-IJIkRyEaYeCcldejoCSLm2ehFquJQdBtdrMzejoopP2E0JFKWO9bcokmjmz4yxymgDLNVnRR-kf6nl4PaWphiiMN2V3INGMpvDteTeSnKnq6AOUgHRpPn6ebFrGN1k1D59KYyO1NnedyNtBFvfcpAcBFV9k"/>
+<p class="font-body-sm text-on-surface-variant italic">Average response time: 4 hours</p>
+</div>
+</div>
+</section>
+</div>
+
+</div>
+<!-- Footer Spacing -->
+<footer class="mt-auto h-24"></footer>
+</main>
+</div>
+<script src="../assets/js/modules/help_center.js" type="module"></script>
+<script src="../assets/js/modules/dashboard.js" type="module"></script>
+</body></html>

@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($data)) {
         $logStmt->execute();
 
         $conn->commit();
-        echo json_encode(["success" => true, "message" => "رقم کامیابی سے منتقل کر دی گئی ہے۔"]);
+        echo json_encode(["success" => true, "message" => "Congratulations! your transaction is successful"]);
 
     } catch (Exception $e) {
         $conn->rollback();
@@ -88,3 +88,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($data)) {
 
 $conn->close();
 ?>
+
