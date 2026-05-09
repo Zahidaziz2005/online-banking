@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apex Bank - Dashboard Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Public+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e6e8ea",
+                    "primary-container": "#131b2e",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-secondary-fixed": "#0d1c2f",
+                    "on-primary-fixed": "#131b2e",
+                    "tertiary-fixed": "#d3e4fe",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-tint": "#565e74",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "outline": "#76777d",
+                    "surface-container-highest": "#e0e3e5",
+                    "secondary-fixed-dim": "#b9c7e0",
+                    "on-surface": "#191c1e",
+                    "surface-dim": "#d8dadc",
+                    "secondary-container": "#d5e3fd",
+                    "secondary-fixed": "#d5e3fd",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "surface": "#f7f9fb",
+                    "surface-container": "#eceef0",
+                    "on-secondary-container": "#57657b",
+                    "outline-variant": "#c6c6cd",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f7f9fb",
+                    "secondary": "#515f74",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "tertiary-container": "#0b1c30",
+                    "primary-fixed": "#dae2fd",
+                    "on-primary-container": "#7c839b",
+                    "primary": "#000000",
+                    "on-tertiary-container": "#75859d",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "on-background": "#191c1e",
+                    "tertiary": "#000000",
+                    "inverse-primary": "#bec6e0",
+                    "surface-variant": "#e0e3e5",
+                    "surface-container-low": "#f2f4f6",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#45464d",
+                    "surface-bright": "#f7f9fb",
+                    "on-secondary-fixed-variant": "#3a485c",
+                    "primary-fixed-dim": "#bec6e0",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2d3133"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "1rem",
+                    "stack-gap": "1rem",
+                    "sidebar-width": "280px",
+                    "container-max-width": "1440px",
+                    "margin-desktop": "2.5rem",
+                    "gutter": "1.5rem"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Public Sans"],
+                    "headline-lg": ["Public Sans"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Public Sans"],
+                    "display-brand": ["Public Sans"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-brand": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .sidebar-shadow { box-shadow: none; }
+        .card-shadow { box-shadow: 0px 4px 20px rgba(15, 23, 42, 0.05); }
+        .dropdown-shadow { box-shadow: 0px 10px 32px rgba(15, 23, 42, 0.12); }
+        .active-scale:active { transform: scale(0.98); }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background">
+<!-- Fixed SideNavBar -->
+<aside class="fixed h-full w-[280px] left-0 top-0 bg-primary-container flex flex-col py-6 overflow-y-auto">
+<div class="px-6 mb-10 flex items-center gap-3">
+<div class="w-10 h-10 bg-on-primary-fixed-variant rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<h1 class="font-display-brand text-display-brand text-white leading-tight">Apex Bank</h1>
+<p class="font-label-sm text-on-primary-container opacity-80 uppercase tracking-wider">Corporate Treasury</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="bg-primary text-on-primary rounded-xl flex items-center gap-3 px-4 py-3 mx-4 active-scale" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<a class="text-secondary-fixed-dim hover:text-on-primary flex items-center gap-3 px-4 py-3 mx-4 transition-colors hover:bg-on-primary-fixed-variant rounded-xl active-scale" href="admin_txt.html">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md">Transactions</span>
+</a>
+<a class="text-secondary-fixed-dim hover:text-on-primary flex items-center gap-3 px-4 py-3 mx-4 transition-colors hover:bg-on-primary-fixed-variant rounded-xl active-scale" href="admin_staff.html">
+<span class="material-symbols-outlined">badge</span>
+<span class="font-label-md">Staff Management</span>
+</a>
+<a class="text-secondary-fixed-dim hover:text-on-primary flex items-center gap-3 px-4 py-3 mx-4 transition-colors hover:bg-on-primary-fixed-variant rounded-xl active-scale" href="admin_users.html">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md">User Management</span>
+</a>
+<a class="text-secondary-fixed-dim hover:text-on-primary flex items-center gap-3 px-4 py-3 mx-4 transition-colors hover:bg-on-primary-fixed-variant rounded-xl active-scale" href="admin-audit.html">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md">Audit Logs</span>
+</a>
+<a class="text-secondary-fixed-dim hover:text-on-primary flex items-center gap-3 px-4 py-3 mx-4 transition-colors hover:bg-on-primary-fixed-variant rounded-xl active-scale" href="admin_help.html">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md">Help Center</span>
+</a>
+</nav>
+<div class="mt-auto py-4 border-on-primary-fixed-variant/20"><div class="mx-6 border-t border-on-primary-fixed-variant/20 mb-4"></div><div class="px-4 pb-6"><button class="w-full flex items-center gap-3 px-4 py-3 text-secondary-fixed-dim hover:text-white hover:bg-error/20 rounded-xl transition-all duration-200 active-scale group"><span class="material-symbols-outlined group-hover:text-error">logout</span><span class="font-label-md">Logout</span></button></div></div>
+</aside>
+<!-- Main Content Shell -->
+<main class="ml-[280px] min-h-screen">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full h-16 px-10 sticky top-0 bg-surface border-b border-outline-variant shadow-sm z-10">
+<div class="flex items-center flex-1 max-w-lg">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg pl-10 pr-4 py-2 text-body-md focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none" placeholder="Search transactions, accounts, or audit logs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-secondary-container hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-secondary-container hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md hover:bg-primary-container transition-all active-scale">
+<span class="material-symbols-outlined text-[20px]">admin_panel_settings</span>
+                    Admin Profile
+                </button>
+</div>
+</header>
+<!-- Dashboard Canvas -->
+<div class="px-10 py-8 max-w-[1440px] mx-auto">
+<!-- Content Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+<div>
+<h2 class="font-headline-lg text-primary">Dashboard Overview</h2>
+<p class="font-body-md text-secondary">Real-time performance metrics and institutional health indicators.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center bg-white border border-outline-variant rounded-lg px-3 py-2 text-label-md gap-2">
+<span class="material-symbols-outlined text-[20px] text-outline">calendar_today</span>
+<span>Oct 12, 2023 - Oct 19, 2023</span>
+</div>
+<button class="bg-white border border-outline-variant text-primary px-4 py-2 rounded-lg font-label-md flex items-center gap-2 hover:bg-surface-container-low transition-all active-scale">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                        Download Report
+                    </button>
+</div>
+</div>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-white p-6 rounded-xl border border-outline-variant card-shadow flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary bg-surface-container p-2 rounded-lg">account_balance_wallet</span>
+<span class="text-green-600 font-label-sm flex items-center gap-1">+2.4% <span class="material-symbols-outlined text-[14px]">trending_up</span></span>
+</div>
+<div>
+<p class="font-label-sm text-secondary uppercase tracking-wider mb-1">Total Assets Under Management</p>
+<h3 class="font-headline-lg text-primary">$14.2B</h3>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant card-shadow flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary bg-surface-container p-2 rounded-lg">corporate_fare</span>
+<span class="text-green-600 font-label-sm flex items-center gap-1">+12% <span class="material-symbols-outlined text-[14px]">trending_up</span></span>
+</div>
+<div>
+<p class="font-label-sm text-secondary uppercase tracking-wider mb-1">Active Corporate Accounts</p>
+<h3 class="font-headline-lg text-primary">12,842</h3>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant card-shadow flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-error bg-error-container/30 p-2 rounded-lg">pending_actions</span>
+<span class="text-error font-label-sm">Action Required</span>
+</div>
+<div>
+<p class="font-label-sm text-secondary uppercase tracking-wider mb-1">Pending Approvals</p>
+<h3 class="font-headline-lg text-primary">42</h3>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant card-shadow flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary bg-surface-container p-2 rounded-lg">security</span>
+<span class="text-green-600 font-label-sm">Operational</span>
+</div>
+<div>
+<p class="font-label-sm text-secondary uppercase tracking-wider mb-1">System Health</p>
+<h3 class="font-headline-lg text-primary">99.9%</h3>
+</div>
+</div>
+</div>
+<!-- Middle Row: Chart & Activity Table -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+<!-- Transaction Volume Chart -->
+<div class="lg:col-span-2 bg-white rounded-xl border border-outline-variant card-shadow">
+<div class="flex items-center justify-between px-6 py-4 border-b border-surface-container">
+<h4 class="font-headline-md text-primary">Transaction Volume</h4>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-primary text-white rounded-md text-label-sm">7D</button>
+<button class="px-3 py-1 bg-surface-container text-secondary rounded-md text-label-sm hover:bg-surface-container-high transition-colors">30D</button>
+</div>
+</div>
+<div class="p-6">
+<div class="h-[300px] w-full flex items-end gap-3 px-2">
+<!-- Simple representative bar chart -->
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-[60%] relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-white px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">Oct 12</div>
+</div>
+<div class="flex-1 bg-primary rounded-t-lg h-[85%] relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-white px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">Oct 13</div>
+</div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-[45%] relative group"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-[70%] relative group"></div>
+<div class="flex-1 bg-primary rounded-t-lg h-[95%] relative group"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-lg h-[40%] relative group"></div>
+<div class="flex-1 bg-primary rounded-t-lg h-[75%] relative group"></div>
+</div>
+<div class="flex justify-between mt-4 text-label-sm text-secondary">
+<span>Oct 12</span><span>Oct 13</span><span>Oct 14</span><span>Oct 15</span><span>Oct 16</span><span>Oct 17</span><span>Oct 18</span>
+</div>
+</div>
+</div>
+<!-- Flagged Activities -->
+<div class="bg-white rounded-xl border border-outline-variant card-shadow overflow-hidden">
+<div class="px-6 py-4 border-b border-surface-container flex items-center justify-between">
+<h4 class="font-headline-md text-primary">Recent Flagged</h4>
+<a class="text-primary font-label-sm hover:underline" href="#">View All</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-subtle text-label-sm text-secondary uppercase tracking-widest border-b border-outline-variant">
+<tr>
+<th class="px-6 py-3">User</th>
+<th class="px-6 py-3">Amount</th>
+<th class="px-6 py-3">Risk</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 font-body-md text-primary">Global Logis...</td>
+<td class="px-6 py-4 font-label-md">$450,000</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-error-container/40 text-error rounded-md text-[10px] font-bold">HIGH</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 font-body-md text-primary">TechNova Inc.</td>
+<td class="px-6 py-4 font-label-md">$12,400</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-md text-[10px] font-bold">MED</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 font-body-md text-primary">Z-Corp Int.</td>
+<td class="px-6 py-4 font-label-md">$1.2M</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-error-container/40 text-error rounded-md text-[10px] font-bold">HIGH</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 font-body-md text-primary">BlueWave Ltd.</td>
+<td class="px-6 py-4 font-label-md">$8,250</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-md text-[10px] font-bold">MED</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Bottom Row: Quick Actions & Activity Feed -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Quick Actions -->
+<div class="bg-white rounded-xl border border-outline-variant card-shadow p-6">
+<h4 class="font-headline-md text-primary mb-6">Quick Administrative Actions</h4>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-start p-4 rounded-xl border border-outline-variant hover:border-primary hover:bg-surface-container-low transition-all group">
+<span class="material-symbols-outlined text-primary mb-2 group-hover:scale-110 transition-transform">approval_delegation</span>
+<span class="font-label-md text-primary">Authorize Batch</span>
+<span class="text-label-sm text-secondary mt-1">Review bulk transfers</span>
+</button>
+<button class="flex flex-col items-start p-4 rounded-xl border border-outline-variant hover:border-primary hover:bg-surface-container-low transition-all group">
+<span class="material-symbols-outlined text-primary mb-2 group-hover:scale-110 transition-transform">manage_accounts</span>
+<span class="font-label-md text-primary">Manage Roles</span>
+<span class="text-label-sm text-secondary mt-1">Edit access controls</span>
+</button>
+<button class="flex flex-col items-start p-4 rounded-xl border border-outline-variant hover:border-primary hover:bg-surface-container-low transition-all group">
+<span class="material-symbols-outlined text-primary mb-2 group-hover:scale-110 transition-transform">history</span>
+<span class="font-label-md text-primary">View Audit Logs</span>
+<span class="text-label-sm text-secondary mt-1">Full compliance history</span>
+</button>
+<button class="flex flex-col items-start p-4 rounded-xl border border-outline-variant hover:border-primary hover:bg-surface-container-low transition-all group">
+<span class="material-symbols-outlined text-primary mb-2 group-hover:scale-110 transition-transform">settings_input_component</span>
+<span class="font-label-md text-primary">System Settings</span>
+<span class="text-label-sm text-secondary mt-1">Core bank parameters</span>
+</button>
+</div>
+</div>
+<!-- Recent Staff Activity -->
+<div class="bg-white rounded-xl border border-outline-variant card-shadow p-6">
+<div class="flex items-center justify-between mb-6">
+<h4 class="font-headline-md text-primary">Recent Staff Activity</h4>
+<span class="text-label-sm text-secondary">Updated 2m ago</span>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-2 h-2 mt-2 bg-green-500 rounded-full shrink-0"></div>
+<div>
+<p class="text-body-md text-primary"><span class="font-label-md">Sarah Jenkins</span> approved a $2.4M treasury transfer for <span class="font-label-md">Apex Assets LLC</span>.</p>
+<p class="text-label-sm text-secondary mt-1">14:22 PM • Treasury Control</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-2 h-2 mt-2 bg-primary rounded-full shrink-0"></div>
+<div>
+<p class="text-body-md text-primary"><span class="font-label-md">Michael Chen</span> updated the risk profile for 14 offshore entities.</p>
+<p class="text-label-sm text-secondary mt-1">13:45 PM • Compliance</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-2 h-2 mt-2 bg-primary rounded-full shrink-0"></div>
+<div>
+<p class="text-body-md text-primary"><span class="font-label-md">System</span> generated the Q3 quarterly reconciliation report.</p>
+<p class="text-label-sm text-secondary mt-1">11:30 AM • Automated Task</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-2 h-2 mt-2 bg-error rounded-full shrink-0"></div>
+<div>
+<p class="text-body-md text-primary"><span class="font-label-md">Robert Fox</span> flagged an anomalous login attempt from a new location (London, UK).</p>
+<p class="text-label-sm text-secondary mt-1">09:12 AM • Security</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB Suppression Rule Active: No FAB on Dashboard screens as per mandate -->
+</body></html>

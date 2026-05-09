@@ -42,7 +42,7 @@ function initUI(user) {
 
     // بیلنس اپ ڈیٹ (PKR فارمیٹ)
     if (balanceField && user.balance !== undefined) {
-        balanceField.textContent = `PKR ${parseFloat(user.balance).toLocaleString('en-US', { 
+        balanceField.textContent = `${parseFloat(user.balance).toLocaleString('en-US', { 
             minimumFractionDigits: 2 
         })}`;
     }
