@@ -170,8 +170,8 @@
 </button>
 <div class="flex items-center gap-3 ml-4">
 <div class="text-right">
-<p class="font-label-md text-on-surface">Welcome, Admin</p>
-<p class="font-label-sm text-secondary">Super Admin Access</p>
+<p id="adminProfileName" class="font-label-md text-on-surface">Welcome, Admin</p>
+<p id="adminProfileRole" class="font-label-sm text-secondary">Super Admin Access</p>
 </div>
 <img alt="Admin Profile Picture" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a mature corporate executive man with short hair and a confident expression, wearing a tailored charcoal suit and a clean white shirt. The lighting is soft and studio-quality against a neutral, high-key background, reflecting a modern and authoritative banking professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw3h4-s4PE6cyt_lNI-AywrqvwVWgSVorSbBloSOKRuFjvLpFFk1PDyPE4sQ-9yICCcEnR2ve6_CZcQVgD2uwL--yw7ObqAVdaHkBWyQ1imU9ZnZFwSTS2t6e8bBTv5q-wVw_1bYjSK2DGx56KenCGOYE5QQgmRtZ5ysRtwYOruY2EFbW8qpg_ABuaubiY-KfvkPXkZpVMSey-pohHESrkGGbL_8H3dNIlKbufWY32HjDVOfJvPWyGYJz84JRwn_rqKED-urin"/>
 </div>
@@ -181,46 +181,19 @@
 <main class="ml-[280px] pt-16 p-margin-desktop min-h-screen">
 <div class="max-w-[1440px] mx-auto space-y-8">
 <!-- Summary Bento Grid -->
-<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Total Staff -->
-<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
-<div class="flex justify-between items-start mb-4">
-<div class="p-3 bg-primary-fixed text-on-primary-fixed rounded-lg">
-<span class="material-symbols-outlined" data-icon="badge">badge</span>
-</div>
-<span class="text-green-600 font-label-md flex items-center gap-1">
-<span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span>
-                            +12%
-                        </span>
-</div>
-<p class="text-secondary font-label-md">Total Staff</p>
-<h2 class="text-headline-lg font-headline-lg text-on-surface">1,284</h2>
-<p class="text-on-surface-variant text-label-sm mt-2">Active across all global regions</p>
-</div>
-<!-- Active Departments -->
-<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
-<div class="flex justify-between items-start mb-4">
-<div class="p-3 bg-secondary-fixed text-on-secondary-fixed rounded-lg">
-<span class="material-symbols-outlined" data-icon="domain">domain</span>
-</div>
-<span class="text-on-surface-variant font-label-md">Stable</span>
-</div>
-<p class="text-secondary font-label-md">Active Departments</p>
-<h2 class="text-headline-lg font-headline-lg text-on-surface">18</h2>
-<p class="text-on-surface-variant text-label-sm mt-2">3 new departments added this quarter</p>
-</div>
-<!-- Open Positions -->
-<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
-<div class="flex justify-between items-start mb-4">
-<div class="p-3 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg">
-<span class="material-symbols-outlined" data-icon="work_history">work_history</span>
-</div>
-<button class="bg-primary text-on-primary text-label-sm px-3 py-1 rounded-full hover:opacity-90 transition-all">Add New</button>
-</div>
-<p class="text-secondary font-label-md">Open Positions</p>
-<h2 class="text-headline-lg font-headline-lg text-on-surface">42</h2>
-<p class="text-on-surface-variant text-label-sm mt-2">8 priority hires in compliance</p>
-</div>
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant h-full">
+    <div class="px-6 py-5 bg-surface-container-low shadow-[0px_4px_20px_rgba(15,23,42,0.05)] flex flex-col justify-between h-full min-h-[120px]">
+        
+        <div>
+            <p class="text-secondary font-label-md tracking-wide">Total Staff</p>
+        </div>
+
+        <div class="mt-2">
+            <h2 id="totalStaffCountMain" class="text-[32px] font-headline-lg font-bold text-on-surface leading-none tracking-tight">1,284</h2>
+            <p class="text-on-surface-variant text-label-sm mt-1.5 opacity-90">Active across all global regions</p>
+        </div>
+
+    </div>
 </section>
 <!-- Table Section -->
 <section class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)] overflow-hidden">
@@ -234,7 +207,7 @@
 <span class="material-symbols-outlined text-[20px]" data-icon="filter_list">filter_list</span>
                             Filter
                         </button>
-<button class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-md font-label-md hover:opacity-90 transition-all active:scale-[0.98]">
+<button onclick="openAddStaffModal()" class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-md font-label-md hover:opacity-90 transition-all active:scale-[0.98]">
 <span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
                             Add Staff Member
                         </button>
@@ -252,7 +225,7 @@
 <th class="px-6 py-4 font-label-sm text-secondary uppercase tracking-wider text-right">Actions</th>
 </tr>
 </thead>
-<tbody class="divide-y divide-outline-variant">
+<tbody id="staffTableBody" class="divide-y divide-outline-variant">
 <!-- Staff Member 1 -->
 <tr class="hover:bg-surface-container-low transition-colors group">
 <td class="px-6 py-4">
@@ -412,7 +385,7 @@
 </table>
 </div>
 <div class="px-6 py-4 bg-surface-container-low border-t border-outline-variant flex items-center justify-between">
-<p class="text-label-sm text-secondary">Showing 5 of 1,284 staff members</p>
+<p id="totalStaffCount" class="text-label-sm text-secondary">Showing 5 of 1,284 staff members</p>
 <div class="flex gap-2">
 <button class="p-2 border border-outline-variant rounded hover:bg-surface-container transition-all">
 <span class="material-symbols-outlined text-[20px]" data-icon="chevron_left">chevron_left</span>
@@ -427,5 +400,63 @@
 </div>
 </section>
 </div>
+
+<div id="addStaffModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[100] backdrop-blur-sm p-4">
+    <div class="bg-surface-container-lowest w-full max-w-md rounded-2xl shadow-2xl border border-outline-variant overflow-hidden transform transition-all scale-95 opacity-0 duration-300" id="modalContainer">
+        
+        <div class="px-6 py-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+            <h3 class="font-headline-sm text-on-surface font-semibold text-lg">Add New Staff Member</h3>
+            <button onclick="closeAddStaffModal()" class="text-on-surface-variant hover:bg-surface-container rounded-full p-1.5 transition-colors">
+                <span class="material-symbols-outlined block">close</span>
+            </button>
+        </div>
+
+        <form id="addStaffForm" onsubmit="submitStaffForm(event)" method="POST" class="p-6 space-y-4">
+            <div>
+                <label class="block font-label-md text-on-surface mb-1.5 font-medium">Full Name</label>
+                <input type="text" id="staffFullName" name="full_name" required placeholder="e.g. Muhammad Saad" 
+                    class="w-full px-4 py-2.5 bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all">
+            </div>
+
+            <div>
+                <label class="block font-label-md text-on-surface mb-1.5 font-medium">Email Address</label>
+                <input type="email" id="staffEmail" name="email" required placeholder="saad@apex.com" 
+                    class="w-full px-4 py-2.5 bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all">
+            </div>
+
+            <div>
+                <label class="block font-label-md text-on-surface mb-1.5 font-medium">Role / Assignment</label>
+                <select id="staffRole" name="role" class="w-full px-4 py-2.5 bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all">
+                    <option value="support">Support</option>
+                    <option value="manager">Manager</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block font-label-md text-on-surface mb-1.5 font-medium">Initial Password</label>
+                <input type="password" id="staffPassword" name="password" required placeholder="••••••••" 
+                    class="w-full px-4 py-2.5 bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all">
+            </div>
+
+            <div class="pt-4 flex gap-3">
+                <button type="button" onclick="closeAddStaffModal()" 
+                    class="flex-1 px-4 py-2.5 border border-outline-variant rounded-lg font-label-md text-on-surface hover:bg-surface-container transition-all">
+                    Cancel
+                </button>
+                <button type="submit" 
+                    class="flex-1 px-4 py-2.5 bg-primary text-on-primary rounded-lg font-label-md hover:opacity-90 shadow-sm transition-all flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-[18px]">save</span>
+                    Save Member
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
 </main>
+<script src="../assets/js/admin/admin_global.js"></script>
+<script src="../assets/js/admin/staff_controller.js"></script>
+
 </body></html>
