@@ -119,441 +119,177 @@
     </script>
 </head>
 <body class="bg-surface font-body-md text-on-surface">
-<!-- SideNavBar (Authority Source: JSON & Style Guidance) -->
 <aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-lowest border-r border-outline-variant flex flex-col p-4 overflow-y-auto z-50">
-<div class="mb-10 px-2 flex items-center gap-3">
-<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">account_balance</span>
-</div>
-<div>
-<h1 class="font-display-brand text-display-brand text-primary">Apex Bank</h1>
-<p class="font-label-sm text-label-sm text-on-surface-variant">Corporate Admin</p>
-</div>
-</div>
-<nav class="flex-1 space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-secondary hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="admin_dash.html">
-<span class="material-symbols-outlined">dashboard</span>
-<span>Dashboard</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md bg-primary text-on-primary shadow-md active:scale-[0.98] transition-all duration-200" href="admin_txt.html">
-<span class="material-symbols-outlined">sync_alt</span>
-<span>Transactions</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-secondary hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="admin_staff.html">
-<span class="material-symbols-outlined">manage_accounts</span>
-<span>Staff Management</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-secondary hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="admin_users.html">
-<span class="material-symbols-outlined">group</span>
-<span>User Management</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-secondary hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="admin-audit.html">
-<span class="material-symbols-outlined">history</span>
-<span>Audit Logs</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-secondary hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="admin_help.html">
-<span class="material-symbols-outlined">help</span>
-<span>Help Center</span>
-</a>
-</nav>
-<div class="mt-auto pt-4 border-t border-outline-variant">
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-error hover:bg-error-container transition-colors duration-200 active:scale-[0.98]" href="#">
-<span class="material-symbols-outlined">logout</span>
-<span>Logout</span>
-</a>
+    <div class="mb-10 px-2 flex items-center gap-3">
+        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+        </div>
+        <div>
+            <h1 class="font-display-brand text-display-brand text-primary">Apex Bank</h1>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">Corporate Admin</p>
+        </div>
+    </div>
+    <nav class="flex-1 space-y-1">
+        <a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-secondary hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="admin_dash.html">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span>Dashboard</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md bg-primary text-on-primary shadow-md active:scale-[0.98] transition-all duration-200" href="admin_txt.html">
+            <span class="material-symbols-outlined">sync_alt</span>
+            <span>Transactions</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-secondary hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="admin_staff.html">
+            <span class="material-symbols-outlined">manage_accounts</span>
+            <span>Staff Management</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-secondary hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="admin_users.html">
+            <span class="material-symbols-outlined">group</span>
+            <span>User Management</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-secondary hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="admin-audit.html">
+            <span class="material-symbols-outlined">history</span>
+            <span>Audit Logs</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-secondary hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.98]" href="admin_help.html">
+            <span class="material-symbols-outlined">help</span>
+            <span>Help Center</span>
+        </a>
+    </nav>
+  <div class="p-4 border-t border-outline-variant">
+    <a href="javascript:void(0);" onclick="handleAdminLogout(event)" class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all">
+        <span class="material-symbols-outlined" data-icon="logout">logout</span>
+        <span class="font-label-md">Logout</span>
+    </a>
 </div>
 </aside>
-<!-- TopNavBar (Authority Source: JSON & Style Guidance) -->
+
 <header class="fixed top-0 right-0 h-16 bg-surface-bright border-b border-outline-variant flex justify-between items-center px-10 ml-[280px] w-[calc(100%-280px)] z-40">
-<div class="flex items-center gap-4 flex-1">
-<div class="relative w-full max-w-md">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
-<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search transactions, accounts..." type="text"/>
+    <div class="flex items-center gap-4 flex-1">
+        <div class="relative w-full max-w-md">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+            <input id="txSearchInput" class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search transactions, accounts..." type="text"/>
+        </div>
+    </div>
+    <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2">
+            <button class="p-2 text-on-surface hover:bg-surface-container rounded-full transition-transform active:scale-95">
+                <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <button class="p-2 text-on-surface hover:bg-surface-container rounded-full transition-transform active:scale-95">
+                <span class="material-symbols-outlined">settings</span>
+            </button>
+        </div>
+        <div class="h-8 w-[1px] bg-outline-variant"></div>
+        <div class="truncate max-w-[120px]">
+    <p class="font-label-md text-slate-900 font-bold truncate leading-tight" id="adminProfileName">Loading...</p>
+    
+    <p class="text-[10px] text-slate-500 font-medium tracking-wide lowercase mt-0.5 truncate" id="adminProfileRole">Admin</p>
 </div>
-</div>
-<div class="flex items-center gap-6">
-<div class="flex items-center gap-2">
-<button class="p-2 text-on-surface hover:bg-surface-container rounded-full transition-transform active:scale-95">
-<span class="material-symbols-outlined">notifications</span>
-</button>
-<button class="p-2 text-on-surface hover:bg-surface-container rounded-full transition-transform active:scale-95">
-<span class="material-symbols-outlined">settings</span>
-</button>
-</div>
-<div class="h-8 w-[1px] bg-outline-variant"></div>
-<div class="flex items-center gap-3">
-<span class="text-label-md font-label-md">Welcome, Admin</span>
-<img class="w-9 h-9 rounded-full object-cover border border-outline-variant shadow-sm" data-alt="A professional headshot of a corporate bank administrator in a sharp navy suit, looking confident and approachable. The lighting is bright and clean with a soft-focus background of a modern office environment, reflecting high-stakes financial expertise and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJXMQD-nB_v2VlmJg3fLH5TD_owMrL0K1tUAHaKOs0c9yQsq5MjJNKKB8hThsFnEM69WgRgp9BChdApRV733OJnmKhCJnmb7HxsZ-SeAQOoim7IHgH9S9ClxRUcyDXfUrWSgqF8KIW8nDR9qNhQiDkhdEkyXMEHsjJfLE1QH9glrxa6osQjSjSFeChsH1vStPR5yJFUDxVHe085dyrgemwIdmHIsxfEKFV-N4O-L7ZH5spOM83WYtLnuOvJWv9SlIau3ZnEBhg"/>
-</div>
-</div>
+    </div>
 </header>
-<!-- Main Content Area -->
+
 <main class="ml-[280px] pt-16 min-h-screen">
-<div class="max-w-[1440px] mx-auto p-10 space-y-10">
-<!-- Page Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-<div>
-<h2 class="font-headline-lg text-headline-lg text-primary">Transactions</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">Monitor and manage institutional financial flows.</p>
-</div>
-<div class="flex items-center gap-3">
-<button class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-lowest border border-outline-variant text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-container transition-all active:scale-[0.98] shadow-sm">
-<span class="material-symbols-outlined text-[20px]">file_download</span>
-                        Export Reports
+    <div class="max-w-[1440px] mx-auto p-10 space-y-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+                <h2 class="font-headline-lg text-headline-lg text-primary">Transactions</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mt-1">Monitor and manage institutional financial flows.</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <button class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-lowest border border-outline-variant text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-container transition-all active:scale-[0.98] shadow-sm">
+                    <span class="material-symbols-outlined text-[20px]">file_download</span> Export Reports
+                </button>
+                <button class="flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:opacity-90 transition-all active:scale-[0.98] shadow-md">
+                    <span class="material-symbols-outlined text-[20px]">add</span> New Transaction
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-2 bg-surface-container rounded-lg"><span class="material-symbols-outlined text-primary">analytics</span></div>
+                    <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">+12.4%</span>
+                </div>
+                <p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Total Volume</p>
+                <h3 id="statTotalVolume" class="text-[28px] font-bold text-primary mt-1">...</h3>
+            </div>
+            <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-2 bg-surface-container rounded-lg"><span class="material-symbols-outlined text-primary">pending_actions</span></div>
+                    <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded">Action Required</span>
+                </div>
+                <p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Pending Authorizations</p>
+                <h3 id="statPendingCount" class="text-[28px] font-bold text-primary mt-1">...</h3>
+            </div>
+            <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-2 bg-surface-container rounded-lg"><span class="material-symbols-outlined text-primary">verified</span></div>
+                    <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">Stable</span>
+                </div>
+                <p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Success Rate</p>
+                <h3 id="statSuccessRate" class="text-[28px] font-bold text-primary mt-1">...</h3>
+            </div>
+            <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-2 bg-surface-container rounded-lg"><span class="material-symbols-outlined text-error">report_problem</span></div>
+                    <span class="text-xs font-bold text-error bg-error-container/30 px-2 py-1 rounded">Failures</span>
+                </div>
+                <p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Flagged Transactions</p>
+                <h3 id="statFlaggedCount" class="text-[28px] font-bold text-primary mt-1">...</h3>
+            </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)] overflow-hidden">
+            <div class="p-6 border-b border-surface-subtle flex flex-col lg:flex-row gap-4 items-center justify-between">
+                <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
+                    <div class="relative min-w-[300px]">
+                        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+                        <input id="txTableSearch" class="w-full pl-10 pr-4 py-2 bg-white border border-outline-variant rounded-lg text-body-md focus:ring-1 focus:ring-primary focus:border-primary" placeholder="Search by Account Number or ID..." type="text"/>
+                    </div>
+                    <div class="relative">
+                        <select id="txStatusFilter" class="pl-4 pr-10 py-2 bg-white border border-outline-variant rounded-lg text-body-md focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
+                            <option value="all">Status: All</option>
+                            <option value="completed">Completed / Success</option>
+                            <option value="pending">Pending</option>
+                            <option value="failed">Failed</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="btnRefreshTx" class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant transition-colors">
+                        <span class="material-symbols-outlined">refresh</span>
                     </button>
-<button class="flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:opacity-90 transition-all active:scale-[0.98] shadow-md">
-<span class="material-symbols-outlined text-[20px]">add</span>
-                        New Transaction
-                    </button>
-</div>
-</div>
-<!-- KPI Row (Bento Grid Style) -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- KPI 1 -->
-<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
-<div class="flex justify-between items-start mb-4">
-<div class="p-2 bg-surface-container rounded-lg">
-<span class="material-symbols-outlined text-primary">analytics</span>
-</div>
-<span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">+12.4%</span>
-</div>
-<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Total Volume (24h)</p>
-<h3 class="text-[28px] font-bold text-primary mt-1">$4.28B</h3>
-</div>
-<!-- KPI 2 -->
-<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
-<div class="flex justify-between items-start mb-4">
-<div class="p-2 bg-surface-container rounded-lg">
-<span class="material-symbols-outlined text-primary">pending_actions</span>
-</div>
-<span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded">Action Required</span>
-</div>
-<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Pending Authorizations</p>
-<h3 class="text-[28px] font-bold text-primary mt-1">142</h3>
-</div>
-<!-- KPI 3 -->
-<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
-<div class="flex justify-between items-start mb-4">
-<div class="p-2 bg-surface-container rounded-lg">
-<span class="material-symbols-outlined text-primary">verified</span>
-</div>
-<span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">Stable</span>
-</div>
-<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Success Rate</p>
-<h3 class="text-[28px] font-bold text-primary mt-1">99.98%</h3>
-</div>
-<!-- KPI 4 -->
-<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
-<div class="flex justify-between items-start mb-4">
-<div class="p-2 bg-surface-container rounded-lg">
-<span class="material-symbols-outlined text-error">report_problem</span>
-</div>
-<span class="text-xs font-bold text-error bg-error-container/30 px-2 py-1 rounded">-3%</span>
-</div>
-<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Flagged Transactions</p>
-<h3 class="text-[28px] font-bold text-primary mt-1">12</h3>
-</div>
-</div>
-<!-- Transaction Ledger Table Container -->
-<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)] overflow-hidden">
-<!-- Filters Header -->
-<div class="p-6 border-b border-surface-subtle flex flex-col lg:flex-row gap-4 items-center justify-between">
-<div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
-<div class="relative min-w-[300px]">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
-<input class="w-full pl-10 pr-4 py-2 bg-white border border-outline-variant rounded-lg text-body-md focus:ring-1 focus:ring-primary focus:border-primary" placeholder="Search by Entity or ID..." type="text"/>
-</div>
-<div class="relative">
-<select class="pl-4 pr-10 py-2 bg-white border border-outline-variant rounded-lg text-body-md focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
-<option>Status: All</option>
-<option>Success</option>
-<option>Pending</option>
-<option>Failed</option>
-</select>
-<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
-</div>
-<div class="relative">
-<button class="flex items-center gap-2 px-4 py-2 bg-white border border-outline-variant rounded-lg text-body-md hover:bg-surface-container transition-all">
-<span class="material-symbols-outlined text-[18px]">calendar_today</span>
-<span>May 01 - May 24, 2024</span>
-</button>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant transition-colors">
-<span class="material-symbols-outlined">filter_list</span>
-</button>
-<button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant transition-colors">
-<span class="material-symbols-outlined">refresh</span>
-</button>
-</div>
-</div>
-<!-- Table Content -->
-<div class="overflow-x-auto">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="bg-surface-container-low">
-<th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Date</th>
-<th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Transaction ID</th>
-<th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Entity</th>
-<th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Type</th>
-<th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider text-right">Amount</th>
-<th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Status</th>
-<th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider"></th>
-</tr>
-</thead>
-<tbody class="divide-y divide-outline-variant/30">
-<!-- Row 1 -->
-<tr class="hover:bg-surface-container-low transition-colors group">
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="text-body-md font-medium text-primary">May 24, 2024</div>
-<div class="text-[11px] text-on-surface-variant">09:14 AM EST</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap font-mono text-xs text-on-surface-variant">TXN-882190-QW</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold text-xs">GS</div>
-<div>
-<div class="text-body-md font-medium text-primary">Goldman Sachs Group</div>
-<div class="text-[11px] text-on-surface-variant">Institutional Clearing</div>
-</div>
-</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container text-[11px] font-bold uppercase tracking-tight">Wire Transfer</span>
-</td>
-<td class="px-6 py-5 whitespace-nowrap text-right">
-<div class="text-body-md font-bold text-green-600">+$24,500,000.00</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="flex items-center gap-1.5 text-green-600">
-<span class="w-2 h-2 rounded-full bg-green-600"></span>
-<span class="text-body-md font-medium">Success</span>
-</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap text-right">
-<button class="opacity-0 group-hover:opacity-100 p-1.5 hover:bg-surface-container-high rounded transition-all">
-<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
-</button>
-</td>
-</tr>
-<!-- Row 2 -->
-<tr class="hover:bg-surface-container-low transition-colors group">
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="text-body-md font-medium text-primary">May 24, 2024</div>
-<div class="text-[11px] text-on-surface-variant">08:50 AM EST</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap font-mono text-xs text-on-surface-variant">TXN-104882-PL</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold text-xs">AM</div>
-<div>
-<div class="text-body-md font-medium text-primary">Amazon Corp.</div>
-<div class="text-[11px] text-on-surface-variant">Vendor Disbursement</div>
-</div>
-</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container text-[11px] font-bold uppercase tracking-tight">Bulk ACH</span>
-</td>
-<td class="px-6 py-5 whitespace-nowrap text-right">
-<div class="text-body-md font-bold text-primary">-$112,840.50</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="flex items-center gap-1.5 text-amber-600">
-<span class="w-2 h-2 rounded-full bg-amber-600"></span>
-<span class="text-body-md font-medium">Pending</span>
-</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap text-right">
-<button class="opacity-0 group-hover:opacity-100 p-1.5 hover:bg-surface-container-high rounded transition-all">
-<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
-</button>
-</td>
-</tr>
-<!-- Row 3 (Zebra stripe alternative via hover) -->
-<tr class="bg-surface-container-low/30 hover:bg-surface-container-low transition-colors group">
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="text-body-md font-medium text-primary">May 23, 2024</div>
-<div class="text-[11px] text-on-surface-variant">11:32 PM EST</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap font-mono text-xs text-on-surface-variant">TXN-773124-KL</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-error-container/30 flex items-center justify-center text-error font-bold text-xs">UK</div>
-<div>
-<div class="text-body-md font-medium text-primary">Unknown Entity</div>
-<div class="text-[11px] text-error">High-risk Region</div>
-</div>
-</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container text-[11px] font-bold uppercase tracking-tight">SWIFT</span>
-</td>
-<td class="px-6 py-5 whitespace-nowrap text-right">
-<div class="text-body-md font-bold text-error">-$5,000,000.00</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="flex items-center gap-1.5 text-error">
-<span class="w-2 h-2 rounded-full bg-error"></span>
-<span class="text-body-md font-medium">Flagged</span>
-</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap text-right">
-<button class="opacity-0 group-hover:opacity-100 p-1.5 hover:bg-surface-container-high rounded transition-all">
-<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
-</button>
-</td>
-</tr>
-<!-- Row 4 -->
-<tr class="hover:bg-surface-container-low transition-colors group">
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="text-body-md font-medium text-primary">May 23, 2024</div>
-<div class="text-[11px] text-on-surface-variant">04:15 PM EST</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap font-mono text-xs text-on-surface-variant">TXN-990145-MN</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold text-xs">MS</div>
-<div>
-<div class="text-body-md font-medium text-primary">Microsoft Treasury</div>
-<div class="text-[11px] text-on-surface-variant">Inter-Account</div>
-</div>
-</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container text-[11px] font-bold uppercase tracking-tight">Internal</span>
-</td>
-<td class="px-6 py-5 whitespace-nowrap text-right">
-<div class="text-body-md font-bold text-green-600">+$120,000,000.00</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="flex items-center gap-1.5 text-green-600">
-<span class="w-2 h-2 rounded-full bg-green-600"></span>
-<span class="text-body-md font-medium">Success</span>
-</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap text-right">
-<button class="opacity-0 group-hover:opacity-100 p-1.5 hover:bg-surface-container-high rounded transition-all">
-<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
-</button>
-</td>
-</tr>
-<!-- Row 5 -->
-<tr class="hover:bg-surface-container-low transition-colors group">
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="text-body-md font-medium text-primary">May 23, 2024</div>
-<div class="text-[11px] text-on-surface-variant">02:40 PM EST</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap font-mono text-xs text-on-surface-variant">TXN-221094-VB</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold text-xs">JP</div>
-<div>
-<div class="text-body-md font-medium text-primary">JP Morgan Chase</div>
-<div class="text-[11px] text-on-surface-variant">Settlement</div>
-</div>
-</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container text-[11px] font-bold uppercase tracking-tight">Fedwire</span>
-</td>
-<td class="px-6 py-5 whitespace-nowrap text-right">
-<div class="text-body-md font-bold text-primary">-$45,000,000.00</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap">
-<div class="flex items-center gap-1.5 text-on-surface-variant/40">
-<span class="w-2 h-2 rounded-full bg-outline"></span>
-<span class="text-body-md font-medium">Failed</span>
-</div>
-</td>
-<td class="px-6 py-5 whitespace-nowrap text-right">
-<button class="opacity-0 group-hover:opacity-100 p-1.5 hover:bg-surface-container-high rounded transition-all">
-<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
-</button>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<!-- Pagination Footer -->
-<div class="p-6 border-t border-outline-variant flex items-center justify-between">
-<p class="text-label-sm font-label-sm text-on-surface-variant">Showing 1 to 5 of 2,841 transactions</p>
-<div class="flex items-center gap-2">
-<button class="px-3 py-1.5 bg-white border border-outline-variant rounded-md text-label-sm disabled:opacity-50 cursor-not-allowed" disabled="">
-                            Previous
-                        </button>
-<button class="px-3 py-1.5 bg-primary text-on-primary border border-primary rounded-md text-label-sm">
-                            1
-                        </button>
-<button class="px-3 py-1.5 bg-white border border-outline-variant rounded-md text-label-sm hover:bg-surface-container">
-                            2
-                        </button>
-<button class="px-3 py-1.5 bg-white border border-outline-variant rounded-md text-label-sm hover:bg-surface-container">
-                            3
-                        </button>
-<span class="px-2">...</span>
-<button class="px-3 py-1.5 bg-white border border-outline-variant rounded-md text-label-sm hover:bg-surface-container">
-                            568
-                        </button>
-<button class="px-3 py-1.5 bg-white border border-outline-variant rounded-md text-label-sm hover:bg-surface-container">
-                            Next
-                        </button>
-</div>
-</div>
-</div>
-<!-- Contextual Insights / Secondary Content Area -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-<!-- High Value Watchlist -->
-<div class="lg:col-span-2 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant">
-<div class="flex justify-between items-center mb-6">
-<h4 class="font-headline-md text-headline-md text-primary">Institutional Flow Trends</h4>
-<button class="text-primary font-label-md text-label-md hover:underline">View Analytics</button>
-</div>
-<div class="h-[200px] flex items-end gap-3 px-4">
-<!-- Simplified bar chart representation -->
-<div class="flex-1 bg-surface-container-high rounded-t-lg h-[40%] group relative">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">$1.2B</div>
-</div>
-<div class="flex-1 bg-surface-container-high rounded-t-lg h-[65%] group relative">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">$2.1B</div>
-</div>
-<div class="flex-1 bg-primary rounded-t-lg h-[85%] group relative">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">$3.8B</div>
-</div>
-<div class="flex-1 bg-surface-container-high rounded-t-lg h-[55%] group relative">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">$1.8B</div>
-</div>
-<div class="flex-1 bg-surface-container-high rounded-t-lg h-[75%] group relative">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">$2.9B</div>
-</div>
-<div class="flex-1 bg-surface-container-high rounded-t-lg h-[95%] group relative">
-<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">$4.2B</div>
-</div>
-</div>
-<div class="flex justify-between mt-4 px-4 text-label-sm font-label-sm text-on-surface-variant">
-<span>Mon</span>
-<span>Tue</span>
-<span>Wed</span>
-<span>Thu</span>
-<span>Fri</span>
-<span>Sat</span>
-</div>
-</div>
-<!-- Alert Card -->
-<div class="bg-primary text-on-primary p-6 rounded-xl shadow-xl flex flex-col justify-between">
-<div>
-<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mb-4">
-<span class="material-symbols-outlined">security</span>
-</div>
-<h4 class="font-headline-md text-headline-md mb-2">Compliance Alert</h4>
-<p class="text-body-md opacity-80 leading-relaxed">System detected 4 transactions exceeding normal volume thresholds from the London Regional node.</p>
-</div>
-<button class="mt-6 w-full py-3 bg-white text-primary font-label-md text-label-md rounded-lg hover:bg-white/90 transition-all active:scale-[0.98]">
-                        Investigate Now
-                    </button>
-</div>
-</div>
-</div>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-surface-container-low">
+                            <th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Date</th>
+                            <th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Transaction ID</th>
+                            <th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Sender (A/C)</th>
+                            <th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Receiver (A/C)</th>
+                            <th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Type</th>
+                            <th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider text-right">Amount</th>
+                            <th class="px-6 py-4 text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionTableBody" class="divide-y divide-outline-variant/30">
+                        </tbody>
+                </table>
+            </div>
+
+            <div class="p-6 border-t border-outline-variant flex items-center justify-between">
+                <p id="txCounterText" class="text-label-sm font-label-sm text-on-surface-variant">Loading transactions count...</p>
+            </div>
+        </div>
+    </div>
 </main>
-</body></html>
+
+<script src="../assets/js/admin/transaction_controller.js"></script>
+<script src="../assets/js/admin/admin_dashboard.js"></script>
+</body>
+</html>

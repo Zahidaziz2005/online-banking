@@ -147,11 +147,11 @@
 <span class="font-label-md text-label-md">Help Center</span>
 </a>
 </nav>
-<div class="mt-auto pt-4 border-t border-outline-variant">
-<a class="flex items-center gap-3 px-4 py-3 text-error hover:bg-error-container/10 transition-colors duration-200 rounded-xl active:scale-[0.98]" href="#">
-<span class="material-symbols-outlined">logout</span>
-<span class="font-label-md text-label-md">Logout</span>
-</a>
+<div class="p-4 border-t border-outline-variant">
+    <a href="javascript:void(0);" onclick="handleAdminLogout(event)" class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all">
+        <span class="material-symbols-outlined" data-icon="logout">logout</span>
+        <span class="font-label-md">Logout</span>
+    </a>
 </div>
 </aside>
 <!-- Top Bar -->
@@ -171,12 +171,10 @@
 </button>
 <div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
 <div class="flex items-center gap-3">
-<div class="text-right hidden sm:block">
-<p class="font-label-md text-label-md text-on-surface">Admin User</p>
-<p class="text-[10px] text-secondary uppercase font-bold tracking-tighter">Security Lead</p>
-</div>
-<img alt="Admin Profile Picture" class="w-9 h-9 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsuCqS89luNX0YAZ1xmaZcGolS10WJYNLJ1WQoO8LRdmUWJJ3u8ED5llfE16sTprLpVpUgBxwUimx9C2U5LY6kPtbzeFjUNeQy6BMkPhuc_VDhIE4lyvTsNtd742hSc-odQUJq3lfzbVjEGPDtNvwwREL7Z6mv2PtSGXaarKDfw7SqCk-RGzl7EYPp86cyO9AAcoSDEykB8hV_H_rrv9JuP4dlHOi7kxq6eMJiFWd4rEJVYlyRVyIUTWwzCPZM1bsc1uN20qAu"/>
-</div>
+<div class="truncate max-w-[120px]">
+    <p class="font-label-md text-neutral-900 font-bold truncate leading-tight" id="adminProfileName">Loading...</p>
+    
+    <p class="text-[10px] text-neutral-500 font-medium tracking-wide lowercase mt-0.5 truncate" id="adminProfileRole">Admin</p>
 </div>
 </header>
 <!-- Main Content -->
@@ -204,33 +202,32 @@
 <div class="col-span-12 lg:col-span-9 space-y-gutter">
 <!-- Statistics Bar -->
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-gutter">
-<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant flex items-center gap-4 shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
-<div class="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">event_note</span>
-</div>
-<div>
-<p class="text-secondary font-label-sm uppercase">Total Events (24h)</p>
-<p class="text-headline-md font-headline-md">14,208</p>
-</div>
-</div>
-<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant flex items-center gap-4 shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
-<div class="w-12 h-12 rounded-full bg-error/5 flex items-center justify-center text-error">
-<span class="material-symbols-outlined">warning</span>
-</div>
-<div>
-<p class="text-secondary font-label-sm uppercase">Anomalies Detected</p>
-<p class="text-headline-md font-headline-md">12</p>
-</div>
-</div>
-<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant flex items-center gap-4 shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
-<div class="w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center text-on-secondary-container">
-<span class="material-symbols-outlined">security</span>
-</div>
-<div>
-<p class="text-secondary font-label-sm uppercase">Policy Compliance</p>
-<p class="text-headline-md font-headline-md">99.8%</p>
-</div>
-</div>
+    <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant flex items-center gap-4 shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+        <div class="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined">event_note</span>
+        </div>
+        <div>
+            <p class="text-secondary font-label-sm uppercase">Total Events (24h)</p>
+            <p id="statTotalEvents" class="text-headline-md font-headline-md">...</p> </div>
+    </div>
+
+    <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant flex items-center gap-4 shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+        <div class="w-12 h-12 rounded-full bg-error/5 flex items-center justify-center text-error">
+            <span class="material-symbols-outlined">warning</span>
+        </div>
+        <div>
+            <p class="text-secondary font-label-sm uppercase">Anomalies Detected</p>
+            <p id="statAnomalies" class="text-headline-md font-headline-md">...</p> </div>
+    </div>
+
+    <div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant flex items-center gap-4 shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+        <div class="w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center text-on-secondary-container">
+            <span class="material-symbols-outlined">security</span>
+        </div>
+        <div>
+            <p class="text-secondary font-label-sm uppercase">Policy Compliance</p>
+            <p id="statCompliance" class="text-headline-md font-headline-md">...</p> </div>
+    </div>
 </div>
 <!-- Logs Table -->
 <div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)] overflow-hidden">
@@ -252,7 +249,7 @@
 <th class="px-6 py-4 font-label-sm text-secondary uppercase tracking-wider text-right">Status</th>
 </tr>
 </thead>
-<tbody class="divide-y divide-outline-variant/30">
+<tbody id="auditLogTableBody" class="divide-y divide-outline-variant/30">
 <tr class="hover:bg-surface-container-low/50 transition-colors">
 <td class="px-6 py-5">
 <div class="flex flex-col">
@@ -268,82 +265,6 @@
 </td>
 <td class="px-6 py-5 font-body-md text-secondary">192.168.1.105</td>
 <td class="px-6 py-5 font-body-md text-secondary">Oct 24, 2023 · 14:32:11</td>
-<td class="px-6 py-5 text-right">
-<span class="px-2 py-1 bg-green-100 text-green-700 text-[11px] font-bold rounded-full uppercase">Success</span>
-</td>
-</tr>
-<tr class="bg-surface-subtle/30 hover:bg-surface-container-low/50 transition-colors">
-<td class="px-6 py-5">
-<div class="flex flex-col">
-<span class="font-label-md text-on-surface">Authorize Wire Transfer</span>
-<span class="text-label-sm text-secondary">System: API Node #4</span>
-</div>
-</td>
-<td class="px-6 py-5">
-<div class="flex items-center gap-2 text-on-surface">
-<span class="material-symbols-outlined text-[18px]">terminal</span>
-<span class="font-body-md">Linux / Headless Node</span>
-</div>
-</td>
-<td class="px-6 py-5 font-body-md text-secondary">10.0.4.12</td>
-<td class="px-6 py-5 font-body-md text-secondary">Oct 24, 2023 · 14:30:55</td>
-<td class="px-6 py-5 text-right">
-<span class="px-2 py-1 bg-green-100 text-green-700 text-[11px] font-bold rounded-full uppercase">Success</span>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low/50 transition-colors">
-<td class="px-6 py-5">
-<div class="flex flex-col">
-<span class="font-label-md text-on-surface">Login Attempt (Failed)</span>
-<span class="text-label-sm text-secondary">User: guest_4491</span>
-</div>
-</td>
-<td class="px-6 py-5">
-<div class="flex items-center gap-2 text-on-surface">
-<span class="material-symbols-outlined text-[18px]">smartphone</span>
-<span class="font-body-md">iOS / Mobile Safari</span>
-</div>
-</td>
-<td class="px-6 py-5 font-body-md text-secondary">172.58.20.141</td>
-<td class="px-6 py-5 font-body-md text-secondary">Oct 24, 2023 · 14:28:02</td>
-<td class="px-6 py-5 text-right">
-<span class="px-2 py-1 bg-error-container text-on-error-container text-[11px] font-bold rounded-full uppercase">Rejected</span>
-</td>
-</tr>
-<tr class="bg-surface-subtle/30 hover:bg-surface-container-low/50 transition-colors">
-<td class="px-6 py-5">
-<div class="flex flex-col">
-<span class="font-label-md text-on-surface">Modify Staff Permissions</span>
-<span class="text-label-sm text-secondary">Admin: S. Chen</span>
-</div>
-</td>
-<td class="px-6 py-5">
-<div class="flex items-center gap-2 text-on-surface">
-<span class="material-symbols-outlined text-[18px]">desktop_windows</span>
-<span class="font-body-md">Firefox / Windows 11</span>
-</div>
-</td>
-<td class="px-6 py-5 font-body-md text-secondary">192.168.1.122</td>
-<td class="px-6 py-5 font-body-md text-secondary">Oct 24, 2023 · 14:25:40</td>
-<td class="px-6 py-5 text-right">
-<span class="px-2 py-1 bg-green-100 text-green-700 text-[11px] font-bold rounded-full uppercase">Success</span>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low/50 transition-colors">
-<td class="px-6 py-5">
-<div class="flex flex-col">
-<span class="font-label-md text-on-surface">Batch User Archive</span>
-<span class="text-label-sm text-secondary">Admin: J. Miller</span>
-</div>
-</td>
-<td class="px-6 py-5">
-<div class="flex items-center gap-2 text-on-surface">
-<span class="material-symbols-outlined text-[18px]">desktop_windows</span>
-<span class="font-body-md">Chrome / macOS v14.2</span>
-</div>
-</td>
-<td class="px-6 py-5 font-body-md text-secondary">192.168.1.105</td>
-<td class="px-6 py-5 font-body-md text-secondary">Oct 24, 2023 · 14:15:00</td>
 <td class="px-6 py-5 text-right">
 <span class="px-2 py-1 bg-green-100 text-green-700 text-[11px] font-bold rounded-full uppercase">Success</span>
 </td>
@@ -421,4 +342,7 @@
 </div>
 </div>
 </main>
+
+<script src="../assets/js/admin/get_audit_logs.js"></script>
+<script src="../assets/js/admin/admin_dashboard.js">  </script>
 </body></html>

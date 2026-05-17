@@ -145,10 +145,10 @@
 </a>
 </nav>
 <div class="p-4 border-t border-outline-variant">
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all" href="#">
-<span class="material-symbols-outlined" data-icon="logout">logout</span>
-<span class="font-label-md">Logout</span>
-</a>
+    <a href="javascript:void(0);" onclick="handleAdminLogout(event)" class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all">
+        <span class="material-symbols-outlined" data-icon="logout">logout</span>
+        <span class="font-label-md">Logout</span>
+    </a>
 </div>
 </aside>
 <!-- Main Content Area -->
@@ -170,8 +170,10 @@
 </button>
 <div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
 <button class="flex items-center gap-3 pl-2 pr-1 py-1 rounded-full border border-outline-variant hover:bg-surface-container transition-all">
-<span class="font-label-md text-primary pl-2">Admin Profile</span>
-<img alt="Admin Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbkmB2YQ0ECZO4Wgc7JZNxc4wO_dCIlrtvez11J4ya5nlltXa1mqq03dvpxF2NrXreQeOxHOV8jpSfbFWAfCoagOyCUdsDKwukr9gJr9Si__T2iKgn7WATMRhL12A0reZlfyVx2-dHtbgtO7tNnzIUln6atJgdaGTK9v6xvnsJRA9hY-gB6DnSR1cNBN4NIVtX9osKfi4VlEWSi9-qDs68gNQutT3yIO7baD8oimiJ9bfLissDXuUqob2S94bjE5J5FhudpXuF"/>
+
+    <p class="font-label-md text-neutral-900 font-bold truncate leading-tight" id="adminProfileName">Loading...</p>
+    
+    <p class="text-[10px] text-neutral-500 font-medium tracking-wide lowercase mt-0.5 truncate" id="adminProfileRole">Admin</p>
 </button>
 </div>
 </div>
@@ -220,82 +222,7 @@
 <p class="text-on-surface-variant text-body-md">Corporate service inquiries and account changes.</p>
 </div>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-<!-- Complaint Submission Form -->
-<section class="lg:col-span-7">
-<div class="bg-white border border-outline-variant rounded-2xl p-8 shadow-sm">
-<h2 class="font-headline-lg text-xl mb-6">Submit a New Ticket</h2>
-<form class="space-y-6">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<label class="text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Category</label>
-<select class="w-full border border-outline-variant rounded-xl p-4 bg-white focus:border-primary focus:ring-0">
-<option>Account Discrepancy</option>
-<option>Technical Error</option>
-<option>Fraud Report</option>
-<option>General Inquiry</option>
-</select>
-</div>
-<div class="space-y-2">
-<label class="text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Subject</label>
-<input class="w-full border border-outline-variant rounded-xl p-4 bg-white focus:border-primary focus:ring-0" placeholder="Summary of the issue" type="text"/>
-</div>
-</div>
-<div class="space-y-2">
-<label class="text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Description</label>
-<textarea class="w-full border border-outline-variant rounded-xl p-4 bg-white focus:border-primary focus:ring-0" placeholder="Provide as much detail as possible..." rows="5"></textarea>
-</div>
-<div class="space-y-2">
-<label class="text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Attachment</label>
-<div class="border-2 border-dashed border-outline-variant rounded-xl p-10 text-center hover:bg-surface-container transition-all cursor-pointer">
-<span class="material-symbols-outlined text-4xl text-outline mb-2">upload_file</span>
-<p class="text-body-md text-on-surface-variant">Drop files here or <span class="text-primary font-bold">browse</span></p>
-</div>
-</div>
-<button class="w-full bg-primary text-white py-4 rounded-xl font-label-md hover:bg-opacity-90 transition-all" type="submit">Submit Support Ticket</button>
-</form>
-</div>
-</section>
-<!-- Ticket Tracking -->
-<section class="lg:col-span-5">
-<div class="bg-white border border-outline-variant rounded-2xl p-8 shadow-sm h-full flex flex-col">
-<div class="flex justify-between items-center mb-6">
-<h2 class="font-headline-lg text-xl">Recent Tickets</h2>
-<button class="text-primary font-label-md flex items-center gap-1 hover:underline">View History <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
-</div>
-<div class="space-y-4 flex-grow">
-<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-error flex items-center justify-between">
-<div>
-<p class="font-label-md">#TK-8429 — Wire Dispute</p>
-<p class="text-label-sm text-on-surface-variant mt-1">High Priority • Active</p>
-</div>
-<span class="px-3 py-1 bg-error-container text-on-error-container text-[10px] font-bold rounded-full uppercase">Open</span>
-</div>
-<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-primary flex items-center justify-between">
-<div>
-<p class="font-label-md">#TK-8311 — API Access</p>
-<p class="text-label-sm text-on-surface-variant mt-1">Medium Priority • Responding</p>
-</div>
-<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold rounded-full uppercase">Pending</span>
-</div>
-<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-outline flex items-center justify-between">
-<div>
-<p class="font-label-md">#TK-8104 — User Profile</p>
-<p class="text-label-sm text-on-surface-variant mt-1">Low Priority • Done</p>
-</div>
-<span class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] font-bold rounded-full uppercase">Resolved</span>
-</div>
-</div>
-<div class="mt-8 pt-8 border-t border-outline-variant">
-<img alt="Support desk" class="w-full h-32 object-cover rounded-xl mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMvUPilP92xPqqkW-iHBPEKroq8FCKlTECpZB2II_qwtlGYeq5EaYxU0mAiqKtQGOzbBamRZkSMydSO-_fW9yWQRQUhuTeICcmqYBnE8TjxIXd-IJIkRyEaYeCcldejoCSLm2ehFquJQdBtdrMzejoopP2E0JFKWO9bcokmjmz4yxymgDLNVnRR-kf6nl4PaWphiiMN2V3INGMpvDteTeSnKnq6AOUgHRpPn6ebFrGN1k1D59KYyO1NnedyNtBFvfcpAcBFV9k"/>
-<div class="flex items-center justify-between text-on-surface-variant italic">
-<span class="text-label-sm">Average resolution: 4.2h</span>
-<span class="text-label-sm">Live chat available</span>
-</div>
-</div>
-</div>
-</section>
-</div>
+
 <!-- Admin Dashboard Section - Preserve as requested -->
 <section class="bg-white border border-outline-variant rounded-2xl p-8 shadow-sm">
 <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
@@ -342,7 +269,7 @@
 <td class="px-6 py-5 text-body-md">Fraud Alert</td>
 <td class="px-6 py-5 text-error font-medium">12m 45s</td>
 <td class="px-6 py-5 text-right">
-<button class="bg-primary text-white px-4 py-1.5 rounded-lg font-label-md text-xs">Assign</button>
+<button id="ticketModal" class="bg-primary text-white px-4 py-1.5 rounded-lg font-label-md text-xs">Assign</button>
 </td>
 </tr>
 <tr class="hover:bg-surface-container-low transition-colors">
@@ -359,7 +286,7 @@
 <td class="px-6 py-5 text-body-md">Transfer Delay</td>
 <td class="px-6 py-5 text-body-md">1h 22m</td>
 <td class="px-6 py-5 text-right">
-<button class="bg-primary text-white px-4 py-1.5 rounded-lg font-label-md text-xs">Assign</button>
+<button onclick="openTicket('${ticket.ticket_id}', '${ticket.subject}', '${ticket.status}')" class="bg-primary text-white px-4 py-1.5 rounded-lg text-xs">Assign / View</button>
 </td>
 </tr>
 <tr class="hover:bg-surface-container-low transition-colors">
@@ -387,4 +314,68 @@
 <footer class="h-24 bg-transparent"></footer>
 </main>
 </div>
-</body></html>
+<div id="ticketModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm items-center justify-center p-4 z-50 transition-all duration-300">
+    <div class="bg-white rounded-2xl max-w-2xl w-full flex flex-col max-h-[85vh] shadow-2xl border border-slate-100 overflow-hidden transform scale-100 transition-transform duration-300">
+        
+        <div class="bg-blue-50/80 px-6 py-5 border-b border-blue-100/50 flex justify-between items-start">
+            <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                    <h3 class="text-xl font-bold text-slate-800 tracking-tight" id="modalTicketTitle">Ticket # — Subject</h3>
+                    <span id="modalPriorityBadge" class="bg-amber-100 text-amber-800 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">Medium</span>
+                </div>
+                <p class="text-xs font-medium text-slate-500" id="modalTicketMeta">Client: ...</p>
+            </div>
+            <button onclick="closeTicketModal()" class="text-slate-400 hover:text-rose-600 hover:bg-rose-50 p-1.5 rounded-lg transition-colors duration-150 outline-none">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        
+        <div class="p-6 flex-1 flex flex-col overflow-hidden bg-slate-50/30">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Conversation History</h4>
+            
+            <div id="chatContainer" class="flex-1 space-y-4 overflow-y-auto pr-1 pb-4 max-h-[350px] min-h-[220px] scrollbar-thin">
+                </div>
+        </div>
+
+        <form id="ticketReplyForm" class="p-6 bg-white border-t border-slate-100 space-y-4">
+            <input type="hidden" id="modalTicketId">
+            
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Action Panel</h4>
+            
+            <div class="flex flex-col sm:flex-row sm:items-center gap-2 justify-between bg-slate-50 p-3 rounded-xl border border-slate-100">
+                <div class="flex items-center gap-3">
+                    <label class="text-xs font-semibold text-slate-700">Update Status:</label>
+                    <div class="relative">
+                        <select id="modalTicketStatus" class="appearance-none bg-white border border-slate-200 rounded-lg pl-3 pr-8 py-1.5 text-xs font-bold text-slate-700 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/20 cursor-pointer shadow-sm">
+                            <option value="Open">Open</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Resolved">Resolved</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none text-slate-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <span class="text-[11px] font-medium text-slate-400 italic">Ticket Status</span>
+            </div>
+
+            <div class="relative">
+                <textarea id="modalReplyMessage" placeholder="Write your professional response..." required class="w-full border border-slate-200 rounded-xl p-4 text-sm text-slate-700 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/5 bg-slate-50/50 focus:bg-white resize-none transition-all duration-200 placeholder:text-slate-400" rows="3"></textarea>
+            </div>
+            
+            <div class="flex justify-end pt-1">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-bold text-xs shadow-md shadow-blue-600/10 hover:shadow-lg hover:shadow-blue-600/20 active:scale-95 flex items-center gap-2 transition-all duration-150">
+                    <span>Send Response</span>
+                    <svg class="w-3.5 h-3.5 transform rotate-45 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="../assets/js/admin/help_center_controller.js"></script>
+<script src="../assets/js/admin/manage_tickets.js"></script>
+<script src="../assets/js/admin/admin_dashboard.js"></script>
+</body>
+</html>

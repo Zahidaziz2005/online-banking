@@ -107,330 +107,207 @@
     </script>
 </head>
 <body class="bg-background font-body-md text-on-background">
-<!-- Sidebar Navigation -->
 <aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-lowest border-r border-outline-variant flex flex-col p-4 overflow-y-auto z-50">
-<div class="mb-8 px-2 flex items-center gap-3">
-<div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg">
-<span class="material-symbols-outlined text-on-primary">account_balance</span>
-</div>
-<div>
-<h1 class="font-display-brand text-display-brand text-primary leading-none">Apex Bank</h1>
-<p class="font-label-md text-label-md text-secondary opacity-70">Corporate Admin</p>
-</div>
-</div>
-<nav class="flex-1 space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high transition-colors duration-200 rounded-xl group active:scale-[0.98]" href="admin_dash.html">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="font-label-md text-label-md">Dashboard</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high transition-colors duration-200 rounded-xl group active:scale-[0.98]" href="admin_txt.html">
-<span class="material-symbols-outlined">sync_alt</span>
-<span class="font-label-md text-label-md">Transactions</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high transition-colors duration-200 rounded-xl group active:scale-[0.98]" href="admin_staff.html">
-<span class="material-symbols-outlined">manage_accounts</span>
-<span class="font-label-md text-label-md">Staff Management</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary rounded-xl shadow-md transition-all duration-200 active:scale-[0.98]" href="admin_users.html">
-<span class="material-symbols-outlined">group</span>
-<span class="font-label-md text-label-md">User Management</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high transition-colors duration-200 rounded-xl group active:scale-[0.98]" href="admin-audit.html">
-<span class="material-symbols-outlined">history</span>
-<span class="font-label-md text-label-md">Audit Logs</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high transition-colors duration-200 rounded-xl group active:scale-[0.98]" href="admin_help.html">
-<span class="material-symbols-outlined">help</span>
-<span class="font-label-md text-label-md">Help Center</span>
-</a>
-</nav>
-<div class="mt-auto pt-4 border-t border-outline-variant">
-<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-error-container hover:text-on-error-container transition-colors duration-200 rounded-xl active:scale-[0.98]" href="#">
-<span class="material-symbols-outlined">logout</span>
-<span class="font-label-md text-label-md">Logout</span>
-</a>
-</div>
+    <div class="mb-8 px-2 flex items-center gap-3">
+        <div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg">
+            <span class="material-symbols-outlined text-on-primary">account_balance</span>
+        </div>
+        <div>
+            <h1 class="font-display-brand text-display-brand text-primary leading-none">Apex Bank</h1>
+            <p class="font-label-md text-label-md text-secondary opacity-70">Corporate Admin</p>
+        </div>
+    </div>
+    <nav class="flex-1 space-y-1">
+        <a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high transition-colors duration-200 rounded-xl group active:scale-[0.98]" href="admin_dash.html">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="font-label-md text-label-md">Dashboard</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high transition-colors duration-200 rounded-xl group active:scale-[0.98]" href="admin_txt.html">
+            <span class="material-symbols-outlined">sync_alt</span>
+            <span class="font-label-md text-label-md">Transactions</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high transition-colors duration-200 rounded-xl group active:scale-[0.98]" href="admin_staff.html">
+            <span class="material-symbols-outlined">manage_accounts</span>
+            <span class="font-label-md text-label-md">Staff Management</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary rounded-xl shadow-md transition-all duration-200 active:scale-[0.98]" href="admin_users.html">
+            <span class="material-symbols-outlined">group</span>
+            <span class="font-label-md text-label-md">User Management</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high transition-colors duration-200 rounded-xl group active:scale-[0.98]" href="admin-audit.html">
+            <span class="material-symbols-outlined">history</span>
+            <span class="font-label-md text-label-md">Audit Logs</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-high transition-colors duration-200 rounded-xl group active:scale-[0.98]" href="admin_help.html">
+            <span class="material-symbols-outlined">help</span>
+            <span class="font-label-md text-label-md">Help Center</span>
+        </a>
+    </nav>
+    <div class="mt-auto pt-4 border-t border-outline-variant">
+      <a href="javascript:void(0);" onclick="handleAdminLogout(event)" class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all">
+        <span class="material-symbols-outlined" data-icon="logout">logout</span>
+        <span class="font-label-md">Logout</span>
+    </a>
+    </div>
 </aside>
-<!-- Main Content Area -->
+
 <main class="ml-[280px] min-h-screen flex flex-col">
-<!-- Top Navigation Bar -->
-<header class="h-16 flex justify-between items-center px-margin-desktop bg-surface-bright border-b border-outline-variant sticky top-0 z-40">
-<div class="flex items-center gap-4 flex-1">
-<div class="relative w-96">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
-<input class="w-full bg-surface-container border-none rounded-full pl-10 pr-4 py-2 text-body-md focus:ring-2 focus:ring-primary transition-all" placeholder="Search accounts, transactions, or users..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-6">
-<div class="flex items-center gap-2">
-<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-transform active:scale-95">
-<span class="material-symbols-outlined">notifications</span>
-</button>
-<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-transform active:scale-95">
-<span class="material-symbols-outlined">settings</span>
-</button>
-</div>
-<div class="h-8 w-[1px] bg-outline-variant"></div>
-<div class="flex items-center gap-3">
-<div class="text-right">
-<p class="font-label-md text-label-md text-on-surface">Welcome, Admin</p>
-<p class="text-[10px] text-secondary-fixed-variant uppercase tracking-wider font-bold">Superuser</p>
-</div>
-<img class="w-10 h-10 rounded-full border-2 border-outline-variant object-cover" data-alt="A professional headshot of a corporate bank administrator with a confident expression. The lighting is crisp and studio-quality, emphasizing a modern corporate environment. The background is a soft-focus office with clean lines and a palette of slate grays and muted blues, aligning with the Apex Bank aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4zIMnaLVQ4NHT2i3DTzswmPoQ4lc-4f9n1zdDp7czbUbVY2W6SNAK7Rqg84mAFEGHcbi5bcu6Kj5q9BEV74_FSFAPgFwFCxBj0LqLKCARe5jcYyrny3gTeBzQTwSLOh0FCCmW3WQrx6nP0_IHl-LzMqyd9s_qLM4TtXGs4vvlGtC5QDpru6LdFiUnU1iOiqfrxC1uE_BVu8eIqYwlRWD_uidMVl5HUjIEmb73zwOuS8I0QCYRAnVGQJSIdXnorg9YL-gL-2a7"/>
-</div>
-</div>
-</header>
-<!-- Canvas Content -->
-<div class="p-margin-desktop space-y-8 max-w-[1440px]">
-<!-- Page Header -->
-<div class="flex justify-between items-end">
-<div>
-<h2 class="font-headline-lg text-headline-lg text-primary">User Management</h2>
-<p class="font-body-md text-body-md text-secondary">Monitor and manage institutional account access and security statuses.</p>
-</div>
-<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md flex items-center gap-2 shadow-sm hover:opacity-90 active:scale-95 transition-all">
-<span class="material-symbols-outlined text-[20px]">person_add</span>
+    <header class="h-16 flex justify-between items-center px-margin-desktop bg-surface-bright border-b border-outline-variant sticky top-0 z-40">
+        <div class="flex items-center gap-4 flex-1">
+            <div class="relative w-96">
+                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+                <input id="userSearchInput" class="w-full bg-surface-container border-none rounded-full pl-10 pr-4 py-2 text-body-md focus:ring-2 focus:ring-primary transition-all" placeholder="Search accounts, transactions, or users..." type="text"/>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2">
+                <button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-transform active:scale-95">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+                <button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-transform active:scale-95">
+                    <span class="material-symbols-outlined">settings</span>
+                </button>
+            </div>
+            <div class="h-8 w-[1px] bg-outline-variant"></div>
+            <div class="flex items-center gap-3">
+                <div class="text-right">
+                    <p id="adminProfileName" class="font-label-md text-label-md text-on-surface">Welcome, Admin</p>
+                    <p id="adminProfileRole" class="text-[10px] text-secondary-fixed-variant uppercase tracking-wider font-bold">Superuser</p>
+                </div>
+                <img class="w-10 h-10 rounded-full border-2 border-outline-variant object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4zIMnaLVQ4NHT2i3DTzswmPoQ4lc-4f9n1zdDp7czbUbVY2W6SNAK7Rqg84mAFEGHcbi5bcu6Kj5q9BEV74_FSFAPgFwFCxBj0LqLKCARe5jcYyrny3gTeBzQTwSLOh0FCCmW3WQrx6nP0_IHl-LzMqyd9s_qLM4TtXGs4vvlGtC5QDpru6LdFiUnU1iOiqfrxC1uE_BVu8eIqYwlRWD_uidMVl5HUjIEmb73zwOuS8I0QCYRAnVGQJSIdXnorg9YL-gL-2a7"/>
+            </div>
+        </div>
+    </header>
+
+    <div class="p-margin-desktop space-y-8 max-w-[1440px]">
+        <div class="flex justify-between items-end">
+            <div>
+                <h2 class="font-headline-lg text-headline-lg text-primary">User Management</h2>
+                <p class="font-body-md text-body-md text-secondary">Monitor and manage institutional account access and security statuses.</p>
+            </div>
+            <a href="register.html">
+                <button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md flex items-center gap-2 shadow-sm hover:opacity-90 active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-[20px]">person_add</span>
                     Create New User
                 </button>
-</div>
-<!-- Stats Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-<!-- Total Users -->
-<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
-<div class="flex justify-between items-start mb-4">
-<div class="p-2 bg-primary-fixed rounded-lg">
-<span class="material-symbols-outlined text-primary">group</span>
-</div>
-<span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-full">+12% vs last mo</span>
-</div>
-<h3 class="text-secondary font-label-md">Total Users</h3>
-<p class="text-[32px] font-bold text-primary mt-1">12,842</p>
-</div>
-<!-- Active Users -->
-<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
-<div class="flex justify-between items-start mb-4">
-<div class="p-2 bg-blue-50 rounded-lg">
-<span class="material-symbols-outlined text-blue-600">how_to_reg</span>
-</div>
-<span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">94% active</span>
-</div>
-<h3 class="text-secondary font-label-md">Active Users</h3>
-<p class="text-[32px] font-bold text-primary mt-1">11,068</p>
-</div>
-<!-- Frozen Accounts -->
-<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
-<div class="flex justify-between items-start mb-4">
-<div class="p-2 bg-error-container rounded-lg">
-<span class="material-symbols-outlined text-error">ac_unit</span>
-</div>
-<span class="text-xs font-bold text-error bg-error-container px-2 py-1 rounded-full">Warning</span>
-</div>
-<h3 class="text-secondary font-label-md">Frozen Accounts</h3>
-<p class="text-[32px] font-bold text-primary mt-1">245</p>
-</div>
-<!-- Pending Approvals -->
-<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
-<div class="flex justify-between items-start mb-4">
-<div class="p-2 bg-tertiary-fixed rounded-lg">
-<span class="material-symbols-outlined text-tertiary">pending_actions</span>
-</div>
-<span class="text-xs font-bold text-on-tertiary-fixed-variant bg-tertiary-fixed px-2 py-1 rounded-full">Action Needed</span>
-</div>
-<h3 class="text-secondary font-label-md">Pending Approvals</h3>
-<p class="text-[32px] font-bold text-primary mt-1">12</p>
-</div>
-</div>
-<!-- Table Section -->
-<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)] overflow-hidden">
-<div class="px-6 py-4 border-b border-surface-subtle flex justify-between items-center">
-<h3 class="font-headline-md text-headline-md">User Database</h3>
-<div class="flex items-center gap-3">
-<button class="flex items-center gap-2 px-3 py-1.5 border border-outline-variant rounded-lg text-body-md hover:bg-surface-container transition-colors">
-<span class="material-symbols-outlined text-[18px]">filter_list</span>
-                            Filter
-                        </button>
-<button class="flex items-center gap-2 px-3 py-1.5 border border-outline-variant rounded-lg text-body-md hover:bg-surface-container transition-colors">
-<span class="material-symbols-outlined text-[18px]">download</span>
-                            Export
-                        </button>
-</div>
-</div>
-<div class="overflow-x-auto">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="bg-surface-subtle border-b border-outline-variant">
-<th class="px-6 py-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider">Name</th>
-<th class="px-6 py-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider">Email Address</th>
-<th class="px-6 py-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider">Account Number</th>
-<th class="px-6 py-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider">Status</th>
-<th class="px-6 py-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider">Last Login</th>
-<th class="px-6 py-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider text-right">Actions</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-outline-variant">
-<!-- Row 1 -->
-<tr class="hover:bg-surface-container-low transition-colors group">
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary">JD</div>
-<span class="font-label-md text-on-surface">Johnathan Doe</span>
-</div>
-</td>
-<td class="px-6 py-4 text-secondary text-body-md">j.doe@apexcorporate.com</td>
-<td class="px-6 py-4 font-mono text-body-md text-on-surface">**** 8291</td>
-<td class="px-6 py-4">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-green-50 text-green-700 text-xs font-bold border border-green-100">
-<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                                        Active
-                                    </span>
-</td>
-<td class="px-6 py-4 text-secondary text-body-md">Oct 24, 2023 • 14:20</td>
-<td class="px-6 py-4 text-right">
-<div class="flex justify-end gap-2">
-<button class="p-2 hover:bg-surface-container rounded-lg text-secondary hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">edit</span>
-</button>
-<button class="p-2 hover:bg-error-container rounded-lg text-secondary hover:text-error transition-colors">
-<span class="material-symbols-outlined text-[20px]">block</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 2 -->
-<tr class="bg-surface-subtle/30 hover:bg-surface-container-low transition-colors group">
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-outline-variant flex items-center justify-center font-bold text-on-surface-variant">SC</div>
-<span class="font-label-md text-on-surface">Sarah Chen</span>
-</div>
-</td>
-<td class="px-6 py-4 text-secondary text-body-md">s.chen@globaltech.io</td>
-<td class="px-6 py-4 font-mono text-body-md text-on-surface">**** 4432</td>
-<td class="px-6 py-4">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-error-container text-error text-xs font-bold border border-red-100">
-<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
-                                        Frozen
-                                    </span>
-</td>
-<td class="px-6 py-4 text-secondary text-body-md">Oct 22, 2023 • 09:12</td>
-<td class="px-6 py-4 text-right">
-<div class="flex justify-end gap-2">
-<button class="p-2 hover:bg-surface-container rounded-lg text-secondary hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">edit</span>
-</button>
-<button class="p-2 bg-error text-on-error rounded-lg shadow-sm transition-transform active:scale-95">
-<span class="material-symbols-outlined text-[20px]">lock_open</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 3 -->
-<tr class="hover:bg-surface-container-low transition-colors group">
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed">MB</div>
-<span class="font-label-md text-on-surface">Marcus Blackwell</span>
-</div>
-</td>
-<td class="px-6 py-4 text-secondary text-body-md">m.blackwell@summitlogistics.net</td>
-<td class="px-6 py-4 font-mono text-body-md text-on-surface">**** 1109</td>
-<td class="px-6 py-4">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-green-50 text-green-700 text-xs font-bold border border-green-100">
-<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                                        Active
-                                    </span>
-</td>
-<td class="px-6 py-4 text-secondary text-body-md">Oct 24, 2023 • 16:45</td>
-<td class="px-6 py-4 text-right">
-<div class="flex justify-end gap-2">
-<button class="p-2 hover:bg-surface-container rounded-lg text-secondary hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">edit</span>
-</button>
-<button class="p-2 hover:bg-error-container rounded-lg text-secondary hover:text-error transition-colors">
-<span class="material-symbols-outlined text-[20px]">block</span>
-</button>
-</div>
-</td>
-</tr>
-<!-- Row 4 -->
-<tr class="bg-surface-subtle/30 hover:bg-surface-container-low transition-colors group">
-<td class="px-6 py-4">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center font-bold text-on-tertiary-fixed">EW</div>
-<span class="font-label-md text-on-surface">Elena Wright</span>
-</div>
-</td>
-<td class="px-6 py-4 text-secondary text-body-md">e.wright@horizonwealth.com</td>
-<td class="px-6 py-4 font-mono text-body-md text-on-surface">**** 5621</td>
-<td class="px-6 py-4">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-green-50 text-green-700 text-xs font-bold border border-green-100">
-<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                                        Active
-                                    </span>
-</td>
-<td class="px-6 py-4 text-secondary text-body-md">Oct 23, 2023 • 11:30</td>
-<td class="px-6 py-4 text-right">
-<div class="flex justify-end gap-2">
-<button class="p-2 hover:bg-surface-container rounded-lg text-secondary hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">edit</span>
-</button>
-<button class="p-2 hover:bg-error-container rounded-lg text-secondary hover:text-error transition-colors">
-<span class="material-symbols-outlined text-[20px]">block</span>
-</button>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<!-- Pagination -->
-<div class="px-6 py-4 bg-surface-bright flex justify-between items-center border-t border-outline-variant">
-<p class="text-body-md text-secondary">Showing 1 to 10 of 12,842 users</p>
-<div class="flex items-center gap-2">
-<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container disabled:opacity-50" disabled="">
-<span class="material-symbols-outlined text-[20px]">chevron_left</span>
-</button>
-<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-bold text-sm">1</button>
-<button class="w-8 h-8 rounded-lg hover:bg-surface-container font-bold text-sm">2</button>
-<button class="w-8 h-8 rounded-lg hover:bg-surface-container font-bold text-sm">3</button>
-<span class="px-2">...</span>
-<button class="w-8 h-8 rounded-lg hover:bg-surface-container font-bold text-sm">1284</button>
-<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container">
-<span class="material-symbols-outlined text-[20px]">chevron_right</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Bento Contextual Section -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
-<div class="lg:col-span-2 bg-gradient-to-br from-primary-container to-primary rounded-xl p-8 text-on-primary-fixed overflow-hidden relative shadow-lg">
-<div class="relative z-10 max-w-md">
-<h4 class="font-headline-md text-headline-md mb-2">Automated Risk Assessment</h4>
-<p class="font-body-md text-body-md opacity-80 mb-6">Our new AI-driven module flags suspicious activity in real-time. 14 user accounts are currently under secondary review by the compliance team.</p>
-<button class="bg-white text-primary px-5 py-2 rounded-lg font-label-md hover:bg-opacity-90 transition-all active:scale-95">Review Flagged Accounts</button>
-</div>
-<span class="material-symbols-outlined absolute -right-8 -bottom-8 text-[200px] opacity-10 rotate-12">shield_with_heart</span>
-</div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm flex flex-col justify-center">
-<h4 class="font-label-md text-label-md text-secondary uppercase mb-4">Security Overview</h4>
-<div class="space-y-4">
-<div class="flex items-center justify-between">
-<span class="text-body-md">2FA Adoption</span>
-<span class="font-bold text-on-surface">98.2%</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-2">
-<div class="bg-primary h-2 rounded-full" style="width: 98.2%"></div>
-</div>
-<div class="flex items-center justify-between mt-6">
-<span class="text-body-md">Passkey Support</span>
-<span class="font-bold text-on-surface">45.0%</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-2">
-<div class="bg-secondary h-2 rounded-full" style="width: 45%"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+            <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-2 bg-primary-fixed rounded-lg">
+                        <span class="material-symbols-outlined text-primary">group</span>
+                    </div>
+                    <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-full">+12% vs last mo</span>
+                </div>
+                <h3 class="text-secondary font-label-md">Total Users</h3>
+                <p id="statTotalUsers" class="text-[32px] font-bold text-primary mt-1">...</p>
+            </div>
+            <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-2 bg-blue-50 rounded-lg">
+                        <span class="material-symbols-outlined text-blue-600">how_to_reg</span>
+                    </div>
+                    <span id="statActivePercentage" class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">... active</span>
+                </div>
+                <h3 class="text-secondary font-label-md">Active Users</h3>
+                <p id="statActiveUsers" class="text-[32px] font-bold text-primary mt-1">...</p>
+            </div>
+            <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-2 bg-error-container rounded-lg">
+                        <span class="material-symbols-outlined text-error">ac_unit</span>
+                    </div>
+                    <span class="text-xs font-bold text-error bg-error-container px-2 py-1 rounded-full">Warning</span>
+                </div>
+                <h3 class="text-secondary font-label-md">Frozen Accounts</h3>
+                <p id="statFrozenUsers" class="text-[32px] font-bold text-primary mt-1">...</p>
+            </div>
+            <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)]">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="p-2 bg-tertiary-fixed rounded-lg">
+                        <span class="material-symbols-outlined text-tertiary">block</span>
+                    </div>
+                    <span class="text-xs font-bold text-on-tertiary-fixed-variant bg-tertiary-fixed px-2 py-1 rounded-full">Action Needed</span>
+                </div>
+                <h3 class="text-secondary font-label-md">Blocked Accounts</h3>
+                <p id="statBlockedUsers" class="text-[32px] font-bold text-primary mt-1">...</p>
+            </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(15,23,42,0.05)] overflow-hidden">
+            <div class="px-6 py-4 border-b border-surface-subtle flex justify-between items-center">
+                <h3 class="font-headline-md text-headline-md">User Database</h3>
+                <div class="flex items-center gap-3">
+                    <button class="flex items-center gap-2 px-3 py-1.5 border border-outline-variant rounded-lg text-body-md hover:bg-surface-container transition-colors">
+                        <span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filter
+                    </button>
+                    <button class="flex items-center gap-2 px-3 py-1.5 border border-outline-variant rounded-lg text-body-md hover:bg-surface-container transition-colors">
+                        <span class="material-symbols-outlined text-[18px]">download</span>
+                        Export
+                    </button>
+                </div>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-surface-subtle border-b border-outline-variant">
+                            <th class="px-6 py-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider">Name</th>
+                            <th class="px-6 py-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider">Email Address</th>
+                            <th class="px-6 py-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider">CNIC </th>
+                            <th class="px-6 py-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider">Status</th>
+                            <th class="px-6 py-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider">Phone No.</th>
+                            <th class="px-6 py-4 font-label-sm text-label-sm text-secondary uppercase tracking-wider text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableBody" class="divide-y divide-outline-variant">
+                        </tbody>
+                </table>
+            </div>
+
+            <div class="px-6 py-4 bg-surface-bright flex justify-between items-center border-t border-outline-variant">
+                <p id="totalUsersCount" class="text-body-md text-secondary">Loading users...</p>
+                <div id="userPagination" class="flex items-center gap-2">
+                    </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+            <div class="lg:col-span-2 bg-gradient-to-br from-primary-container to-primary rounded-xl p-8 text-on-primary-fixed overflow-hidden relative shadow-lg">
+                <div class="relative z-10 max-w-md">
+                    <h4 class="font-headline-md text-headline-md mb-2">Automated Risk Assessment</h4>
+                    <p class="font-body-md text-body-md opacity-80 mb-6">Our new AI-driven module flags suspicious activity in real-time. 14 user accounts are currently under secondary review by the compliance team.</p>
+                    <button class="bg-white text-primary px-5 py-2 rounded-lg font-label-md hover:bg-opacity-90 transition-all active:scale-95">Review Flagged Accounts</button>
+                </div>
+                <span class="material-symbols-outlined absolute -right-8 -bottom-8 text-[200px] opacity-10 rotate-12">shield_with_heart</span>
+            </div>
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm flex flex-col justify-center">
+                <h4 class="font-label-md text-label-md text-secondary uppercase mb-4">Security Overview</h4>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-body-md">2FA Adoption</span>
+                        <span class="font-bold text-on-surface">98.2%</span>
+                    </div>
+                    <div class="w-full bg-surface-container rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 98.2%"></div>
+                    </div>
+                    <div class="flex items-center justify-between mt-6">
+                        <span class="text-body-md">Passkey Support</span>
+                        <span class="font-bold text-on-surface">45.0%</span>
+                    </div>
+                    <div class="w-full bg-surface-container rounded-full h-2">
+                        <div class="bg-secondary h-2 rounded-full" style="width: 45%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
-</body></html>
+
+
+<script src="../assets/js/admin/user_controller.js"></script>
+<script src="../assets/js/admin/admin_dashboard.js"></script>
+</body>

@@ -2,12 +2,13 @@
 require_once '../db_config.php';
 header('Content-Type: application/json');
 
-// تمام ایررز کو JSON فارمیٹ میں واپس بھیجنے کے لیے ایک فنکشن
+// ریسپانس بھیجنے کا فنکشن (فرنٹ اینڈ کی 'success' اور 'error' کیز کے مطابق)
 function sendResponse(bool $success, mixed $data_or_message) {
     if ($success) {
         echo json_encode(["success" => true, "data" => $data_or_message]);
     } else {
-        echo json_encode(["success" => false, "message" => $data_or_message]);
+        // فرنٹ اینڈ 'error' کی کی ڈھونڈتا ہے، اس لیے یہاں 'error' استعمال کیا ہے
+        echo json_encode(["success" => false, "error" => $data_or_message]);
     }
     exit;
 }
@@ -20,9 +21,8 @@ if ($method === 'GET') {
         sendResponse(false, "User ID is required");
     }
 
-    $user_id = intval($_GET['user_id']); // سیکیورٹی کے لیے انٹیجر میں تبدیل کریں
+    $user_id = intval($_GET['user_id']);
     
-    // Prepared Statement استعمال کریں تاکہ SQL Injection نہ ہو
     $stmt = $conn->prepare("SELECT * FROM support_tickets WHERE user_id = ? ORDER BY created_at DESC");
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
@@ -38,22 +38,26 @@ if ($method === 'GET') {
 
 // --- 2. نیا ٹکٹ جمع کرنا (POST) ---
 if ($method === 'POST') {
-    // ضروری فیلڈز چیک کریں
+    // ضروری فیلڈز کی تصدیق
     if (empty($_POST['user_id']) || empty($_POST['subject'])) {
-        sendResponse(false, "Required fields are missing");
+        sendResponse(false, "Required fields (User ID or Subject) are missing");
     }
 
-    $user_id     = $_POST['user_id'];
-    $category    = $_POST['category'] ?? 'General';
+    $user_id     = intval($_POST['user_id']);
+    $category    = $_POST['category'] ?? 'Technical Error';
     $subject     = $_POST['subject'];
     $description = $_POST['description'] ?? '';
     
-    // فائل ہینڈلنگ کو الگ کریں
+    // آپ کے ڈیٹا بیس اسٹرکچر کے مطابق اضافی اور ضروری ڈیفالٹ ویلیوز
+    $assigned_to = null;       // چونکہ نیا ٹکٹ ابھی کسی ایڈمن کو اسائن نہیں ہوا
+    $status      = 'Open';     // ڈیفالٹ اسٹیٹس
+    $priority    = 'Medium';   // ڈیفالٹ پرائورٹی
+
+    // فائل اپلوڈ ہینڈلنگ
     $file_path = null;
     if (isset($_FILES['attachment']) && $_FILES['attachment']['error'] === UPLOAD_ERR_OK) {
         $target_dir = "../../uploads/tickets/";
         
-        // اگر فولڈر نہیں ہے تو بنائیں
         if (!file_exists($target_dir)) {
             mkdir($target_dir, 0777, true);
         }
@@ -62,20 +66,26 @@ if ($method === 'POST') {
         $target_file = $target_dir . $filename;
         
         if (move_uploaded_file($_FILES["attachment"]["tmp_name"], $target_file)) {
-            $file_path = "uploads/tickets/" . $filename; // ڈیٹا بیس کے لیے چھوٹا پاتھ
+            $file_path = "../uploads/tickets/" . $filename; // فرنٹ اینڈ ڈسپلے پاتھ
         }
     }
 
-    // ڈیٹا بیس میں انسرٹ کریں
-    $query = "INSERT INTO support_tickets (user_id, category, subject, description, attachment_path) VALUES (?, ?, ?, ?, ?)";
+    // درست کوئیری: اب اس میں assigned_to، status، اور priority سب شامل ہیں
+    $query = "INSERT INTO support_tickets (user_id, assigned_to, category, subject, description, attachment_path, status, priority) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("issss", $user_id, $category, $subject, $description, $file_path);
+
+    if (!$stmt) {
+        sendResponse(false, "Prepare statement failed: " . $conn->error);
+    }
+
+    // بائنڈنگ ٹائپس: i (user_id)، i (assigned_to - جو کہ null ہے)، اور باقی 6 اسٹرنگز (ssssss)
+    // چونکہ $assigned_to خالی (null) ہو سکتا ہے، اس لیے ہم اسے بھی پاس کر رہے ہیں
+    $stmt->bind_param("iissssss", $user_id, $assigned_to, $category, $subject, $description, $file_path, $status, $priority);
 
     if ($stmt->execute()) {
-        // آڈٹ لاگ کے لیے یہاں اپنا فنکشن کال کر سکتے ہیں
-        // logAction($user_id, "Submitted Ticket: " . $subject); 
         sendResponse(true, "Ticket submitted successfully");
     } else {
+        // اگر کوئی ڈیٹا بیس کنسٹرینٹ اب بھی مسئلہ کرے گا تو اصل وجہ الرٹ میں دکھ جائے گی
         sendResponse(false, "Database error: " . $stmt->error);
     }
 }

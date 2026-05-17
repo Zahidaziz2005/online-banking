@@ -149,10 +149,10 @@
 <span class="material-symbols-outlined" data-icon="help">help</span>
                 Help Center
             </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-secondary hover:bg-surface-container-high transition-colors duration-200 font-label-md" href="#">
-<span class="material-symbols-outlined" data-icon="logout">logout</span>
-                Logout
-            </a>
+<a href="javascript:void(0);" onclick="handleAdminLogout(event)" class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all">
+        <span class="material-symbols-outlined" data-icon="logout">logout</span>
+        <span class="font-label-md">Logout</span>
+    </a>
 </div>
 </aside>
 <!-- Top Bar -->
@@ -456,7 +456,8 @@
 
 
 </main>
-<script src="../assets/js/admin/admin_global.js"></script>
+
 <script src="../assets/js/admin/staff_controller.js"></script>
+<script src="../assets/js/admin/admin_dashboard.js"></script>
 
 </body></html>
