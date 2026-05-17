@@ -3,21 +3,62 @@
  * Real-Time Metrics, Dynamic Menus & Global Profile Engine
  */
 
-document.addEventListener("DOMContentLoaded", function () {
+/**
+ * 🚨 1️⃣ گلوبل پیج ایکسیس پروٹیکشن گارڈ
+ * یہ لاجک غیر مجاز صفحات کو بلاک کر کے صرف اجازت یافتہ یو آر ایلز تک رسائی دیتی ہے
+ */
+(function checkPageAccess() {
+    const currentPath = window.location.pathname;
     
-    // 1️⃣ گلوبل پروفائل انجن: یہ ہر اس پیج پر چلے گا جہاں یہ فائل لنک ہوگی
-    fetchAdminProfile();
+    // صرف یہ دو یو آر ایلز (اور روٹ پاتھ) بنا لاگ ان کے کھل سکتے ہیں
+    const publicPages = ['index.html', 'admin_home.html'];
+    
+    // یہ چیک کرنے کے لیے کہ کیا موجودہ پیج پبلک لسٹ میں ہے؟
+    const isPublicPage = publicPages.some(page => currentPath.endsWith(page));
+    
+    // اگر یوزر روٹ فولڈر میں ہو (یعنی صرف / لکھا ہو) تو اسے جانے دیں
+    if (currentPath === '/' || currentPath.endsWith('/')) {
+        return;
+    }
 
-    // 2️⃣ ڈیش بورڈ میٹرکس سیف گارڈ: ڈیٹا صرف تب ہی فیچ کریں اگر 'live-total-volume' کا کارڈ موجود ہو
+    // 🔒 اگر پیج پبلک نہیں ہے، تو فوری طور پر پسِ منظر میں سیشن چیک کریں
+    if (!isPublicPage) {
+        fetch('../backend/staff/staff_profile.php')
+        .then(response => response.json())
+        .then(data => {
+            if (!data.success) {
+                // اگر لاگ ان نہیں ہے تو سیکیورٹی گارڈ اسے ہوم پیج پر پھینک دے گا
+                window.location.href = "admin_home.html";
+            }
+        })
+        .catch(() => {
+            window.location.href = "admin_home.html";
+        });
+    }
+})();
+
+/**
+ * 2️⃣ پیج لوڈ ایونٹ لسنر
+ */
+document.addEventListener("DOMContentLoaded", function () {
+    const currentPath = window.location.pathname;
+    const publicPages = ['index.html', 'admin_home.html'];
+    const isPublicPage = publicPages.some(page => currentPath.endsWith(page));
+
+    // 🎯 لوپ سے بچاؤ کا فلٹر: پروفائل صرف تب فیچ کریں جب ہم پروٹیکٹڈ (محفوظ) صفحات پر ہوں
+    if (!isPublicPage) {
+        fetchAdminProfile();
+    }
+
+    // ڈیش بورڈ میٹرکس سیف گارڈ: ڈیٹا صرف تب ہی فیچ کریں اگر 'live-total-volume' کا کارڈ موجود ہو
     if (document.getElementById('live-total-volume')) {
         initializeDashboardEngine();
-        // ہر 15 سیکنڈ بعد پسِ منظر میں ڈیٹا اپڈیٹ کریں
         setInterval(initializeDashboardEngine, 15000);
     }
 });
 
 /**
- * گلوبل ایڈمن پروفائل فیچر (ہر پیج پر پروفائل بائنڈ کرنے کے لیے)
+ * گلوبل ایڈمن پروفائل فیچر
  */
 function fetchAdminProfile() {
     fetch('../backend/staff/staff_profile.php')
@@ -30,7 +71,6 @@ function fetchAdminProfile() {
             const nameElement = document.getElementById('adminProfileName');
             const roleElement = document.getElementById('adminProfileRole');
 
-            // اگر ایچ ٹی ایم ایل ایلیمنٹس اسکرین پر موجود ہوں تو ڈیٹا داخل کریں
             if (nameElement && data.full_name) {
                 nameElement.textContent = data.full_name;
             }
@@ -39,11 +79,14 @@ function fetchAdminProfile() {
                 roleElement.textContent = formattedRole + " Access";
             }
         } else {
-            // اگر سیشن لاگ آؤٹ ہو چکا ہو تو سیکیورٹی ری ڈائریکشن کریں
-            window.location.href = "login.html";
+            // سیشن نہ ہونے پر محفوظ یو آر ایل پر ری ڈائریکٹ کریں
+            window.location.href = "admin_home.html";
         }
     })
-    .catch(error => console.error('Error fetching admin profile:', error));
+    .catch(error => {
+        console.error('Error fetching admin profile:', error);
+        window.location.href = "admin_home.html";
+    });
 }
 
 /**
@@ -61,7 +104,6 @@ async function initializeDashboardEngine() {
 
         const metrics = data.metrics;
 
-        // ڈوم ایلیمنٹس اور ڈیٹا میٹرکس کی سیف میپنگ
         const dashboardElements = {
             'live-total-volume': metrics.total_volume,
             'live-active-accounts': metrics.active_accounts,
@@ -71,7 +113,6 @@ async function initializeDashboardEngine() {
             'live-open-tickets': metrics.open_tickets
         };
 
-        // صرف موجودہ کارڈز کو اپڈیٹ کریں (تاکہ کوڈ کریش نہ ہو)
         for (const [elementId, liveValue] of Object.entries(dashboardElements)) {
             const domElement = document.getElementById(elementId);
             if (domElement && liveValue !== undefined) {
@@ -79,7 +120,6 @@ async function initializeDashboardEngine() {
             }
         }
 
-        // اسٹاف سرگرمی (Staff Activity Feed) ہینڈلر
         if (data.staff_activity) {
             updateStaffActivityFeed(data.staff_activity);
         }
@@ -103,7 +143,6 @@ function updateStaffActivityFeed(activities) {
         return;
     }
 
-    // XSS انجکشن سے بچاؤ کے لیے ہیلپر
     const escapeHTML = str => !str ? '' : str.replace(/[&<>'"]/g, tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag));
 
     activities.forEach(activity => {
@@ -152,7 +191,6 @@ function closeAdminMenuImmediate(menu) {
     }, 200);
 }
 
-// مینیو کے باہر کلک کرنے پر بند کرنے کی لاجک
 document.addEventListener('click', function(event) {
     const container = document.getElementById('adminDropdownContainer');
     const menu = document.getElementById('adminActionMenu');
@@ -163,7 +201,7 @@ document.addEventListener('click', function(event) {
 });
 
 /**
- * گلوبل لائیو لاگ آؤٹ ری ڈائریکشن (اینکر ٹیگ ڈیفالٹ بیہیویر کنٹرول کے ساتھ)
+ * 🚨 گلوبل لائیو لاگ آؤٹ ری ڈائریکشن (درست سیشن ڈسٹرائے ہینڈلر)
  */
 function handleAdminLogout(event) {
     if (event) {
@@ -172,7 +210,7 @@ function handleAdminLogout(event) {
     }
 
     if (confirm("Are you sure you want to log out?")) {
-        // چونکہ آپ کی فائلیں فرنٹ اینڈ فولڈر میں ہیں، پاتھ بالکل درست کر دیا گیا ہے
-        window.location.href = "../backend/staff/logout.php"; 
+        // سیشن کو ڈیٹا بیس اور سرور لیول پر ختم کرنے کے لیے آپ کی پی ایچ پی لاگ آؤٹ فائل ہٹ ہونی چاہیے
+        window.location.href = "../backend/auth/logout.php"; 
     }
 }
